@@ -2,6 +2,8 @@ package com.cms.entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+
 import java.util.Set;
 
 
@@ -22,16 +24,28 @@ public class Course implements Serializable {
 	private int id;
 
 	@Column(length=255)
+	private String name;
+	
+	@Column(length=255)
 	private String description;
 
-	@Column(length=255)
-	private String name;
+	
 
 	@Column(length=255)
 	private String term;
 
 	@Column(length=255)
 	private String type;
+	
+	@Column
+	private String quizes ; 
+	
+	@Column
+	private String imageUrl ; 
+	
+	@Column
+	private String instructor ; 
+
 
 	//bi-directional one-to-one association to Section
 	@OneToOne
@@ -85,6 +99,30 @@ public class Course implements Serializable {
 		this.type = type;
 	}
 
+	public String getQuizes() {
+		return quizes;
+	}
+
+	public void setQuizes(String quizes) {
+		this.quizes = quizes;
+	}
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
+	
+	public String getInstructors() {
+		return instructor;
+	}
+
+	public void setInstructors(String instructor) {
+		this.instructor = instructor;
+	}
+	
 	public Section getSection() {
 		return this.section;
 	}
