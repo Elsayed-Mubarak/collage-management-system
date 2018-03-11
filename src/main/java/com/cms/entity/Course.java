@@ -135,11 +135,11 @@ public class Course implements Serializable {
 		this.imageUrl = imageUrl;
 	}
 	
-	public String getInstructors() {
+	public String getInstructor() {
 		return instructor;
 	}
 
-	public void setInstructors(String instructor) {
+	public void setInstructor(String instructor) {
 		this.instructor = instructor;
 	}
 	
