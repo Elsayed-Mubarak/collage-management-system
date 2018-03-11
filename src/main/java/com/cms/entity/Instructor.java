@@ -20,8 +20,8 @@ public class Instructor implements Serializable {
 	@Column(unique=true, nullable=false)
 	private int id;
 
-	@Column(unique=true)
-	private int departmentID;
+	@Column(name="department_id", unique=true)
+	private int departmentId;
 
 	@Column(length=255)
 	private String rank;
@@ -35,12 +35,12 @@ public class Instructor implements Serializable {
 
 	//bi-directional one-to-one association to Section
 	@OneToOne
-	@JoinColumn(name="ID", nullable=false, insertable=false, updatable=false)
+	@JoinColumn(name="id", nullable=false, insertable=false, updatable=false)
 	private Section section;
 
 	//bi-directional many-to-one association to User
 	@ManyToOne
-	@JoinColumn(name="UserID")
+	@JoinColumn(name="user_id")
 	private User user;
 
 	public Instructor() {
@@ -54,12 +54,12 @@ public class Instructor implements Serializable {
 		this.id = id;
 	}
 
-	public int getDepartmentID() {
-		return this.departmentID;
+	public int getDepartmentId() {
+		return this.departmentId;
 	}
 
-	public void setDepartmentID(int departmentID) {
-		this.departmentID = departmentID;
+	public void setDepartmentId(int departmentId) {
+		this.departmentId = departmentId;
 	}
 
 	public String getRank() {

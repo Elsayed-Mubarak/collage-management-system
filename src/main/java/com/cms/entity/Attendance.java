@@ -22,19 +22,25 @@ public class Attendance implements Serializable {
 	private int id;
 
 	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="date_attended")
 	private Date dateAttended;
 
 	@Column(length=255)
 	private String hours;
 
-	@Column(length=255)
+	@Column(name="remark_text", length=255)
 	private String remarkText;
 
-	@Column(unique=true)
-	private int sectionID;
+	@Column(name="section_id", unique=true)
+	private int sectionId;
 
-	@Column(unique=true)
-	private int studentID;
+	@Column(name="student_id", unique=true)
+	private int studentId;
+
+	//bi-directional many-to-one association to Course
+	@ManyToOne
+	@JoinColumn(name="course_id")
+	private Course course;
 
 	//bi-directional one-to-one association to Section
 	@OneToOne(mappedBy="attendance")
@@ -79,20 +85,28 @@ public class Attendance implements Serializable {
 		this.remarkText = remarkText;
 	}
 
-	public int getSectionID() {
-		return this.sectionID;
+	public int getSectionId() {
+		return this.sectionId;
 	}
 
-	public void setSectionID(int sectionID) {
-		this.sectionID = sectionID;
+	public void setSectionId(int sectionId) {
+		this.sectionId = sectionId;
 	}
 
-	public int getStudentID() {
-		return this.studentID;
+	public int getStudentId() {
+		return this.studentId;
 	}
 
-	public void setStudentID(int studentID) {
-		this.studentID = studentID;
+	public void setStudentId(int studentId) {
+		this.studentId = studentId;
+	}
+
+	public Course getCourse() {
+		return this.course;
+	}
+
+	public void setCourse(Course course) {
+		this.course = course;
 	}
 
 	public Section getSection() {

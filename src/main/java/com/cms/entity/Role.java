@@ -18,10 +18,10 @@ public class Role implements Serializable {
 	@Id
 	@SequenceGenerator(name="ROLES_ROLEID_GENERATOR" )
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="ROLES_ROLEID_GENERATOR")
-	@Column(unique=true, nullable=false)
-	private int roleID;
+	@Column(name="role_id", unique=true, nullable=false)
+	private int roleId;
 
-	@Column(length=50)
+	@Column(name="role_name", length=50)
 	private String roleName;
 
 	//bi-directional many-to-many association to User
@@ -29,10 +29,10 @@ public class Role implements Serializable {
 	@JoinTable(
 		name="user_roles"
 		, joinColumns={
-			@JoinColumn(name="RoleID", nullable=false)
+			@JoinColumn(name="role_id", nullable=false)
 			}
 		, inverseJoinColumns={
-			@JoinColumn(name="UserID", nullable=false)
+			@JoinColumn(name="user_id", nullable=false)
 			}
 		)
 	private Set<User> users;
@@ -40,12 +40,12 @@ public class Role implements Serializable {
 	public Role() {
 	}
 
-	public int getRoleID() {
-		return this.roleID;
+	public int getRoleId() {
+		return this.roleId;
 	}
 
-	public void setRoleID(int roleID) {
-		this.roleID = roleID;
+	public void setRoleId(int roleId) {
+		this.roleId = roleId;
 	}
 
 	public String getRoleName() {

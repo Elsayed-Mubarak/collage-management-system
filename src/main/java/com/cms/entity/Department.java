@@ -2,6 +2,7 @@ package com.cms.entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import java.util.Set;
 
 
 /**
@@ -20,21 +21,25 @@ public class Department implements Serializable {
 	@Column(unique=true, nullable=false)
 	private int id;
 
-	@Column(length=255)
-	private String chairID;
+	@Column(name="chair_id", length=255)
+	private String chairId;
 
-	@Column(length=255)
-	private String contactEmail;
+	@Column(name="cntact_email", length=255)
+	private String cntactEmail;
 
-	@Column(length=255)
+	@Column(name="contact_phone", length=255)
 	private String contactPhone;
 
 	@Column(length=255)
 	private String name;
 
+	//bi-directional many-to-one association to Course
+	@OneToMany(mappedBy="department")
+	private Set<Course> courses;
+
 	//bi-directional one-to-one association to Instructor
 	@OneToOne
-	@JoinColumn(name="ID", nullable=false, insertable=false, updatable=false)
+	@JoinColumn(name="id", nullable=false, insertable=false, updatable=false)
 	private Instructor instructor;
 
 	public Department() {
@@ -48,20 +53,20 @@ public class Department implements Serializable {
 		this.id = id;
 	}
 
-	public String getChairID() {
-		return this.chairID;
+	public String getChairId() {
+		return this.chairId;
 	}
 
-	public void setChairID(String chairID) {
-		this.chairID = chairID;
+	public void setChairId(String chairId) {
+		this.chairId = chairId;
 	}
 
-	public String getContactEmail() {
-		return this.contactEmail;
+	public String getCntactEmail() {
+		return this.cntactEmail;
 	}
 
-	public void setContactEmail(String contactEmail) {
-		this.contactEmail = contactEmail;
+	public void setCntactEmail(String cntactEmail) {
+		this.cntactEmail = cntactEmail;
 	}
 
 	public String getContactPhone() {
@@ -78,6 +83,28 @@ public class Department implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public Set<Course> getCourses() {
+		return this.courses;
+	}
+
+	public void setCourses(Set<Course> courses) {
+		this.courses = courses;
+	}
+
+	public Course addCours(Course cours) {
+		getCourses().add(cours);
+		cours.setDepartment(this);
+
+		return cours;
+	}
+
+	public Course removeCours(Course cours) {
+		getCourses().remove(cours);
+		cours.setDepartment(null);
+
+		return cours;
 	}
 
 	public Instructor getInstructor() {

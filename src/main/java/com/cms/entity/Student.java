@@ -30,21 +30,21 @@ public class Student implements Serializable {
 	@Column(length=255)
 	private String level;
 
+	@Column(name="student_key")
 	private int studentKey;
+
+	//bi-directional many-to-one association to Notification
+	@OneToMany(mappedBy="student")
+	private Set<Notification> notifications;
 
 	//bi-directional one-to-one association to Attendance
 	@OneToOne
-	@JoinColumn(name="ID", nullable=false, insertable=false, updatable=false)
+	@JoinColumn(name="id", nullable=false, insertable=false, updatable=false)
 	private Attendance attendance;
-
-	//bi-directional one-to-one association to Enrollment
-	@OneToOne
-	@JoinColumn(name="ID", nullable=false, insertable=false, updatable=false)
-	private Enrollment enrollment;
 
 	//bi-directional many-to-one association to User
 	@ManyToOne
-	@JoinColumn(name="UserID")
+	@JoinColumn(name="user_id")
 	private User user;
 
 	//bi-directional many-to-many association to Course
@@ -52,13 +52,17 @@ public class Student implements Serializable {
 	@JoinTable(
 		name="student_course"
 		, joinColumns={
-			@JoinColumn(name="Student_ID", nullable=false)
+			@JoinColumn(name="student_id", nullable=false)
 			}
 		, inverseJoinColumns={
-			@JoinColumn(name="Course_ID", nullable=false)
+			@JoinColumn(name="course_id", nullable=false)
 			}
 		)
 	private Set<Course> courses;
+
+	//bi-directional many-to-one association to StudentExam
+	@OneToMany(mappedBy="student")
+	private Set<StudentExam> studentExams;
 
 	public Student() {
 	}
@@ -103,20 +107,34 @@ public class Student implements Serializable {
 		this.studentKey = studentKey;
 	}
 
+	public Set<Notification> getNotifications() {
+		return this.notifications;
+	}
+
+	public void setNotifications(Set<Notification> notifications) {
+		this.notifications = notifications;
+	}
+
+	public Notification addNotification(Notification notification) {
+		getNotifications().add(notification);
+		notification.setStudent(this);
+
+		return notification;
+	}
+
+	public Notification removeNotification(Notification notification) {
+		getNotifications().remove(notification);
+		notification.setStudent(null);
+
+		return notification;
+	}
+
 	public Attendance getAttendance() {
 		return this.attendance;
 	}
 
 	public void setAttendance(Attendance attendance) {
 		this.attendance = attendance;
-	}
-
-	public Enrollment getEnrollment() {
-		return this.enrollment;
-	}
-
-	public void setEnrollment(Enrollment enrollment) {
-		this.enrollment = enrollment;
 	}
 
 	public User getUser() {
@@ -133,6 +151,28 @@ public class Student implements Serializable {
 
 	public void setCourses(Set<Course> courses) {
 		this.courses = courses;
+	}
+
+	public Set<StudentExam> getStudentExams() {
+		return this.studentExams;
+	}
+
+	public void setStudentExams(Set<StudentExam> studentExams) {
+		this.studentExams = studentExams;
+	}
+
+	public StudentExam addStudentExam(StudentExam studentExam) {
+		getStudentExams().add(studentExam);
+		studentExam.setStudent(this);
+
+		return studentExam;
+	}
+
+	public StudentExam removeStudentExam(StudentExam studentExam) {
+		getStudentExams().remove(studentExam);
+		studentExam.setStudent(null);
+
+		return studentExam;
 	}
 
 }
