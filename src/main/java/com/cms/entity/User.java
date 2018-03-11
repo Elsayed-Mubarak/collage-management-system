@@ -31,22 +31,24 @@ public class User implements Serializable {
 	private String email;
 
 	@Column(length=255)
-	private String firstName;
+	private String firstname;
 
 	@Column(length=255)
 	private String gender;
 
 	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="join_date")
 	private Date joinDate;
 
 	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="last_login_date")
 	private Date lastLoginDate;
 
-	@Column(length=255)
-	private String lastLoginIP;
+	@Column(name="last_login_ip", length=255)
+	private String lastLoginIp;
 
 	@Column(length=255)
-	private String lastName;
+	private String lastname;
 
 	@Column(length=255)
 	private String mobile;
@@ -60,9 +62,10 @@ public class User implements Serializable {
 	@Column(length=255)
 	private String status;
 
-	@Column(length=255)
+	@Column(name="user_name", length=255)
 	private String userName;
 
+	@Column(name="user_type")
 	private int userType;
 
 	//bi-directional many-to-one association to Instructor
@@ -112,12 +115,12 @@ public class User implements Serializable {
 		this.email = email;
 	}
 
-	public String getFirstName() {
-		return this.firstName;
+	public String getFirstname() {
+		return this.firstname;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
 	}
 
 	public String getGender() {
@@ -144,20 +147,20 @@ public class User implements Serializable {
 		this.lastLoginDate = lastLoginDate;
 	}
 
-	public String getLastLoginIP() {
-		return this.lastLoginIP;
+	public String getLastLoginIp() {
+		return this.lastLoginIp;
 	}
 
-	public void setLastLoginIP(String lastLoginIP) {
-		this.lastLoginIP = lastLoginIP;
+	public void setLastLoginIp(String lastLoginIp) {
+		this.lastLoginIp = lastLoginIp;
 	}
 
-	public String getLastName() {
-		return this.lastName;
+	public String getLastname() {
+		return this.lastname;
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
 	}
 
 	public String getMobile() {

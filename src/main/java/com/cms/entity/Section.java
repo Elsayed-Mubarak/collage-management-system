@@ -21,11 +21,11 @@ public class Section implements Serializable {
 	@Column(unique=true, nullable=false)
 	private int id;
 
-	@Column(unique=true)
-	private int courseID;
+	@Column(name="course_id")
+	private int courseId;
 
-	@Column(unique=true)
-	private int instructorID;
+	@Column(name="instructor_id", unique=true)
+	private int instructorId;
 
 	@Column(length=255)
 	private String name;
@@ -33,46 +33,20 @@ public class Section implements Serializable {
 	@Column(length=255)
 	private String room;
 
-	@Column(unique=true)
-	private int scheduleID;
+	@Column(name="schedule_id", unique=true)
+	private int scheduleId;
 
-	//bi-directional one-to-one association to Course
-	@OneToOne(mappedBy="section")
-	private Course course;
-
-	//bi-directional many-to-many association to Section
-	@ManyToMany
-	@JoinTable(
-		name="course_section"
-		, joinColumns={
-			@JoinColumn(name="Section_ID", nullable=false)
-			}
-		, inverseJoinColumns={
-			@JoinColumn(name="Course_ID", nullable=false)
-			}
-		)
-	private Set<Section> sections1;
-
-	//bi-directional many-to-many association to Section
-	@ManyToMany(mappedBy="sections1")
-	private Set<Section> sections2;
+	//bi-directional many-to-many association to Course
+	@ManyToMany(mappedBy="sections")
+	private Set<Course> courses;
 
 	//bi-directional one-to-one association to Instructor
 	@OneToOne(mappedBy="section")
 	private Instructor instructor;
 
-	//bi-directional one-to-one association to Schedule
-	@OneToOne(mappedBy="section")
-	private Schedule schedule;
-
-	//bi-directional one-to-one association to Enrollment
-	@OneToOne
-	@JoinColumn(name="ID", nullable=false, insertable=false, updatable=false)
-	private Enrollment enrollment;
-
 	//bi-directional one-to-one association to Attendance
 	@OneToOne
-	@JoinColumn(name="ID", nullable=false, insertable=false, updatable=false)
+	@JoinColumn(name="id", nullable=false, insertable=false, updatable=false)
 	private Attendance attendance;
 
 	public Section() {
@@ -86,20 +60,20 @@ public class Section implements Serializable {
 		this.id = id;
 	}
 
-	public int getCourseID() {
-		return this.courseID;
+	public int getCourseId() {
+		return this.courseId;
 	}
 
-	public void setCourseID(int courseID) {
-		this.courseID = courseID;
+	public void setCourseId(int courseId) {
+		this.courseId = courseId;
 	}
 
-	public int getInstructorID() {
-		return this.instructorID;
+	public int getInstructorId() {
+		return this.instructorId;
 	}
 
-	public void setInstructorID(int instructorID) {
-		this.instructorID = instructorID;
+	public void setInstructorId(int instructorId) {
+		this.instructorId = instructorId;
 	}
 
 	public String getName() {
@@ -118,36 +92,20 @@ public class Section implements Serializable {
 		this.room = room;
 	}
 
-	public int getScheduleID() {
-		return this.scheduleID;
+	public int getScheduleId() {
+		return this.scheduleId;
 	}
 
-	public void setScheduleID(int scheduleID) {
-		this.scheduleID = scheduleID;
+	public void setScheduleId(int scheduleId) {
+		this.scheduleId = scheduleId;
 	}
 
-	public Course getCourse() {
-		return this.course;
+	public Set<Course> getCourses() {
+		return this.courses;
 	}
 
-	public void setCourse(Course course) {
-		this.course = course;
-	}
-
-	public Set<Section> getSections1() {
-		return this.sections1;
-	}
-
-	public void setSections1(Set<Section> sections1) {
-		this.sections1 = sections1;
-	}
-
-	public Set<Section> getSections2() {
-		return this.sections2;
-	}
-
-	public void setSections2(Set<Section> sections2) {
-		this.sections2 = sections2;
+	public void setCourses(Set<Course> courses) {
+		this.courses = courses;
 	}
 
 	public Instructor getInstructor() {
@@ -156,22 +114,6 @@ public class Section implements Serializable {
 
 	public void setInstructor(Instructor instructor) {
 		this.instructor = instructor;
-	}
-
-	public Schedule getSchedule() {
-		return this.schedule;
-	}
-
-	public void setSchedule(Schedule schedule) {
-		this.schedule = schedule;
-	}
-
-	public Enrollment getEnrollment() {
-		return this.enrollment;
-	}
-
-	public void setEnrollment(Enrollment enrollment) {
-		this.enrollment = enrollment;
 	}
 
 	public Attendance getAttendance() {

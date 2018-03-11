@@ -33,10 +33,30 @@ public class Course implements Serializable {
 	@Column(length=255)
 	private String type;
 
-	//bi-directional one-to-one association to Section
-	@OneToOne
-	@JoinColumn(name="ID", nullable=false, insertable=false, updatable=false)
-	private Section section;
+	@Column(length=255)
+	private String year;
+
+	//bi-directional many-to-one association to Attendance
+	@OneToMany(mappedBy="course")
+	private Set<Attendance> attendances;
+
+	//bi-directional many-to-one association to Department
+	@ManyToOne
+	@JoinColumn(name="department_id")
+	private Department department;
+
+	//bi-directional many-to-many association to Section
+	@ManyToMany
+	@JoinTable(
+		name="course_section"
+		, joinColumns={
+			@JoinColumn(name="course_id", nullable=false)
+			}
+		, inverseJoinColumns={
+			@JoinColumn(name="section_id", nullable=false)
+			}
+		)
+	private Set<Section> sections;
 
 	//bi-directional many-to-many association to Student
 	@ManyToMany(mappedBy="courses")
@@ -85,12 +105,50 @@ public class Course implements Serializable {
 		this.type = type;
 	}
 
-	public Section getSection() {
-		return this.section;
+	public String getYear() {
+		return this.year;
 	}
 
-	public void setSection(Section section) {
-		this.section = section;
+	public void setYear(String year) {
+		this.year = year;
+	}
+
+	public Set<Attendance> getAttendances() {
+		return this.attendances;
+	}
+
+	public void setAttendances(Set<Attendance> attendances) {
+		this.attendances = attendances;
+	}
+
+	public Attendance addAttendance(Attendance attendance) {
+		getAttendances().add(attendance);
+		attendance.setCourse(this);
+
+		return attendance;
+	}
+
+	public Attendance removeAttendance(Attendance attendance) {
+		getAttendances().remove(attendance);
+		attendance.setCourse(null);
+
+		return attendance;
+	}
+
+	public Department getDepartment() {
+		return this.department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
+
+	public Set<Section> getSections() {
+		return this.sections;
+	}
+
+	public void setSections(Set<Section> sections) {
+		this.sections = sections;
 	}
 
 	public Set<Student> getStudents() {
