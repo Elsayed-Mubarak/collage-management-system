@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cms.entity.Course;
@@ -40,6 +41,16 @@ public class CourseController {
 	public Optional<Course>  getCourse(@PathVariable("id") int id) {
 		return courseService.getCourse(id);
 	}
+	
+	@GetMapping("/courses/{term}")
+	public List<Course>  getAllCourseByTermName(@PathVariable("term") String term) {
+		return courseService.getAllCoursesByTerm(term);
+	}
+	
+//	@GetMapping("/courses/{year}")
+//	public List<Course>  getAllCourseByYearName(@RequestParam("year") String year) {
+//		return courseService.getAllCoursesByYear(year);
+//	}
 	
 	@DeleteMapping("/course/release/{id}")
 	public void releaseCourse(@PathVariable int id) {

@@ -13,6 +13,7 @@ public interface  CourseService {
 	Optional<Course> getCourse(int id);
 	List<Course> getAllCourses();
 	void deleteCourse(int id);
-//	List<Courses> getCooursesByTermId();
+    List<Course> getAllCoursesByTerm(String term);
+//    List<Course> getAllCoursesByYear(String year);
 	
 }
