@@ -44,13 +44,13 @@ public class CourseServiceImp implements CourseService {
 
 	@Override
 	public List<Course> getAllCoursesByTerm(String term) {
-		return courseRepository.findAllByTerm(term);
+		return courseRepository.findAllByTermIgnoreCase(term);
 	}
 	
-//	@Override
-//	public List<Course> getAllCoursesByYear(String year) {
-//		return courseRepository.findAllByYear(year);
-//	}
+	@Override
+	public List<Course> getAllCoursesByYear(String year) {
+		return courseRepository.findAllByYearIgnoreCase(year);
+	}
 	
 	@Override
 	public void deleteCourse(int id) {

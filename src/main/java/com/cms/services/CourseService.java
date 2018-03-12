@@ -14,6 +14,6 @@ public interface  CourseService {
 	List<Course> getAllCourses();
 	void deleteCourse(int id);
     List<Course> getAllCoursesByTerm(String term);
-//    List<Course> getAllCoursesByYear(String year);
+    List<Course> getAllCoursesByYear(String year);
 	
 }

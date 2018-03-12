@@ -11,13 +11,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cms.entity.Course;
 import com.cms.services.CourseService;
 
 @RestController
+@RequestMapping("/courses")
 public class CourseController {
 	@Autowired
 	CourseService courseService;
@@ -27,7 +28,7 @@ public class CourseController {
 		courseService.addCourse(course);
 	}
 	
-	@GetMapping(value="/courses")
+	@GetMapping(value="/list")
 	public List<Course> getAllCourses(){
 		return courseService.getAllCourses();
 	}
@@ -42,15 +43,15 @@ public class CourseController {
 		return courseService.getCourse(id);
 	}
 	
-	@GetMapping("/courses/{term}")
+	@GetMapping("/byterm/{term}")
 	public List<Course>  getAllCourseByTermName(@PathVariable("term") String term) {
 		return courseService.getAllCoursesByTerm(term);
 	}
 	
-//	@GetMapping("/courses/{year}")
-//	public List<Course>  getAllCourseByYearName(@RequestParam("year") String year) {
-//		return courseService.getAllCoursesByYear(year);
-//	}
+	@GetMapping("/byyear/{year}")
+	public List<Course>  getAllCourseByYearName(@PathVariable("year") String year) {
+		return courseService.getAllCoursesByYear(year);
+	}
 	
 	@DeleteMapping("/course/release/{id}")
 	public void releaseCourse(@PathVariable int id) {
