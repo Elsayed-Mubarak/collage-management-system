@@ -58,6 +58,14 @@ public class CourseServiceImp implements CourseService {
 		
 	}
 
+	@Override
+	public List<Course> getAllCoursesByYearANDTermIgnoreCase(String year, String term) {
+		
+		List<Course> c = courseRepository.findAllByYearAndTermIgnoreCase(year, term);
+		System.out.println(c.size());
+		return c ;
+	}
+
 	
 
 }

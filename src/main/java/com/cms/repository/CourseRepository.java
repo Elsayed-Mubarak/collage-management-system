@@ -13,6 +13,7 @@ public interface CourseRepository extends CrudRepository<Course, Integer>  {
 	
 	List<Course> findAllByTermIgnoreCase(String term); 
 	List<Course> findAllByYearIgnoreCase(String year);
-//	List<Course> findAllByYearANDTerm(@Param("year")String year , @Param("term")String term); 
+	List<Course> findAllByYearAndTermIgnoreCase(String year , String term); 
+	
 
 }

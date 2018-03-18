@@ -1,61 +1,90 @@
 package com.cms.controller;
 
-
-import java.util.List;
-import java.util.Optional;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.cms.entity.Course;
 import com.cms.services.CourseService;
 
-@RestController
-@RequestMapping("/courses")
+
+
+
+
+@Controller
 public class CourseController {
+
 	@Autowired
-	CourseService courseService;
+	CourseService courseServcie ; 
 	
-	@PostMapping("/courses/add")
-	public void addcourse(@RequestBody Course course) {
-		courseService.addCourse(course);
+	@RequestMapping("/welcome")
+	public String welcome(HttpServletRequest request){
+		request.setAttribute("mode","MODE_HOME");
+		return "welcomecoursepage";
 	}
 	
-	@GetMapping(value="/list")
-	public List<Course> getAllCourses(){
-		return courseService.getAllCourses();
+	
+	@RequestMapping("/addCourse")
+	public String addcourse(HttpServletRequest request) {
+		request.setAttribute("mode", "MODE_ADDCOURSE");
+		return "welcomecoursepage";
 	}
 	
-	@PutMapping(value="/course/update")
-	public void updateCourse(@RequestBody Course course) {
-		courseService.updateCourse(course);
+	@PostMapping("/course-saved")
+	public String saveCourseIndataBase(@ModelAttribute Course course , BindingResult binding , HttpServletRequest request ){
+		courseServcie.addCourse(course);
+		request.setAttribute("mode", "MODE_HOME");
+		return "welcomecoursepage" ; 
 	}
 	
-	@GetMapping("/course/{id}")
-	public Optional<Course>  getCourse(@PathVariable("id") int id) {
-		return courseService.getCourse(id);
+	@GetMapping("/show-courses")
+	public String showAllCourses(HttpServletRequest request){
+		request.setAttribute("courses", courseServcie.getAllCourses());
+		request.setAttribute("mode", "ALL_COURSES");
+		return "welcomecoursepage" ; 
 	}
 	
-	@GetMapping("/byterm/{term}")
-	public List<Course>  getAllCourseByTermName(@PathVariable("term") String term) {
-		return courseService.getAllCoursesByTerm(term);
+
+	@RequestMapping("/delete-course")
+	public String deleteCourse(@RequestParam int id, HttpServletRequest request) {
+		courseServcie.deleteCourse(id);
+		request.setAttribute("courses", courseServcie.getAllCourses());
+		request.setAttribute("mode", "ALL_COURSES");
+		return "welcomecoursepage";
 	}
 	
-	@GetMapping("/byyear/{year}")
-	public List<Course>  getAllCourseByYearName(@PathVariable("year") String year) {
-		return courseService.getAllCoursesByYear(year);
-	}
-	
-	@DeleteMapping("/course/release/{id}")
-	public void releaseCourse(@PathVariable int id) {
-		courseService.deleteCourse(id);
-	}
-	
+//	@RequestMapping("/edit-course")
+//	public String editCourse(@RequestParam int id,HttpServletRequest request) {
+//		request.setAttribute("user",courseServcie.updateCourse(id);
+//		request.setAttribute("mode", "MODE_UPDATE");
+//		return "welcomepage";
+//	}
+//	
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

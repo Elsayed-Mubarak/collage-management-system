@@ -78,6 +78,16 @@ public class Course implements Serializable {
 
 	public Course() {
 	}
+	
+	public Course(String name , String description , String term , String type , String imageUrl , String instructor , String year){
+		this.name = name ; 
+		this.description = description ; 
+		this.term = term ; 
+		this.type = type ; 
+		this.imageUrl = imageUrl ; 
+		this.instructor = instructor ;
+		this.year = year ; 
+	}
 
 	public int getId() {
 		return this.id;

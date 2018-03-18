@@ -15,5 +15,6 @@ public interface  CourseService {
 	void deleteCourse(int id);
     List<Course> getAllCoursesByTerm(String term);
     List<Course> getAllCoursesByYear(String year);
+    List<Course> getAllCoursesByYearANDTermIgnoreCase(String year,String term);
 	
 }

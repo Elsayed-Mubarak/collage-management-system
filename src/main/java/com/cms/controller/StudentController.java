@@ -1,21 +1,26 @@
 package com.cms.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 
-import com.cms.entity.Student;
-import com.cms.services.StudentService;
+import com.cms.services.StrudentService;
+
 
 @Controller
 public class StudentController {
 
 	
-	@Autowired StudentService studentService;
+	@Autowired
+	StrudentService  studentServcie ; 
 	
-	@PostMapping("/createStudent")
-	public Student createStudent(Student student) {
-		return studentService.createStudent(student);
+	@GetMapping("/showstudents")
+	public String showAllCourses(HttpServletRequest request){
+		request.setAttribute("students", studentServcie.getAllStudents());
+		request.setAttribute("mode", "ALL_STUDENTS");
+		return "welcomecoursepage" ; 
 	}
 	
 
