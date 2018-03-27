@@ -67,13 +67,13 @@ public class CourseController {
 		return "welcomecoursepage";
 	}
 	
-//	@RequestMapping("/edit-course")
-//	public String editCourse(@RequestParam int id,HttpServletRequest request) {
-//		request.setAttribute("user",courseServcie.updateCourse(id);
-//		request.setAttribute("mode", "MODE_UPDATE");
-//		return "welcomepage";
-//	}
-//	
+	@RequestMapping("/edit-course")
+	public String editCourse(@RequestParam int id,HttpServletRequest request) {
+		request.setAttribute("user",courseServcie.editCourse(id));
+		request.setAttribute("mode", "MODE_UPDATE");
+		return "welcomecoursepage";
+	}
+
 
 }
 

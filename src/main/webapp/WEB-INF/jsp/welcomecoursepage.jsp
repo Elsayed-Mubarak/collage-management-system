@@ -19,8 +19,24 @@
 
 </head>
 
-<body>
-	<div role="navigation">
+<body class="container">
+
+	<div id='courses'>
+		<ul>
+			<li class='active'><a href='/welcome'>Courses Welcome Page</a></li>
+			
+			<li><a href="/addCourse">New Course</a></li>
+			<li><a href="/show-courses">All Courses</a></li>
+			<li><a href="/showstudents">All Students</a></li>
+			<li><a href="/show-courses-to-users">All Courses To users</a></li>
+			<!-- <li><a href='#'>Contact</a></li>-->
+		</ul>
+	</div>
+	<!--start clearFloat-->
+	<div class="clearFloat"></div>
+
+	.
+	<!-- <div role="navigation">
 		<div class="navbar navbar-inverse">
 			<a href="/welcome" class="navbar-brand">Courses</a>
 			<div class="navbar-collapse collapse">
@@ -32,21 +48,7 @@
 				</ul>
 			</div>
 		</div>
-	</div>
-
-
-	<%--div id='courses'>
-	<ul>
-		<li class='active'><a href='#'>All courses</a></li>
-		<li><a href='#'>Edit course</a></li>
-		<li><a href='#'>Delete Course</a></li>
-		<!-- <li><a href='#'>Contact</a></li>-->
-	</ul>
-</div>
-<!--start clearFloat-->
-<div class="clearFloat"></div>
- --%>
-
+	</div>  -->
 
 	<c:choose>
 		<c:when test="${mode=='MODE_HOME' }">
@@ -119,12 +121,81 @@
 					<div class="form-group">
 						<label class="control-label col-md-3">Image Url </label>
 						<div class="col-md-7">
-							<input type="text" class="form-control" name="Image Url"
+							<input type="text" class="form-control" name="imageUrl"
 								value="${course.imageUrl }" />
 						</div>
 					</div>
 					<div class="form-group ">
 						<input type="submit" class="btn btn-primary" value="Add Course" />
+					</div>
+				</form>
+			</div>
+		</c:when>
+
+		<c:when test="${mode=='MODE_UPDATE' }">
+			<div class="container text-center">
+				<h3>Update Course</h3>
+				<hr>
+				<form class="form-horizontal" method="POST" action="course-saved">
+					<input type="hidden" name="id" value="${course.id }" />
+					<div class="form-group">
+						<label class="control-label col-md-3">Name</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="name"
+								value="${course.name }" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3">Description</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="description"
+								value="${course.description }" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3">Term</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="term"
+								value="${course.term }" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3">Type </label>
+						<div class="col-md-3">
+							<input type="text" class="form-control" name="type"
+								value="${course.type }" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3">Instructor</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="instructor"
+								value="${course.instructor }" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3">Year</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="year"
+								value="${course.year }" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3">Code</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="code"
+								value="${course.code }" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3">Image Url</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="imageUrl"
+								value="${course.imageUrl }" />
+						</div>
+					</div>
+					<div class="form-group ">
+						<input type="submit" class="btn btn-primary" value="Update" />
 					</div>
 				</form>
 			</div>

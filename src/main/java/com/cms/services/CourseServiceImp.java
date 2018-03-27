@@ -18,13 +18,13 @@ public class CourseServiceImp implements CourseService {
 
 	@Override
 	public void addCourse(Course course) {
-		courseRepository.save(course);
+	 courseRepository.save(course);
 		
 	}
 
 	@Override
-	public void updateCourse(Course course) {
-		courseRepository.save(course);
+	public Optional<Course> editCourse(int id) {
+		return courseRepository.findById(id);
 		
 	}
 
@@ -64,6 +64,11 @@ public class CourseServiceImp implements CourseService {
 		List<Course> c = courseRepository.findAllByYearAndTermIgnoreCase(year, term);
 		System.out.println(c.size());
 		return c ;
+	}
+
+	@Override
+	public void updateCourse(Course course) {
+		courseRepository.save(course);
 	}
 
 	

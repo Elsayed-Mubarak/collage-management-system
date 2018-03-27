@@ -191,9 +191,13 @@
 }
 .videos .image {
   float: left;
+  margin-right:10px;
+}
+.video .image img{
+	width:200px;
+	height:200px;
 }
 .video .description{
-  float: right;
-  width:100px 
+  float: right;  
 }
 /*end videos */

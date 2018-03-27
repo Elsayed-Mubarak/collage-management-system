@@ -9,6 +9,7 @@ import com.cms.entity.Course;
 public interface  CourseService {
 
 	void addCourse(Course course);
+	Optional<Course> editCourse(int id);
 	void updateCourse(Course course);
 	Optional<Course> getCourse(int id);
 	List<Course> getAllCourses();
