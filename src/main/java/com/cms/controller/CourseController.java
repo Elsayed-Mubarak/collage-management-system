@@ -51,6 +51,13 @@ public class CourseController {
 		return "welcomecoursepage" ; 
 	}
 	
+	@GetMapping("/show-courses-to-users")
+	public String showAllCoursesToUsers(HttpServletRequest request){
+		request.setAttribute("courses", courseServcie.getAllCourses());
+		request.setAttribute("mode", "ALL_COURSES_TO_USERS");
+		return "welcomecoursepage" ; 
+	}
+	
 
 	@RequestMapping("/delete-course")
 	public String deleteCourse(@RequestParam int id, HttpServletRequest request) {

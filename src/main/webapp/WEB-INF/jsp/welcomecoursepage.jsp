@@ -10,6 +10,8 @@
 <title>courses | home</title>
 <link href="static/css/bootstrap.min.css" rel="stylesheet">
 <link href="static/css/style.css" rel="stylesheet">
+<link href="static/css/styles.css" rel="stylesheet">
+
 <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -26,10 +28,24 @@
 					<li><a href="/addCourse">New Course</a></li>
 					<li><a href="/show-courses">All Courses</a></li>
 					<li><a href="/showstudents">All Students</a></li>
+					<li><a href="/show-courses-to-users">All Courses To users</a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
+
+
+	<%--div id='courses'>
+	<ul>
+		<li class='active'><a href='#'>All courses</a></li>
+		<li><a href='#'>Edit course</a></li>
+		<li><a href='#'>Delete Course</a></li>
+		<!-- <li><a href='#'>Contact</a></li>-->
+	</ul>
+</div>
+<!--start clearFloat-->
+<div class="clearFloat"></div>
+ --%>
 
 
 	<c:choose>
@@ -91,6 +107,22 @@
 								value="${course.year }" />
 						</div>
 					</div>
+
+					<div class="form-group">
+						<label class="control-label col-md-3">Code </label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="code"
+								value="${course.code }" />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="control-label col-md-3">Image Url </label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="Image Url"
+								value="${course.imageUrl }" />
+						</div>
+					</div>
 					<div class="form-group ">
 						<input type="submit" class="btn btn-primary" value="Add Course" />
 					</div>
@@ -113,6 +145,8 @@
 								<th>Type</th>
 								<th>Instructor</th>
 								<th>Year</th>
+								<th>Code</th>
+								<th>ImageUrl</th>
 								<th>Delete</th>
 								<th>Edit</th>
 							</tr>
@@ -127,6 +161,8 @@
 									<td>${course.type}</td>
 									<td>${course.instructor}</td>
 									<td>${course.year}</td>
+									<td>${course.code}</td>
+									<td>${course.imageUrl}</td>
 									<td><a href="/delete-course?id=${course.id }"><span
 											class="glyphicon glyphicon-trash"></span></a></td>
 									<td><a href="/edit-course?id=${course.id }"><span
@@ -139,6 +175,21 @@
 			</div>
 		</c:when>
 
+		<c:when test="${mode=='ALL_COURSES_TO_USERS' }">
+			<c:forEach var="course" items="${courses }">
+				<div class="videos">
+					<div class="image">
+						<img src=${course.imageUrl } alt="image may contain:course logo">
+					</div>
+					<div class="description">
+						<a href="#">
+							<h3>${course.name}</h3>
+						</a>
+						<p>${course.description}</p>
+					</div>
+				</div>
+			</c:forEach>
+		</c:when>
 		<c:when test="${mode=='ALL_STUDENTS' }">
 			<div class="container text-center" id="tasksDiv">
 				<h3>All Students</h3>
@@ -171,6 +222,6 @@
 		</c:when>
 	</c:choose>
 
-
+	<script src="static/js/script.js"></script>
 </body>
 </html>
