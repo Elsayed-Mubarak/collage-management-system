@@ -67,7 +67,7 @@ public class Course implements Serializable {
 	private Department department;
 
 	//bi-directional many-to-many association to Section
-	@JsonIgnore
+	
 	@ManyToMany
 	@JoinTable(
 		name="course_section"
