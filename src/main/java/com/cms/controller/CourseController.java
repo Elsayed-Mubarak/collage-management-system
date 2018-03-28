@@ -14,10 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.cms.entity.Course;
 import com.cms.services.CourseService;
 
-
-
-
-
 @Controller
 public class CourseController {
 
@@ -39,7 +35,9 @@ public class CourseController {
 	
 	@PostMapping("/course-saved")
 	public String saveCourseIndataBase(@ModelAttribute Course course , BindingResult binding , HttpServletRequest request ){
+		System.out.println("mostafaaaa");
 		courseServcie.addCourse(course);
+		System.out.println("mosaaaaaa");
 		request.setAttribute("mode", "MODE_HOME");
 		return "welcomecoursepage" ; 
 	}
@@ -69,29 +67,13 @@ public class CourseController {
 	
 	@RequestMapping("/edit-course")
 	public String editCourse(@RequestParam int id,HttpServletRequest request) {
-		request.setAttribute("user",courseServcie.editCourse(id));
+		request.setAttribute("course",courseServcie.editCourse(id));
 		request.setAttribute("mode", "MODE_UPDATE");
 		return "welcomecoursepage";
 	}
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

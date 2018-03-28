@@ -3,38 +3,36 @@ package com.cms.services;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
+
 import org.springframework.stereotype.Service;
+import javax.transaction.Transactional;
 
 import com.cms.entity.Course;
 import com.cms.repository.CourseRepository;
 
-@Service
-public class CourseServiceImp implements CourseService {
-	@Autowired
-	CourseRepository courseRepository;
 
+
+@Service
+@Transactional
+public class CourseServiceImp implements CourseService {
+	
+	
+	
+	private final CourseRepository courseRepository;
+
+	
+	public CourseServiceImp(CourseRepository courseRepository){
+		this.courseRepository = courseRepository ; 
+	}
+	
 	@Override
 	public void addCourse(Course course) {
 	 courseRepository.save(course);
 		
 	}
-
-	@Override
-	public Optional<Course> editCourse(int id) {
-		return courseRepository.findById(id);
-		
-	}
-
-
-	@Override
-	public Optional<Course> getCourse(int id) {
-		
-		return courseRepository.findById(id);
-	}
-
+	
 	@Override
 	public List<Course> getAllCourses() {
 		List<Course> courses = new ArrayList<>();
@@ -42,6 +40,24 @@ public class CourseServiceImp implements CourseService {
 		return courses;
 	}
 
+	@Override
+	public void deleteCourse(int id) {
+		courseRepository.delete(id);
+		
+	} 
+	
+	@Override
+	public Course editCourse(int id) {
+		return courseRepository.findOne(id);
+	}
+
+
+	@Override
+	public Course getCourse(int id) {
+		
+		return courseRepository.findOne(id);
+	}
+	
 	@Override
 	public List<Course> getAllCoursesByTerm(String term) {
 		return courseRepository.findAllByTermIgnoreCase(term);
@@ -52,11 +68,7 @@ public class CourseServiceImp implements CourseService {
 		return courseRepository.findAllByYearIgnoreCase(year);
 	}
 	
-	@Override
-	public void deleteCourse(int id) {
-		courseRepository.deleteById(id);
-		
-	}
+	
 
 	@Override
 	public List<Course> getAllCoursesByYearANDTermIgnoreCase(String year, String term) {

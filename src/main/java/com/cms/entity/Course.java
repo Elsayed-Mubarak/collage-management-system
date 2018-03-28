@@ -21,8 +21,8 @@ public class Course implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-//	@SequenceGenerator(name="COURSE_ID_GENERATOR" )
-//	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="COURSE_ID_GENERATOR")
+	@SequenceGenerator(name="COURSE_ID_GENERATOR" )
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="COURSE_ID_GENERATOR")
 	@Column(unique=true, nullable=false)
 	private int id;
 
@@ -78,8 +78,7 @@ public class Course implements Serializable {
 			@JoinColumn(name="section_id", nullable=false)
 			}
 		)
-	
-	
+	@JsonIgnore
 	private Set<Section> sections;
 
 	//bi-directional many-to-many association to Student
@@ -232,5 +231,12 @@ public class Course implements Serializable {
 	public void setStudents(Set<Student> students) {
 		this.students = students;
 	}
+	
+//	@Override
+//	public String toString() {
+//		return "Course [id=" + id + ", name=" + name + ", description=" + description+ ", term=" + term
+//				+ ", type=" + type+ ", instructor=" + instructor+ " , year=" + year+" ]";
+//	}
+	
 
 }

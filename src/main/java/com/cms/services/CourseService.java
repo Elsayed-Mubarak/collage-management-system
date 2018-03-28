@@ -1,7 +1,7 @@
 package com.cms.services;
 
 import java.util.List;
-import java.util.Optional;
+
 
 import com.cms.entity.Course;
 
@@ -9,9 +9,9 @@ import com.cms.entity.Course;
 public interface  CourseService {
 
 	void addCourse(Course course);
-	Optional<Course> editCourse(int id);
+	Course editCourse(int id);
 	void updateCourse(Course course);
-	Optional<Course> getCourse(int id);
+	Course getCourse(int id);
 	List<Course> getAllCourses();
 	void deleteCourse(int id);
     List<Course> getAllCoursesByTerm(String term);

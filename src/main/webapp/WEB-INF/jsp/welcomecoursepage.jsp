@@ -4,9 +4,11 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Cache-Control" content="no-cache">
 <meta http-equiv="Expires" content="sat, 01 Dec 2001 00:00:00 GMT">
+
 <title>courses | home</title>
 <link href="static/css/bootstrap.min.css" rel="stylesheet">
 <link href="static/css/style.css" rel="stylesheet">
@@ -21,13 +23,13 @@
 
 <body class="container">
 
-	<div id='courses'>
+	<div id='courses' >
 		<ul>
 			<li class='active'><a href='/welcome'>Courses Welcome Page</a></li>
 			
 			<li><a href="/addCourse">New Course</a></li>
 			<li><a href="/show-courses">All Courses</a></li>
-			<li><a href="/showstudents">All Students</a></li>
+			<!-- <li><a href="/showstudents">All Students</a></li> -->
 			<li><a href="/show-courses-to-users">All Courses To users</a></li>
 			<!-- <li><a href='#'>Contact</a></li>-->
 		</ul>
@@ -292,7 +294,12 @@
 			</div>
 		</c:when>
 	</c:choose>
-
+	
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="static/js/jquery-1.11.1.min.js"></script>
+	<script src="static/js/bootstrap.min.js"></script>
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 	<script src="static/js/script.js"></script>
 </body>
 </html>
