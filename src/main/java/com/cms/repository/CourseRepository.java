@@ -14,6 +14,7 @@ public interface CourseRepository extends CrudRepository<Course, Integer>  {
 	List<Course> findAllByTermIgnoreCase(String term); 
 	List<Course> findAllByYearIgnoreCase(String year);
 	List<Course> findAllByYearAndTermIgnoreCase(String year , String term);
+	Course findById(int id);
 	 
 	
 

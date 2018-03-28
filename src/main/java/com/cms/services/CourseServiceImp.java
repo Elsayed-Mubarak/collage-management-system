@@ -42,20 +42,20 @@ public class CourseServiceImp implements CourseService {
 
 	@Override
 	public void deleteCourse(int id) {
-		courseRepository.delete(id);
+		courseRepository.deleteById(id);
 		
 	} 
 	
 	@Override
 	public Course editCourse(int id) {
-		return courseRepository.findOne(id);
+		return courseRepository.findById(id);
 	}
 
 
 	@Override
 	public Course getCourse(int id) {
 		
-		return courseRepository.findOne(id);
+		return courseRepository.findById(id);
 	}
 	
 	@Override
