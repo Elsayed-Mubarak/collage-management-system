@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -26,6 +27,13 @@ public class CourseController {
 		return "welcomecoursepage";
 	}
 	
+	@GetMapping("/show-courses-to-users/{id}")
+	public String  getCourseDetails(@PathVariable("id") int id , HttpServletRequest request)
+	{
+		request.setAttribute("courseDetails", courseServcie.getCourse(id));
+		request.setAttribute("mode","MODE_COURSE_DETAILS");
+		return "welcomecoursepage" ;
+	}
 	
 	@RequestMapping("/addCourse")
 	public String addcourse(HttpServletRequest request) {
