@@ -15,9 +15,6 @@
 <link href="static/css/style.css" rel="stylesheet">
 <link href="static/css/styles.css" rel="stylesheet">
 <link href="static/css/styledetails.css" rel="stylesheet">
-<link href="static/css/normal.css" rel="stylesheet">
-<link href="static/css/TimeTable.css" rel="stylesheet">
-
 
 <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -26,7 +23,7 @@
 
 </head>
 
-<body class="container">
+<body >
 
 	<div id='courses'>
 		<ul>
@@ -342,186 +339,6 @@
 					</table>
 				</div>
 			</div>
-		</c:when>
-
-
-		<c:when test="${mode=='MODE_SCHEDULE' }">
-			<div class="table1">
-
-				<table class="table1">
-					<div class="container1">
-					<tr>
-						<div class="header">
-							<th class="Year">Year</th>
-							<th>Sat</th>
-							<th>Sun</th>
-							<th>Mon</th>
-							<th>Tue</th>
-							<th>Wed</th>
-							<th>Thr</th>
-							<th>Fri</th>
-						</div>
-					</tr>
-					<!--End of days-->
-
-					<!--Start of First year -->
-					<tr>
-						<div class="First-Year">
-							<td class="col"><h4>1st</h4></td>
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-						</div>
-					</tr>
-					<!--End of First year -->
-
-					<!--Start of second year -->
-					<tr>
-						<div class="Secon-Year">
-							<td class="col"><h4>2nd</h4></td>
-							<td class="dif"><textarea class="dif"></textarea></td>
-							<td class="dif"><textarea class="dif"></textarea></td>
-							<td class="dif"><textarea class="dif"></textarea></td>
-							<td class="dif"><textarea class="dif"></textarea></td>
-							<td class="dif"><textarea class="dif"></textarea></td>
-							<td class="dif"><textarea class="dif"></textarea></td>
-							<td class="dif"><textarea class="dif"></textarea></td>
-						</div>
-					</tr>
-					<!--End of of year -->
-
-					<!--Start of third year -->
-					<tr>
-						<div class="Third-Year">
-							<td class="col"><h4>3rd</h4></td>
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-							<td><textarea></textarea></td>
-						</div>
-					</tr>
-					<!--Start of third year -->
-
-					<!--Start of Forth year -->
-					<tr>
-						<div class="Forth-Year">
-							<td class="col"><h4>4th</h4></td>
-							<td class="dif"><textarea class="dif"></textarea></td>
-							<td class="dif"><textarea class="dif"></textarea></td>
-							<td class="dif"><textarea class="dif"></textarea></td>
-							<td class="dif"><textarea class="dif"></textarea></td>
-							<td class="dif"><textarea class="dif"></textarea></td>
-							<td class="dif"><textarea class="dif"></textarea></td>
-							<td class="dif"><textarea class="dif"></textarea></td>
-						</div>
-					</tr>
-					<!--End of Forth year -->
-					</div>
-				</table>
-			</div>
-
-			<!--Start Of Selection-->
-
-			<label>
-				<div class="select">
-					<select name="month">
-
-						<option name="month" value="Jan">Jan</option>
-						<option name="month" value="Feb">Feb</option>
-						<option name="month" value="Mar">Mar</option>
-						<option name="month" value="April">Apr</option>
-						<option name="month" value="May">May</option>
-						<option name="month" value="June">Jun</option>
-						<option name="month" value="July">Jul</option>
-						<option name="month" value="August">Aug</option>
-						<option name="month" value="Septemper">Sept</option>
-						<option name="month" value="Oct">Oct</option>
-						<option name="month" value="Nov">Nov</option>
-						<option name="month" value="Dec">Dec</option>
-
-					</select>
-				</div>
-			</label>
-			<!--End Of Selection-->
-			<!-- start second table-->
-
-			<table class="secondery">
-				<div class="container1">
-					<tr>
-						<th class="ths">Sun</th>
-						<th class="ths">Mon</th>
-						<th class="ths">Tue</th>
-						<th class="ths">Wed</th>
-						<th class="ths">Thr</th>
-						<th class="ths">Fri</th>
-						<th class="ths">Sat</th>
-					</tr>
-					<tr>
-						<td class="tds"><button>1</button></td>
-						<td class="tds"><button>2</button></td>
-						<td class="tds"><button>3</button></td>
-						<td class="tds"><button>4</button></td>
-						<td class="tds"><button>5</button></td>
-						<td class="tds"><button>6</button></td>
-						<td class="tds"><button>7</button></td>
-					</tr>
-					<tr>
-						<td class="tds"><button>8</button></td>
-						<td class="tds"><button>9</button></td>
-						<td class="tds"><button>10</button></td>
-						<td class="tds"><button>11</button></td>
-						<td class="tds"><button>12</button></td>
-						<td class="tds"><button>13</button></td>
-						<td class="tds"><button>14</button></td>
-					</tr>
-					<tr>
-						<td class="tds"><button>15</button></td>
-						<td class="tds"><button>16</button></td>
-						<td class="tds"><button>17</button></td>
-						<td class="tds"><button>18</button></td>
-						<td class="tds"><button>19</button></td>
-						<td class="tds"><button>20</button></td>
-						<td class="tds"><button>21</button></td>
-					</tr>
-					<tr>
-						<td class="tds"><button>22</button></td>
-						<td class="tds"><button>23</button></td>
-						<td class="tds"><button>24</button></td>
-						<td class="tds"><button>25</button></td>
-						<td class="tds"><button>26</button></td>
-						<td class="tds"><button>27</button></td>
-						<td class="tds"><button>28</button></td>
-					</tr>
-					<tr>
-						<td class="tds"><button>29</button></td>
-						<td class="tds"><button>30</button></td>
-						<td class="tds"><button>31</button></td>
-					</tr>
-				</div>
-			</table>
-			<!-- End second table-->
-			<!--Start of Buttons-->
-			<div class="container">
-				<div class="event">
-					<button class="A">Add Event</button>
-				</div>
-				<div class="edit">
-					<button class="A">Edit</button>
-				</div>
-				<div class="save">
-					<input class="save" type="submit" name="Save" value="Save">
-				</div>
-			</div>
-
-			<!--End of Buttons-->
-
 		</c:when>
 
 	</c:choose>
