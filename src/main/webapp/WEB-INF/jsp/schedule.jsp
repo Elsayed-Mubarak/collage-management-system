@@ -20,7 +20,7 @@
 			<li><a href="/show-courses">All Courses</a></li>
 			<!-- <li><a href="/showstudents">All Students</a></li> -->
 			<li><a href="/show-courses-to-users">All Courses To users</a></li>
-			<li><a href="/schedule">Schedule</a></li>
+			<li><a href="/addSheduleData">Schedule</a></li>
 			<!-- <li><a href='#'>Contact</a></li>-->
 		</ul>
 	</div>
@@ -29,7 +29,7 @@
 
 
 	<c:choose>
-		<c:when test="${mode=='MODE_SCHEDULE' }">
+		<c:when test="${mode=='MODE_ADDSCHEDULEDATA' }">
 			<!-- Start main table-->
 
 
@@ -61,7 +61,7 @@
 								<td class="col"><h4>1st</h4></td>
 								<td><textarea></textarea></td>
 								<td><textarea></textarea></td>
-								<td><textarea> </textarea></td>
+								<td><textarea></textarea></td>
 								<td><textarea></textarea></td>
 								<td><textarea></textarea></td>
 								<td><textarea></textarea></td>
@@ -77,11 +77,11 @@
 							<div class="Secon-Year">
 								<td class="col"><h4>2nd</h4></td>
 								<td class="dif"><textarea class="dif"></textarea></td>
-								<td class="dif"><textarea class="dif"></textarea></td class="dif">
 								<td class="dif"><textarea class="dif"></textarea></td>
 								<td class="dif"><textarea class="dif"></textarea></td>
 								<td class="dif"><textarea class="dif"></textarea></td>
-								<td class="dif"><textarea class="dif"></textarea>
+								<td class="dif"><textarea class="dif"></textarea></td>
+								<td class="dif"><textarea class="dif"></textarea></td>
 								<td class="dif"><textarea class="dif"></textarea></td>
 							</div>
 						</tr>
@@ -115,7 +115,7 @@
 								<td class="dif"><textarea class="dif"></textarea></td>
 								<td class="dif"><textarea class="dif"></textarea></td>
 								<td class="dif"><textarea class="dif"></textarea></td>
-								<td class="dif"><textarea class="dif"></textarea>
+								<td class="dif"><textarea class="dif"></textarea></td>
 								<td class="dif"><textarea class="dif"></textarea></td>
 							</div>
 						</tr>

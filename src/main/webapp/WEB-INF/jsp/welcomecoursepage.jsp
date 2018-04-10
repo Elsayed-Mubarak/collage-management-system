@@ -14,7 +14,6 @@
 <link href="static/css/bootstrap.min.css" rel="stylesheet">
 <link href="static/css/style.css" rel="stylesheet">
 <link href="static/css/styles.css" rel="stylesheet">
-<link href="static/css/styledetails.css" rel="stylesheet">
 
 <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -33,7 +32,7 @@
 			<li><a href="/show-courses">All Courses</a></li>
 			<!-- <li><a href="/showstudents">All Students</a></li> -->
 			<li><a href="/show-courses-to-users">All Courses To users</a></li>
-			<li><a href="/schedule">Schedule</a></li>
+			<li><a href="/addSheduleData">Schedule</a></li>
 			<!-- <li><a href='#'>Contact</a></li>-->
 		</ul>
 	</div>
@@ -267,47 +266,7 @@
 			</c:forEach>
 		</c:when>
 
-		<c:when test="${mode=='MODE_COURSE_DETAILS' }">
-
-			<h1>${courseDetails.name}</h1>
-			<div class="videos">
-				<div class="image">
-					<img src=${courseDetails.imageUrl
-					}
-						alt="image may contain:course logo">
-				</div>
-				<div class="description">
-
-					<p>${courseDetails.type}</p>
-					<p>${courseDetails.description}</p>
-					<p>${courseDetails.code}</p>
-					<p>${courseDetails.instructor}</p>
-					<p>${courseDetails.term}</p>
-					<p>${courseDetails.type}</p>
-				</div>
-			</div>
-			<!--	<header>
-				<main>
-				<h1>${courseDetails.name}</h1>
-				</main>
-			</header>
-			<section>
-				<div class="image">
-					<img src=${courseDetails.imageUrl }
-						alt="image may contain:courselogo">
-				</div>
-				<div class="info">
-					<p>${courseDetails.type}</p>
-					<p>${courseDetails.description}</p>
-					<p>${courseDetails.code}</p>
-					<p>${courseDetails.instructor}</p>
-					<p>${courseDetails.term}</p>
-					<p>${courseDetails.type}</p>
-
-				</div>
-			</section>-->
-		</c:when>
-
+	
 
 
 		<c:when test="${mode=='ALL_STUDENTS' }">

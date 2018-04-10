@@ -30,9 +30,9 @@ public class CourseController {
 	@GetMapping("/show-courses-to-users/{id}")
 	public String  getCourseDetails(@PathVariable("id") int id , HttpServletRequest request)
 	{
-		request.setAttribute("courseDetails", courseServcie.getCourse(id));
 		request.setAttribute("mode","MODE_COURSE_DETAILS");
-		return "welcomecoursepage" ;
+		request.setAttribute("courseDetails", courseServcie.getCourse(id));
+		return "coursedetails" ;
 	}
 	
 	@RequestMapping("/addCourse")
