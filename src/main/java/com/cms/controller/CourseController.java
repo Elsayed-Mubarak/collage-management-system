@@ -24,7 +24,7 @@ public class CourseController {
 	@RequestMapping("/welcome")
 	public String welcome(HttpServletRequest request){
 		request.setAttribute("mode","MODE_HOME");
-		return "welcomecoursepage";
+		return "welcomepage";
 	}
 	
 	@GetMapping("/show-courses-to-users/{id}")
@@ -38,28 +38,43 @@ public class CourseController {
 	@RequestMapping("/addCourse")
 	public String addcourse(HttpServletRequest request) {
 		request.setAttribute("mode", "MODE_ADDCOURSE");
-		return "welcomecoursepage";
+		return "addcoursepage";
 	}
-	
+	          
 	@PostMapping("/course-saved")
 	public String saveCourseIndataBase(@ModelAttribute Course course , BindingResult binding , HttpServletRequest request ){
 		System.out.println("mostafaaaa");
 		courseServcie.addCourse(course);
 		System.out.println("mosaaaaaa");
 		request.setAttribute("mode", "MODE_HOME");
-		return "welcomecoursepage" ; 
+		return "welcomepage" ; 
 	}
 	
 	@GetMapping("/show-courses")
 	public String showAllCourses(HttpServletRequest request){
 		request.setAttribute("courses", courseServcie.getAllCourses());
 		request.setAttribute("mode", "ALL_COURSES");
-		return "welcomecoursepage" ; 
+		return "allcoursestoadminpage" ; 
 	}
+	
+	@GetMapping("/show-courses/{year}")
+	public String showAllCourses(@PathVariable("year") String year , HttpServletRequest request){
+		request.setAttribute("courses", courseServcie.getAllCoursesByYear(year));
+		request.setAttribute("mode", "ALL_COURSES");
+		return "allcoursestoadminpage" ; 
+	}
+	
 	
 	@GetMapping("/show-courses-to-users")
 	public String showAllCoursesToUsers(HttpServletRequest request){
 		request.setAttribute("courses", courseServcie.getAllCourses());
+		request.setAttribute("mode", "ALL_COURSES_TO_USERS");
+		return "welcomecoursepage" ; 
+	}
+	
+	@GetMapping("/show-courses-to-user/{year}")
+	public String showAllCoursesToUsers(@PathVariable("year") String year ,HttpServletRequest request){
+		request.setAttribute("courses", courseServcie.getAllCoursesByYear(year));
 		request.setAttribute("mode", "ALL_COURSES_TO_USERS");
 		return "welcomecoursepage" ; 
 	}
@@ -70,17 +85,15 @@ public class CourseController {
 		courseServcie.deleteCourse(id);
 		request.setAttribute("courses", courseServcie.getAllCourses());
 		request.setAttribute("mode", "ALL_COURSES");
-		return "welcomecoursepage";
+		return "allcoursestoadminpage";
 	}
 	
 	@RequestMapping("/edit-course")
 	public String editCourse(@RequestParam int id,HttpServletRequest request) {
 		request.setAttribute("course",courseServcie.editCourse(id));
 		request.setAttribute("mode", "MODE_UPDATE");
-		return "welcomecoursepage";
+		return "addcoursepage";
 	}
-
-
 }
 
 

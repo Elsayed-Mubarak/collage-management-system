@@ -24,8 +24,8 @@ public class Section implements Serializable {
 	@Column(name="course_id")
 	private int courseId;
 
-	@Column(name="instructor_id", unique=true)
-	private int instructorId;
+//	@Column(name="instructor_id", unique=true)
+//	private int instructorId;
 
 	@Column(length=255)
 	private String name;
@@ -40,9 +40,9 @@ public class Section implements Serializable {
 	@ManyToMany(mappedBy="sections")
 	private Set<Course> courses;
 
-	//bi-directional one-to-one association to Instructor
-	@OneToOne(mappedBy="section")
-	private Instructor instructor;
+//	//bi-directional one-to-one association to Instructor
+//	@OneToOne(mappedBy="section")
+//	private Instructor instructor;
 
 	//bi-directional one-to-one association to Attendance
 	@OneToOne
@@ -68,13 +68,13 @@ public class Section implements Serializable {
 		this.courseId = courseId;
 	}
 
-	public int getInstructorId() {
-		return this.instructorId;
-	}
-
-	public void setInstructorId(int instructorId) {
-		this.instructorId = instructorId;
-	}
+//	public int getInstructorId() {
+//		return this.instructorId;
+//	}
+//
+//	public void setInstructorId(int instructorId) {
+//		this.instructorId = instructorId;
+//	}
 
 	public String getName() {
 		return this.name;
@@ -108,13 +108,13 @@ public class Section implements Serializable {
 		this.courses = courses;
 	}
 
-	public Instructor getInstructor() {
-		return this.instructor;
-	}
-
-	public void setInstructor(Instructor instructor) {
-		this.instructor = instructor;
-	}
+//	public Instructor getInstructor() {
+//		return this.instructor;
+//	}
+//
+//	public void setInstructor(Instructor instructor) {
+//		this.instructor = instructor;
+//	}
 
 	public Attendance getAttendance() {
 		return this.attendance;

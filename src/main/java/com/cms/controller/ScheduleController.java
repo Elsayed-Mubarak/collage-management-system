@@ -27,12 +27,14 @@ public class ScheduleController {
 //	}
 	
 	
-	@RequestMapping("/addSheduleData")
+	@RequestMapping("/add-shedule-data")
 	public String addcourse(HttpServletRequest request) {
 		request.setAttribute("mode", "MODE_ADDSCHEDULEDATA");
 		return "schedule";
 	}
 	
+	
+
 	@PostMapping("/schedule-saved")
 	public String saveCourseIndataBase(@ModelAttribute Schedule schedule, BindingResult binding , HttpServletRequest request ){
 		System.out.println("mostafaaaa");
@@ -41,5 +43,21 @@ public class ScheduleController {
 		request.setAttribute("mode", "MODE_HOME");
 		return "welcomecoursepage" ; 
 	}
+	
+//	
+//	@RequestMapping("/show-schedule-to-users")
+//	public String showScheduletoUsers(HttpServletRequest request) {
+//		request.setAttribute("schedule", scheduleService.getSchedule());
+//		request.setAttribute("mode", "MODE_SHOWSCHEDULEDATA");
+//		return "NewFile";
+//	}
+	
+	@RequestMapping("/show-schedule")
+	public String showSchedule(HttpServletRequest request) {
+		request.setAttribute("schedule", scheduleService.getSchedule());
+		request.setAttribute("mode", "MODE_SHOWSCHEDULEDATA");
+		return "schedule";
+	}
+	
 	
 }

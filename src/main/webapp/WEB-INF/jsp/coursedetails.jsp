@@ -1,22 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<c:set var="contextRoot" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Course Details Page</title>
 
-
-<link href="static/css/styles.css" rel="stylesheet">
+<link href="${contextRoot}/static/css/bootstrap.min.css" rel="stylesheet">
+<link href="${contextRoot}/static/css/style.css" rel="stylesheet">
+<link href="${contextRoot}/static/css/styles.css" rel="stylesheet">
 
 
 </head>
 <body>
 
-	<div>
+<div id='courses'>
+	
 		<ul>
-			<li ><a href='/welcome'>Courses Welcome Page</a></li>
+			<li><a href='/welcome'>Courses Welcome Page</a></li>
 
 			<li><a href="/addCourse">New Course</a></li>
 			<li><a href="/show-courses">All Courses</a></li>
@@ -52,10 +56,13 @@
 
 		</c:when>
 	</c:choose>
-	
+
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	
-	<script src="static/js/script.js"></script>
+	<script src="${contextRoot}/static/js/jquery-1.11.1.min.js"></script>
+	<script src="${contextRoot}/static/js/bootstrap.min.js"></script>
+	<script src="http://code.jquery.com/jquery-latest.min.js"
+		type="text/javascript"></script>
+	<script src="${contextRoot}/static/js/script.js"></script>
 </body>
 </html>

@@ -12,6 +12,7 @@ public interface  CourseService {
 	Course editCourse(int id);
 	void updateCourse(Course course);
 	Course getCourse(int id);
+	List<Course> getCourseByYear(String year);
 	List<Course> getAllCourses();
 	void deleteCourse(int id);
     List<Course> getAllCoursesByTerm(String term);

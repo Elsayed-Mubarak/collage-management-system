@@ -83,6 +83,12 @@ public class CourseServiceImp implements CourseService {
 		courseRepository.save(course);
 	}
 
-	
+	@Override
+	public List<Course> getCourseByYear(String year) {
+		// TODO Auto-generated method stub
+		return courseRepository.findAllByYearIgnoreCase(year);
+	}
+
+		
 
 }

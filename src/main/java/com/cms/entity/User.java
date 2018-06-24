@@ -2,6 +2,9 @@ package com.cms.entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.Date;
 import java.util.Set;
 
@@ -11,6 +14,7 @@ import java.util.Set;
  * 
  */
 @Entity
+@JsonIgnoreProperties(ignoreUnknown=true)
 @Table(name="users")
 @NamedQuery(name="User.findAll", query="SELECT u FROM User u")
 public class User implements Serializable {
@@ -19,21 +23,23 @@ public class User implements Serializable {
 	@Id
 	@SequenceGenerator(name="USERS_ID_GENERATOR" )
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="USERS_ID_GENERATOR")
-	@Column(unique=true, nullable=false)
+	@Column(unique=true, nullable=false , name="id")
 	private int id;
 
-	@Column(length=255)
+	
+	@Column(length=255,name="address")
 	private String address;
 
+	@Column(length=255,name="age")
 	private int age;
 
-	@Column(length=255)
+	@Column(length=255 , name = "email")
 	private String email;
 
-	@Column(length=255)
+	@Column(length=255,name = "first_name")
 	private String firstname;
 
-	@Column(length=255)
+	@Column(length=255 , name="gender")
 	private String gender;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -47,26 +53,23 @@ public class User implements Serializable {
 	@Column(name="last_login_ip", length=255)
 	private String lastLoginIp;
 
-	@Column(length=255)
+	@Column(length=255 , name ="last_name")
 	private String lastname;
 
-	@Column(length=255)
+	@Column(length=255 , name="mobile_number")
 	private String mobile;
 
-	@Column(length=255)
+	@Column(length=255 , name ="password" )
 	private String password;
 
-	@Column(length=255)
+	@Column(length=255  , name = "phone")
 	private String phone;
 
-	@Column(length=255)
+	@Column(length=255 ,name="status")
 	private String status;
 
 	@Column(name="user_name", length=255)
 	private String userName;
-
-	@Column(name="user_type")
-	private int userType;
 
 	//bi-directional many-to-one association to Instructor
 	@OneToMany(mappedBy="user")
@@ -203,13 +206,7 @@ public class User implements Serializable {
 		this.userName = userName;
 	}
 
-	public int getUserType() {
-		return this.userType;
-	}
-
-	public void setUserType(int userType) {
-		this.userType = userType;
-	}
+	
 
 	public Set<Instructor> getInstructors() {
 		return this.instructors;

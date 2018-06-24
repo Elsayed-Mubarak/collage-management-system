@@ -5,7 +5,7 @@ body
     margin-top: 5px;
        
 }
-.container_timeTable
+.container11
 {
   width: 1200px;;  
   margin: auto;
@@ -13,7 +13,7 @@ body
 /*Start First Table*/
 table[class="tabel1"]
 {
-    width:75%;
+    width:100%;
     height: 590px;
     float: left;
     
@@ -55,13 +55,13 @@ td
 textarea[class="dif"]
 {
     
-    width: 115px;
-    height: 110px;
+    width: 160px;
+    height: 120px;
     background-color:#FFCCCC;
     margin-top: -10px;
     margin-left: 4px;
     margin-right: -20px;
-    margin-bottom: -10px;
+    margin-bottom: -20px;
     border: 1px solid #FFF;
     color: #000;
     resize: none;
@@ -69,13 +69,13 @@ textarea[class="dif"]
 }
 textarea
 {
-   width: 115px;
-    height: 110px;
+   width: 160px;
+    height: 120px;
     background-color:#FFF;
     margin-top: -10px;
     margin-left: 4px;
     margin-right: -20px;
-    margin-bottom: -10px;
+    margin-bottom: -20px;
     border: 1px solid #FFCCCC;
     color: #000;
     resize: none;
@@ -84,6 +84,7 @@ textarea
 /*End Table Details*/
 
 /*Start Selection*/
+/*
 div[class="select"]
 {
     background-color: #000;
@@ -107,11 +108,12 @@ select
     margin-top: 10px;
    
 }
-
+*/
 /*End Selection*/
 
 
 /*Start Second Table*/
+/*
 table[class="secondery"]
 {
     
@@ -133,9 +135,12 @@ td[class="tds"]
     text-align: center;
 }
   
+
+*/
+/*End Second Table*/
 button
 {
-   
+    margin: 0px;
     width: 40px;
     height: 60px;
     margin-top: 0px;
@@ -153,18 +158,19 @@ button[class="A"]
     background-color: #DDD;
     color: #000;
     text-align: center;
+    margin-left: 500px;
 }
 input[class="save"]
 {
-    padding: 5px;
+    padding: 0px;
     margin-top: 10px;
     width: 150px;
     height: 30px;
     background-color: #DDD;
     color: #000;
     text-align: center;
+    margin-left: 500px;
 }
-/*End Second Table*/
 
 
 /*Start button*/

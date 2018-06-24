@@ -1,43 +1,46 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+
+<c:set var="contextRoot" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Time Table Page</title>
-<link href="static/css/styles.css" rel="stylesheet">
-<link href="static/css/normal.css" rel="stylesheet">
-<link href="static/css/TimeTable.css" rel="stylesheet">
+
+<link href="${contextRoot}/static/css/styles.css" rel="stylesheet">
+<link href="${contextRoot}/static/css/normal.css" rel="stylesheet">
+<link href="${contextRoot}/static/css/TimeTable.css" rel="stylesheet">
 </head>
-<body >
+<body>
 
 	<div id='courses'>
 		<ul>
 			<li><a href='/welcome'>Courses Welcome Page</a></li>
-
 			<li><a href="/addCourse">New Course</a></li>
 			<li><a href="/show-courses">All Courses</a></li>
 			<!-- <li><a href="/showstudents">All Students</a></li> -->
 			<li><a href="/show-courses-to-users">All Courses To users</a></li>
-			<li><a href="/addSheduleData">Schedule</a></li>
+			<li><a href="/show-schedule">Schedule</a></li>
+			<li><a href="/add-shedule-data">AddSchedule</a></li>
 			<!-- <li><a href='#'>Contact</a></li>-->
 		</ul>
 	</div>
-	<!--start clearFloat-->
+
 	<div class="clearFloat"></div>
 
 
 	<c:choose>
-		<c:when test="${mode=='MODE_ADDSCHEDULEDATA' }">
-			<!-- Start main table-->
+		<c:when test="${mode=='MODE_SHOWSCHEDULEDATA' }">
+
 
 
 			<div class="tabel1">
 				<table class="tabel1">
-					<div class="container_timeTable">
+					<div class="container1">
 
-						<!--Start of days-->
 
 						<tr>
 							<div class="header">
@@ -52,185 +55,164 @@
 							</div>
 						</tr>
 
-						<!--End of days-->
+						<c:forEach var="schedule" items="${schedule }">
+
+							<c:choose>
+								<c:when test="${schedule.year=='1st'}">
+									<tr>
+										<div class="First-Year">
+											<td class="col"><h4>${schedule.year }</h4></td>
+											<td><textarea readonly="readonly">${schedule.sat }</textarea></td>
+											<td><textarea readonly="readonly">${schedule.sun }</textarea></td>
+											<td><textarea readonly="readonly">${schedule.mon } </textarea></td>
+											<td><textarea readonly="readonly">${schedule.tues }</textarea></td>
+											<td><textarea readonly="readonly">${schedule.wed }</textarea></td>
+											<td><textarea readonly="readonly">${schedule.thr }</textarea></td>
+											<td><textarea readonly="readonly">${schedule.fri }</textarea></td>
+										</div>
+									</tr>
+								</c:when>
 
 
-						<!--Start of First year -->
-						<tr>
-							<div class="First-Year">
-								<td class="col"><h4>1st</h4></td>
-								<td><textarea></textarea></td>
-								<td><textarea></textarea></td>
-								<td><textarea></textarea></td>
-								<td><textarea></textarea></td>
-								<td><textarea></textarea></td>
-								<td><textarea></textarea></td>
-								<td><textarea></textarea></td>
-							</div>
-						</tr>
+								<c:when test="${schedule.year=='2nd'}">
+									<tr>
+										<div class="Secon-Year">
+											<td class="col"><h4>${schedule.year }</h4></td>
+											<td class="dif"><textarea class="dif" readonly="readonly">${schedule.sat}</textarea></td>
+											<td class="dif"><textarea class="dif" readonly="readonly">${schedule.sun}</textarea></td>
+											<td class="dif"><textarea class="dif" readonly="readonly">${schedule.mon}</textarea></td>
+											<td class="dif"><textarea class="dif" readonly="readonly">${schedule.tues}</textarea></td>
+											<td class="dif"><textarea class="dif" readonly="readonly">${schedule.wed}</textarea></td>
+											<td class="dif"><textarea class="dif" readonly="readonly">${schedule.thr}</textarea></td>
+											<td class="dif"><textarea class="dif" readonly="readonly">${schedule.fri}</textarea></td>
+										</div>
+									</tr>
+								</c:when>
 
-						<!--End of First year -->
 
-						<!--Start of second year -->
 
-						<tr>
-							<div class="Secon-Year">
-								<td class="col"><h4>2nd</h4></td>
-								<td class="dif"><textarea class="dif"></textarea></td>
-								<td class="dif"><textarea class="dif"></textarea></td>
-								<td class="dif"><textarea class="dif"></textarea></td>
-								<td class="dif"><textarea class="dif"></textarea></td>
-								<td class="dif"><textarea class="dif"></textarea></td>
-								<td class="dif"><textarea class="dif"></textarea></td>
-								<td class="dif"><textarea class="dif"></textarea></td>
-							</div>
-						</tr>
 
-						<!--End of of year -->
+								<c:when test="${schedule.year=='3rd'}">
+									<tr>
+										<div class="Third-Year">
+											<td class="col"><h4>${schedule.year}</h4></td>
+											<td><textarea readonly="readonly">${schedule.sat}</textarea></td>
+											<td><textarea readonly="readonly">${schedule.sun}</textarea></td>
+											<td><textarea readonly="readonly">${schedule.mon}</textarea></td>
+											<td><textarea readonly="readonly">${schedule.tues}</textarea></td>
+											<td><textarea readonly="readonly">${schedule.wed}</textarea></td>
+											<td><textarea readonly="readonly">${schedule.thr}</textarea></td>
+											<td><textarea readonly="readonly">${schedule.fri}</textarea></td>
+										</div>
+									</tr>
+								</c:when>
 
-						<!--Start of third year -->
 
-						<tr>
-							<div class="Third-Year">
-								<td class="col"><h4>3rd</h4></td>
-								<td><textarea></textarea></td>
-								<td><textarea></textarea></td>
-								<td><textarea></textarea></td>
-								<td><textarea></textarea></td>
-								<td><textarea></textarea></td>
-								<td><textarea></textarea></td>
-								<td><textarea></textarea></td>
-							</div>
-						</tr>
+								<c:when test="${schedule.year=='4rh'}">
+									<tr>
+										<div class="Forth-Year">
+											<td class="col"><h4>${schedule.year}</h4></td>
+											<td class="dif"><textarea class="dif" readonly="readonly">${schedule.sat }</textarea></td>
+											<td class="dif"><textarea class="dif" readonly="readonly">${schedule.sun }</textarea></td>
+											<td class="dif"><textarea class="dif" readonly="readonly">${schedule.mon }</textarea></td>
+											<td class="dif"><textarea class="dif" readonly="readonly">${schedule.tues }</textarea></td>
+											<td class="dif"><textarea class="dif" readonly="readonly">${schedule.wed }</textarea></td>
+											<td class="dif"><textarea class="dif" readonly="readonly">${schedule.thr }</textarea></td>
+											<td class="dif"><textarea class="dif" readonly="readonly">${schedule.fri }</textarea></td>
+										</div>
+									</tr>
+								</c:when>
 
-						<!--Start of third year -->
-
-						<!--Start of Forth year -->
-
-						<tr>
-							<div class="Forth-Year">
-								<td class="col"><h4>4th</h4></td>
-								<td class="dif"><textarea class="dif"></textarea></td>
-								<td class="dif"><textarea class="dif"></textarea></td>
-								<td class="dif"><textarea class="dif"></textarea></td>
-								<td class="dif"><textarea class="dif"></textarea></td>
-								<td class="dif"><textarea class="dif"></textarea></td>
-								<td class="dif"><textarea class="dif"></textarea></td>
-								<td class="dif"><textarea class="dif"></textarea></td>
-							</div>
-						</tr>
-
-						<!--End of Forth year -->
-
+							</c:choose>
+						</c:forEach>
 					</div>
 				</table>
 			</div>
 
-
-			<!-- End main table-->
-
-
-
-			<!--Start Of Selection-->
-
-			<label>
-				<div class="select">
-					<select name="month">
-
-						<option name="month" value="Jan">Jan</option>
-						<option name="month" value="Feb">Feb</option>
-						<option name="month" value="Mar">Mar</option>
-						<option name="month" value="April">Apr</option>
-						<option name="month" value="May">May</option>
-						<option name="month" value="June">Jun</option>
-						<option name="month" value="July">Jul</option>
-						<option name="month" value="August">Aug</option>
-						<option name="month" value="Septemper">Sept</option>
-						<option name="month" value="Oct">Oct</option>
-						<option name="month" value="Nov">Nov</option>
-						<option name="month" value="Dec">Dec</option>
-
-					</select>
-				</div>
-			</label>
-
-			<!--End Of Selection-->
-
-			<!-- start second table-->
-
-			<table class="secondery">
-				<div class="container">
-
-					<tr>
-						<th class="ths">Sun</th>
-						<th class="ths">Mon</th>
-						<th class="ths">Tue</th>
-						<th class="ths">Wed</th>
-						<th class="ths">Thr</th>
-						<th class="ths">Fri</th>
-						<th class="ths">Sat</th>
-					</tr>
-					<tr>
-						<td class="tds"><button>1</button></td>
-						<td class="tds"><button>2</button></td>
-						<td class="tds"><button>3</button></td>
-						<td class="tds"><button>4</button></td>
-						<td class="tds"><button>5</button></td>
-						<td class="tds"><button>6</button></td>
-						<td class="tds"><button>7</button></td>
-					</tr>
-					<tr>
-						<td class="tds"><button>8</button></td>
-						<td class="tds"><button>9</button></td>
-						<td class="tds"><button>10</button></td>
-						<td class="tds"><button>11</button></td>
-						<td class="tds"><button>12</button></td>
-						<td class="tds"><button>13</button></td>
-						<td class="tds"><button>14</button></td>
-					</tr>
-					<tr>
-						<td class="tds"><button>15</button></td>
-						<td class="tds"><button>16</button></td>
-						<td class="tds"><button>17</button></td>
-						<td class="tds"><button>18</button></td>
-						<td class="tds"><button>19</button></td>
-						<td class="tds"><button>20</button></td>
-						<td class="tds"><button>21</button></td>
-					</tr>
-					<tr>
-						<td class="tds"><button>22</button></td>
-						<td class="tds"><button>23</button></td>
-						<td class="tds"><button>24</button></td>
-						<td class="tds"><button>25</button></td>
-						<td class="tds"><button>26</button></td>
-						<td class="tds"><button>27</button></td>
-						<td class="tds"><button>28</button></td>
-					</tr>
-					<tr>
-						<td class="tds"><button>29</button></td>
-						<td class="tds"><button>30</button></td>
-						<td class="tds"><button>31</button></td>
-					</tr>
-			</table>
-			<!-- End second table-->
-
-			<!--Start of Buttons-->
-			<div class="container">
-				<div class="event">
-					<button class="A">Add Event</button>
-				</div>
-				<div class="edit">
-					<button class="A">Edit</button>
-				</div>
-				<div class="save">
-					<input class="save" type="submit" name="Save" value="Save">
-				</div>
-			</div>
-			</div>
-			<!--End of Buttons-->
-			</div>
 		</c:when>
 	</c:choose>
+	<c:choose>
+		<c:when test="${mode=='MODE_ADDSCHEDULEDATA' }">
+			<div class="container text-center">
+				<h3>New Schedule</h3>
+				<hr>
+				<form class="form-horizontal" method="POST" action="schedule-saved">
+					<input type="hidden" name="id" value="${schedule.id }" />
+					<div class="form-group">
+						<label class="control-label col-md-3">Year</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="year"
+								value="${schedule.year }" />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="control-label col-md-3">Saturday</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="sat"
+								value="${schedule.sat }" />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="control-label col-md-3">Sunday</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="sun"
+								value="${schedule.sun }" />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="control-label col-md-3">Monday </label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="mon"
+								value="${schedule.mon }" />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="control-label col-md-3">Tuesday</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="tues"
+								value="${schedule.tues}" />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="control-label col-md-3">Wednesday</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="wed"
+								value="${schedule.wed }" />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="control-label col-md-3">Thursday </label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="thr"
+								value="${schedule.thr}" />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="control-label col-md-3">Friday </label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="fri"
+								value="${schedule.fri}" />
+						</div>
+					</div>
+					<div class="form-group ">
+						<input type="submit" class="btn btn-primary" value="Add Schedule" />
+					</div>
+				</form>
+			</div>
+		</c:when>
+
+	</c:choose>
+
+
+
+
 
 
 </body>

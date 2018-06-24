@@ -15,6 +15,9 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+/*start container*/
+.container{width:1170px;margin:auto;background-color: #ccc}
+/*end container*/
 #courses:after,
 #courses > ul:after {
   content: ".";
@@ -183,7 +186,8 @@
 .clearFloat{
   clear: both;
 }
-/*end clearFloat*/
+/*start clearFloat */
+
 /*start videos */
 .videos{
   margin-top: 20px;
@@ -193,13 +197,61 @@
   float: left;
   width:30%;
   height:200px;
-  margin-right:30px;
+  margin-right: 30px;
 }
 .videos .image img{
-	width:100%;
+  width:100%
 }
 .videos .description{
   float: left;
-  width:60%  
+  width:60%;
 }
 /*end videos */
+
+
+
+
+
+
+
+
+
+
+.dropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #ddd}
+
+.show {display:block;}

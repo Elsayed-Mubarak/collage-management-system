@@ -2,7 +2,9 @@ package com.cms.services;
 
 
 
-import java.util.Optional;
+import java.util.ArrayList;
+import java.util.List;
+
 
 import javax.transaction.Transactional;
 
@@ -31,9 +33,10 @@ public class ScheduleServiceImpl  implements ScheduleService{
 	}
 
 	@Override
-	public Optional<Schedule> getSchedule(int id) {
-		// TODO Auto-generated method stub
-		return scheduleRepository.findById(id);
+	public List<Schedule> getSchedule() {
+		List<Schedule> schedules= new ArrayList<>();
+		scheduleRepository.findAll().forEach(schedules::add);
+		return schedules;
 	}
 
 }
