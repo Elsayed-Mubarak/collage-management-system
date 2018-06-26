@@ -2,6 +2,9 @@ package com.cms.entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.Set;
 
 
@@ -41,6 +44,7 @@ public class Student implements Serializable {
 //	private Attendance attendance;
 
 	//bi-directional many-to-one association to User
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name="user_id")
 	private User user;
