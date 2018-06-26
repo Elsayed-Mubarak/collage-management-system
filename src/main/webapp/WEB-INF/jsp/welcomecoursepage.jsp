@@ -16,12 +16,12 @@
 
 <title>courses | home</title>
 
-<link href="static/css/bootstrap.min.css" rel="stylesheet">
-<link href="static/css/style.css" rel="stylesheet">
-<link href="static/css/styles.css" rel="stylesheet">
-<script src="static/js/jquery-1.11.1.min.js"></script>
-<script src="static/js/bootstrap.min.js"></script>
-<script src="static/js/script.js"></script>
+<link href="${contextRoot }/static/css/bootstrap.min.css" rel="stylesheet">
+<link href="${contextRoot }/static/css/style.css" rel="stylesheet">
+<link href="${contextRoot }/static/css/styles.css" rel="stylesheet">
+<script src="${contextRoot }/static/js/jquery-1.11.1.min.js"></script>
+<script src="${contextRoot }/static/js/bootstrap.min.js"></script>
+<script src="${contextRoot }/static/js/script.js"></script>
 
 
 
@@ -77,7 +77,7 @@
 				<button onclick="myFunction()" class="dropbtn">Courses</button>
 				<div id="myDropdown" class="dropdown-content">
 					<a href="#first">First Year</a> <a
-						href="/show-courses-to-user/2rd year">Second Year</a> <a
+						href="/show-courses-to-user/2nd year">Second Year</a> <a
 						href="/show-courses-to-user/3rd year">Third Year</a> <a
 						href="#fourth">Fourth Year</a>
 				</div>

@@ -33,9 +33,9 @@ public class Attendance implements Serializable {
 
 	@Column(name="section_id", unique=true)
 	private int sectionId;
-
-	@Column(name="student_id", unique=true)
-	private int studentId;
+//
+//	@Column(name="student_id", unique=true)
+//	private int studentId;
 
 	//bi-directional many-to-one association to Course
 	@ManyToOne
@@ -46,9 +46,9 @@ public class Attendance implements Serializable {
 	@OneToOne(mappedBy="attendance")
 	private Section section;
 
-	//bi-directional one-to-one association to Student
-	@OneToOne(mappedBy="attendance")
-	private Student student;
+//	//bi-directional one-to-one association to Student
+//	@OneToOne(mappedBy="attendance")
+//	private Student student;
 
 	public Attendance() {
 	}
@@ -93,13 +93,13 @@ public class Attendance implements Serializable {
 		this.sectionId = sectionId;
 	}
 
-	public int getStudentId() {
-		return this.studentId;
-	}
-
-	public void setStudentId(int studentId) {
-		this.studentId = studentId;
-	}
+//	public int getStudentId() {
+//		return this.studentId;
+//	}
+//
+//	public void setStudentId(int studentId) {
+//		this.studentId = studentId;
+//	}
 
 	public Course getCourse() {
 		return this.course;
@@ -117,12 +117,12 @@ public class Attendance implements Serializable {
 		this.section = section;
 	}
 
-	public Student getStudent() {
-		return this.student;
-	}
-
-	public void setStudent(Student student) {
-		this.student = student;
-	}
+//	public Student getStudent() {
+//		return this.student;
+//	}
+//
+//	public void setStudent(Student student) {
+//		this.student = student;
+//	}
 
 }

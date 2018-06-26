@@ -10,11 +10,11 @@ import com.cms.entity.Student;
 import com.cms.repository.StudentRepository;
 
 @Service
-public class StudentServiceImpl implements StrudentService {
+public class StudentServiceImpl implements StudentService {
 
 	
 	@Autowired
-	StudentRepository studentRepository;
+	private StudentRepository studentRepository;
 	
 	
 	@Override
@@ -30,6 +30,12 @@ public class StudentServiceImpl implements StrudentService {
 		List<Student> students= new ArrayList<>();
 		studentRepository.findAll().forEach(students::add);
 		return students;
+	}
+	
+	@Override
+	public Student getStudent(int id) {
+		
+		return studentRepository.findById(id);
 	}
 
 }

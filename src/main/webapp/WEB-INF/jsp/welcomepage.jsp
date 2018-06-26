@@ -27,7 +27,7 @@
 			<li><a href="/show-courses-to-users">All Courses To users</a></li>
 			<li><a href="/show-schedule">Schedule</a></li>
 			<li><a href="/add-shedule-data">AddSchedule</a></li>
-			<li><a href="#Sprofile">Student Profile</a></li>
+			<li><a href="/showstudents">Student Profile</a></li>
 			<li><a href="/AllInstructors">Instructors</a></li>
 			<li><a href="/addinstructorProfiledata">Fill Your Profile</a></li>
 			

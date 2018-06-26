@@ -28,7 +28,7 @@
 			<div id="doc2" class="yui-t7">
 				<div id="inner">
 					<div class="profile_img">
-						<img src="${contextRoot}/static/images/ggg.png">
+						<img src="${instructorProfile.code }">
 					</div>
 					<div id="hd">
 						<div class="yui-gc">

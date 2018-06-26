@@ -58,12 +58,12 @@ public class InstructorController {
 		instructorService.createInstructor(instructor);
 		
 		 //upload the file
-//		 if(!instructor.getFile().getOriginalFilename().equals("") ){
+		 if(!instructor.getFile().getOriginalFilename().equals("") ){
 			 
-//			 System.out.println("here");
+			 System.out.println("here");
 			 
 			FileUploadUtility.uploadFile(request, instructor.getFile() , instructor.getCode()); 
-//		 }
+		 }
 		
 		System.out.println("saved !");
 		request.setAttribute("mode", "MODE_HOME");

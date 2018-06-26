@@ -23,17 +23,18 @@
 			<div id="doc2" class="yui-t7">
 				<div id="inner">
 					<div class="profile_img">
-						<form class="FORM" method="POST" action="instructor-profile-saved" enctype = "mulipart/form-data" >
-							
-							
+						<form class="FORM" method="POST" action="instructor-profile-saved"
+							enctype="mulipart/form-data">
+
+
 							<label style="font-size: 20px">choose your image profile</label><br>
 							<br>
 							<div class="upload">
-								 <input type="file" name="pic" accept="image/*" value="Upload">
-								
+								<input type="file" name="pic" accept="image/*" value="Upload">
+
+
 							</div>
-							<br>
-							<br>
+							<br> <br>
 
 							<div id="bd">
 								<div id="yui-main">

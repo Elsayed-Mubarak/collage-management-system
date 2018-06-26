@@ -21,13 +21,11 @@ public class Student implements Serializable {
 	@Column(unique=true, nullable=false)
 	private int id;
 
-	@Column(length=255)
-	private String department;
-
+	
 	@Column(length=255)
 	private String gpa;
 
-	@Column(length=255)
+	@Column(name="year" ,  length=255)
 	private String level;
 
 	@Column(name="student_key")
@@ -37,10 +35,10 @@ public class Student implements Serializable {
 	@OneToMany(mappedBy="student")
 	private Set<Notification> notifications;
 
-	//bi-directional one-to-one association to Attendance
-	@OneToOne
-	@JoinColumn(name="id", nullable=false, insertable=false, updatable=false)
-	private Attendance attendance;
+//	//bi-directional one-to-one association to Attendance
+//	@OneToOne
+//	@JoinColumn(name="id", nullable=false, insertable=false, updatable=false)
+//	private Attendance attendance;
 
 	//bi-directional many-to-one association to User
 	@ManyToOne
@@ -75,13 +73,6 @@ public class Student implements Serializable {
 		this.id = id;
 	}
 
-	public String getDepartment() {
-		return this.department;
-	}
-
-	public void setDepartment(String department) {
-		this.department = department;
-	}
 
 	public String getGpa() {
 		return this.gpa;
@@ -129,13 +120,13 @@ public class Student implements Serializable {
 		return notification;
 	}
 
-	public Attendance getAttendance() {
-		return this.attendance;
-	}
-
-	public void setAttendance(Attendance attendance) {
-		this.attendance = attendance;
-	}
+//	public Attendance getAttendance() {
+//		return this.attendance;
+//	}
+//
+//	public void setAttendance(Attendance attendance) {
+//		this.attendance = attendance;
+//	}
 
 	public User getUser() {
 		return this.user;

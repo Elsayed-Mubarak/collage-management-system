@@ -21,8 +21,8 @@ public class Department implements Serializable {
 	@Column(unique=true, nullable=false)
 	private int id;
 
-	@Column(name="chair_id", length=255)
-	private String chairId;
+	@Column(name="head", length=255)
+	private String head;
 
 	@Column(name="cntact_email", length=255)
 	private String cntactEmail;
@@ -37,10 +37,22 @@ public class Department implements Serializable {
 	@OneToMany(mappedBy="department")
 	private Set<Course> courses;
 
-	//bi-directional one-to-one association to Instructor
-	@OneToOne
-	@JoinColumn(name="id", nullable=false, insertable=false, updatable=false)
-	private Instructor instructor;
+	//bi-directional many-to-one association to user
+	@OneToMany(mappedBy="department")
+	private Set<User> user;
+
+//	//bi-directional one-to-one association to Instructor
+//	@OneToOne
+//	@JoinColumn(name="id", nullable=false, insertable=false, updatable=false)
+//	private Instructor instructor;
+
+	public Set<User> getUser() {
+		return user;
+	}
+
+	public void setUser(Set<User> user) {
+		this.user = user;
+	}
 
 	public Department() {
 	}
@@ -53,12 +65,12 @@ public class Department implements Serializable {
 		this.id = id;
 	}
 
-	public String getChairId() {
-		return this.chairId;
+	public String getHead() {
+		return this.head;
 	}
 
-	public void setChairId(String chairId) {
-		this.chairId = chairId;
+	public void setHead(String head) {
+		this.head = head;
 	}
 
 	public String getCntactEmail() {
@@ -107,12 +119,12 @@ public class Department implements Serializable {
 		return cours;
 	}
 
-	public Instructor getInstructor() {
-		return this.instructor;
-	}
-
-	public void setInstructor(Instructor instructor) {
-		this.instructor = instructor;
-	}
+//	public Instructor getInstructor() {
+//		return this.instructor;
+//	}
+//
+//	public void setInstructor(Instructor instructor) {
+//		this.instructor = instructor;
+//	}
 
 }

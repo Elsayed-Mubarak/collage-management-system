@@ -3,6 +3,7 @@ package com.cms.entity;
 import java.io.Serializable;
 import javax.persistence.*;
 
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.Date;
@@ -71,9 +72,22 @@ public class User implements Serializable {
 	@Column(name="user_name", length=255)
 	private String userName;
 
+	
+	@ManyToOne
+	@JoinColumn(name="department_id")
+	private Department department;
+	
 	//bi-directional many-to-one association to Instructor
 	@OneToMany(mappedBy="user")
 	private Set<Instructor> instructors;
+
+	public Department getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
 
 	//bi-directional many-to-one association to Student
 	@OneToMany(mappedBy="user")
@@ -82,6 +96,8 @@ public class User implements Serializable {
 	//bi-directional many-to-many association to Role
 	@ManyToMany(mappedBy="users")
 	private Set<Role> roles;
+	
+	
 
 	public User() {
 	}

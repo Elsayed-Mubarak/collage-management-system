@@ -6,12 +6,12 @@ import java.util.List;
 import com.cms.entity.Student;
 
 
-public interface StrudentService {
+public interface StudentService {
 
 	
 	void addStudent(Student student);
 //	void updateCourse(Course course);
-//	Optional<Course> getCourse(int id);
+	Student getStudent(int id);
 	List<Student> getAllStudents();
 //	void deleteCourse(int id);
 //    List<Course> getAllCoursesByTerm(String term);
