@@ -1,12 +1,23 @@
 package com.cms.entity;
 
 import java.io.Serializable;
-import javax.persistence.*;
+import java.util.Set;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
-
-import java.util.Set;
 
 
 /**
@@ -66,6 +77,10 @@ public class Course implements Serializable {
 	@JoinColumn(name="department_id")
 	private Department department;
 
+	
+	@ManyToOne
+	@JoinColumn(name="instructor_id")
+	private Instructor instructorId ;
 	//bi-directional many-to-many association to Section
 	
 	@ManyToMany
@@ -231,6 +246,16 @@ public class Course implements Serializable {
 	public void setStudents(Set<Student> students) {
 		this.students = students;
 	}
+
+	public Instructor getInstructorId() {
+		return instructorId;
+	}
+
+	public void setInstructorId(Instructor instructorId) {
+		this.instructorId = instructorId;
+	}
+	
+	
 	
 //	@Override
 //	public String toString() {

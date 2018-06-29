@@ -1,6 +1,8 @@
 package com.cms.entity;
 
 import java.io.Serializable;
+import java.util.Set;
+
 import javax.persistence.*;
 
 import org.springframework.web.multipart.MultipartFile;
@@ -32,6 +34,10 @@ public class Instructor implements Serializable {
 //	@Column(name="department_id", unique=true)
 //	private int departmentId;
 
+	
+	@OneToMany(mappedBy="instructor")
+	private Set<Course> courses;
+	
 	@Column(length=255)
 	private String rank;
 
@@ -189,6 +195,8 @@ public class Instructor implements Serializable {
 	public void setOtherTitles(String otherTitles) {
 		this.otherTitles = otherTitles;
 	}
+	
+	
 
 
 //	public Department getDepartment() {
@@ -206,6 +214,14 @@ public class Instructor implements Serializable {
 //	public void setSection(Section section) {
 //		this.section = section;
 //	}
+
+	public Set<Course> getCourses() {
+		return courses;
+	}
+
+	public void setCourses(Set<Course> courses) {
+		this.courses = courses;
+	}
 
 	public User getUser() {
 		return this.user;

@@ -24,6 +24,36 @@ public class Attendance implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="date_attended")
 	private Date dateAttended;
+	@Column(name="pre")
+	private Boolean pre;
+	@Column(name="secorder")
+	private String secorder ;
+	/*@Column(name="done")
+	private Boolean done;
+	public Boolean getDone() {
+		return done;
+	}
+
+	public void setDone(Boolean done) {
+		this.done = done;
+	}*/
+
+	public String getSecorder() {
+		return secorder;
+	}
+
+	public void setSecorder(String secorder) {
+		this.secorder = secorder;
+	}
+
+	public Boolean getPre() {
+		return pre;
+	}
+
+	public void setPre(Boolean pre) {
+		this.pre = pre;
+	}
+
 
 	@Column(length=255)
 	private String hours;
@@ -31,11 +61,11 @@ public class Attendance implements Serializable {
 	@Column(name="remark_text", length=255)
 	private String remarkText;
 
-	@Column(name="section_id", unique=true)
-	private int sectionId;
-//
-//	@Column(name="student_id", unique=true)
-//	private int studentId;
+	//@Column(name="section_id", unique=true)
+	//private int sectionId;
+
+	@Column(name="student_id", unique=true)
+	private int studentId;
 
 	//bi-directional many-to-one association to Course
 	@ManyToOne
@@ -43,14 +73,56 @@ public class Attendance implements Serializable {
 	private Course course;
 
 	//bi-directional one-to-one association to Section
-	@OneToOne(mappedBy="attendance")
-	private Section section;
+	//@OneToOne(mappedBy="attendance")
+	//private Section section;
 
-//	//bi-directional one-to-one association to Student
-//	@OneToOne(mappedBy="attendance")
-//	private Student student;
+	//bi-directional one-to-one association to Student
+	
+	
+	public Course getCourse() {
+		return course;
+	}
+
+	public void setCourse(Course course) {
+		this.course = course;
+	}
+
+
+	@OneToOne(mappedBy="attendance")
+	private Student student;
 
 	public Attendance() {
+	}
+	@Column(name="sname")
+	private String sname;
+	@Column(name="course_name")
+	private String coursename;
+	public String getCoursename() {
+		return coursename;
+	}
+
+	public void setCoursename(String coursename) {
+		this.coursename = coursename;
+	}
+
+	/**
+	@Column(name="course_id")
+	private int courseid;
+	
+	public int getCourseid() {
+		return courseid;
+	}
+
+	public void setCourseid(int courseid) {
+		this.courseid = courseid;
+	}
+*/
+	public String getSname() {
+		return sname;
+	}
+
+	public void setSname(String sname) {
+		this.sname = sname;
 	}
 
 	public int getId() {
@@ -85,22 +157,22 @@ public class Attendance implements Serializable {
 		this.remarkText = remarkText;
 	}
 
-	public int getSectionId() {
+/**	public int getSectionId() {
 		return this.sectionId;
 	}
 
 	public void setSectionId(int sectionId) {
 		this.sectionId = sectionId;
 	}
+**/
+	public int getStudentId() {
+		return this.studentId;
+	}
 
-//	public int getStudentId() {
-//		return this.studentId;
-//	}
-//
-//	public void setStudentId(int studentId) {
-//		this.studentId = studentId;
-//	}
-
+	public void setStudentId(int studentId) {
+		this.studentId = studentId;
+	}
+/**
 	public Course getCourse() {
 		return this.course;
 	}
@@ -108,21 +180,24 @@ public class Attendance implements Serializable {
 	public void setCourse(Course course) {
 		this.course = course;
 	}
+	*/
 
-	public Section getSection() {
+	/**public Section getSection() {
 		return this.section;
 	}
 
 	public void setSection(Section section) {
 		this.section = section;
 	}
+**/
+	public Student getStudent() {
+		return this.student;
+		
+	}
+	
 
-//	public Student getStudent() {
-//		return this.student;
-//	}
-//
-//	public void setStudent(Student student) {
-//		this.student = student;
-//	}
+	public void setStudent(Student student) {
+		this.student = student;
+	}
 
 }

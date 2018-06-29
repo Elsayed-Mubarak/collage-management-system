@@ -28,11 +28,10 @@ public class Student implements Serializable {
 	@Column(length=255)
 	private String gpa;
 
-	@Column(name="year" ,  length=255)
+	@Column(name="level" ,  length=255)
 	private String level;
-
-	@Column(name="student_key")
-	private int studentKey;
+//	@Column(name="student_key")
+//	private int studentKey;
 
 	//bi-directional many-to-one association to Notification
 	@OneToMany(mappedBy="student")
@@ -48,7 +47,45 @@ public class Student implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="user_id")
 	private User user;
+	
+	
+	@JsonIgnore
+	@OneToOne
+	@JoinColumn(name="id", nullable=false, insertable=false, updatable=false)
+	private Attendance attendance;
 
+
+	
+	public Attendance getAttendance() {
+		return attendance;
+	}
+
+	public void setAttendance(Attendance attendance) {
+		this.attendance = attendance;
+	}
+
+	@Column(length=255)
+	private String department;
+	
+	public String getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(String department) {
+		this.department = department;
+	}
+
+	@Column(name="name")
+	private String name;
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
 	//bi-directional many-to-many association to Course
 	@ManyToMany
 	@JoinTable(
@@ -94,13 +131,13 @@ public class Student implements Serializable {
 		this.level = level;
 	}
 
-	public int getStudentKey() {
-		return this.studentKey;
-	}
-
-	public void setStudentKey(int studentKey) {
-		this.studentKey = studentKey;
-	}
+//	public int getStudentKey() {
+//		return this.studentKey;
+//	}
+//
+//	public void setStudentKey(int studentKey) {
+//		this.studentKey = studentKey;
+//	}
 
 	public Set<Notification> getNotifications() {
 		return this.notifications;

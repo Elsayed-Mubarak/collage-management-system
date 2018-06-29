@@ -80,7 +80,8 @@
 									</div>
 									<div class="yui-u">
 										<p class="enlarge">
-											${instructorProfile.coursesTaught}<br>
+									${instructorProfile.coursesTaught }
+											<br>
 										</p>
 									</div>
 								</div>

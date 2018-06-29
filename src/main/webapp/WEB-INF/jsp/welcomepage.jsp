@@ -30,12 +30,16 @@
 			<li><a href="/showstudents">Student Profile</a></li>
 			<li><a href="/AllInstructors">Instructors</a></li>
 			<li><a href="/addinstructorProfiledata">Fill Your Profile</a></li>
+			<li><a href="/attendence-services">Show attendance services</a></li>
 			
 			<!-- <li><a href='#'>Contact</a></li>-->
 		</ul>
 	</div>
 	<!--start clearFloat-->
 	<div class="clearFloat"></div>
+
+
+
 
 	<c:choose>
 		<c:when test="${mode=='MODE_HOME' }">
