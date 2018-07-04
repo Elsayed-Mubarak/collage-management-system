@@ -2,8 +2,8 @@ package com.cms.services;
 
 import java.util.List;
 
-
 import com.cms.entity.Course;
+import com.cms.entity.Instructor;
 
 
 public interface  CourseService {
@@ -19,4 +19,5 @@ public interface  CourseService {
     List<Course> getAllCoursesByYear(String year);
     List<Course> getAllCoursesByYearANDTermIgnoreCase(String year,String term);
 	
+    List<Course> getAllCoursesByInstructorId(int id);
 }

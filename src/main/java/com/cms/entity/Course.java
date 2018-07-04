@@ -57,8 +57,7 @@ public class Course implements Serializable {
 	@Column
 	private String imageUrl ; 
 	
-	@Column
-	private String instructor ; 
+	
 
 	@Column
 	private String code ; 
@@ -74,13 +73,13 @@ public class Course implements Serializable {
 
 	//bi-directional many-to-one association to Department
 	@ManyToOne
-	@JoinColumn(name="department_id")
+	@JoinColumn(name="department_id"  )
 	private Department department;
 
 	
 	@ManyToOne
-	@JoinColumn(name="instructor_id")
-	private Instructor instructorId ;
+	@JoinColumn(name="instructor_id"  )
+	private Instructor instructor;
 	//bi-directional many-to-many association to Section
 	
 	@ManyToMany
@@ -104,7 +103,7 @@ public class Course implements Serializable {
 	public Course() {
 	}
 	
-	public Course(String name , String description , String term , String type , String imageUrl , String instructor , String year){
+	public Course(String name , String description , String term , String type , String imageUrl , Instructor instructor , String year){
 		this.name = name ; 
 		this.description = description ; 
 		this.term = term ; 
@@ -170,13 +169,7 @@ public class Course implements Serializable {
 		this.imageUrl = imageUrl;
 	}
 	
-	public String getInstructor() {
-		return instructor;
-	}
-
-	public void setInstructor(String instructor) {
-		this.instructor = instructor;
-	}
+	
 	
 	public Set<Section> getSection() {
 		return this.sections ;
@@ -247,13 +240,15 @@ public class Course implements Serializable {
 		this.students = students;
 	}
 
-	public Instructor getInstructorId() {
-		return instructorId;
+	public Instructor getInstructor() {
+		return instructor;
 	}
 
-	public void setInstructorId(Instructor instructorId) {
-		this.instructorId = instructorId;
+	public void setInstructor(Instructor instructor) {
+		this.instructor = instructor;
 	}
+
+	
 	
 	
 	

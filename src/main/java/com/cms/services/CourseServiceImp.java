@@ -4,12 +4,12 @@ package com.cms.services;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
-import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 
+import org.springframework.stereotype.Service;
+
 import com.cms.entity.Course;
+import com.cms.entity.Instructor;
 import com.cms.repository.CourseRepository;
 
 
@@ -87,6 +87,12 @@ public class CourseServiceImp implements CourseService {
 	public List<Course> getCourseByYear(String year) {
 		// TODO Auto-generated method stub
 		return courseRepository.findAllByYearIgnoreCase(year);
+	}
+
+	@Override
+	public List<Course> getAllCoursesByInstructorId(int id) {
+		// TODO Auto-generated method stub
+		return courseRepository.findbyinstrucor(id);
 	}
 
 		

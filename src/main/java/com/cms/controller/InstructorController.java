@@ -3,6 +3,7 @@ package com.cms.controller;
 
 
 import java.util.List;
+//import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -16,8 +17,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
+//import com.cms.entity.Course;
 import com.cms.entity.Instructor;
+import com.cms.services.CourseService;
 import com.cms.services.InstructorService;
 import com.cms.util.FileUploadUtility;
 
@@ -26,6 +28,8 @@ import com.cms.util.FileUploadUtility;
 @Controller
 public class InstructorController {
 
+	@Autowired CourseService courseService;
+	
 	
 	@Autowired InstructorService instructorService;
 	
@@ -39,11 +43,19 @@ public class InstructorController {
 		return "instructorspage" ; 
 	}
 	
+	//@SuppressWarnings("unchecked")
 	@GetMapping("/AllInstructors/{id}")
 	public String  getInstructorProfile(@PathVariable("id") int id , HttpServletRequest request)
 	{
+//		
+		Instructor in = instructorService.getInstructorProfile(id);
+//		
+		in.setCourses(courseService.getAllCoursesByInstructorId(id));
+//		
+		
 		request.setAttribute("mode","MODE_INSTRUCTOR_PROFILE");
 		request.setAttribute("instructorProfile", instructorService.getInstructorProfile(id));
+		System.out.println(in.getCourses().size());
 		return "instructorprofilepage" ;
 	}
 	

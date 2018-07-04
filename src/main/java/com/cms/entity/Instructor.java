@@ -1,6 +1,7 @@
 package com.cms.entity;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.*;
@@ -35,8 +36,8 @@ public class Instructor implements Serializable {
 //	private int departmentId;
 
 	
-	@OneToMany(mappedBy="instructor")
-	private Set<Course> courses;
+	@OneToMany(mappedBy="instructor" , fetch=FetchType.EAGER)
+	private List<Course> courses;
 	
 	@Column(length=255)
 	private String rank;
@@ -215,11 +216,11 @@ public class Instructor implements Serializable {
 //		this.section = section;
 //	}
 
-	public Set<Course> getCourses() {
+	public List<Course> getCourses() {
 		return courses;
 	}
 
-	public void setCourses(Set<Course> courses) {
+	public void setCourses(List<Course> courses) {
 		this.courses = courses;
 	}
 

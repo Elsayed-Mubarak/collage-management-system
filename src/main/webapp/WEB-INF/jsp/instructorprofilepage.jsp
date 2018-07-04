@@ -79,10 +79,11 @@
 										<h2>Courses Taught</h2>
 									</div>
 									<div class="yui-u">
-										<p class="enlarge">
-									${instructorProfile.coursesTaught }
-											<br>
-										</p>
+										<c:forEach var="course1" items="${instructorProfile.courses }">
+											<p class="enlarge">
+												<a href="/">${course1.name} </a>   <br>
+											</p>
+											</c:forEach>
 									</div>
 								</div>
 							</div>
