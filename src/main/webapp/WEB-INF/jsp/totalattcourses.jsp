@@ -14,8 +14,8 @@
 <meta http-equiv="Expires" content="sat, 01 Dec 2001 00:00:00 GMT">
 <title>courses | home</title>
 <link href="static/css/bootstrap.min.css" rel="stylesheet">
-<link href="static/css/style-attendance.css" rel="stylesheet">
-<link href="static/css/table-attendance.css" rel="stylesheet">
+<link href="static/css/style.css" rel="stylesheet">
+<link href="static/css/table.css" rel="stylesheet">
 <script src="static/js/query-1.11.1.min.js"></script>
 <script src="static/js/placeholder.js"></script>
 

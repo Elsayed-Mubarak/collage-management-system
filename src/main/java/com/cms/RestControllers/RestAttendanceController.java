@@ -1,16 +1,20 @@
 package com.cms.RestControllers;
 
-//import java.util.ArrayList;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cms.entity.Attendance;
-//import com.cms.entity.Course;
+import com.cms.entity.Course;
+import com.cms.entity.detail;
 import com.cms.entity.total;
 import com.cms.services.AttendanceService;
 
@@ -20,11 +24,8 @@ public class RestAttendanceController {
 	@Autowired
 	AttendanceService attendnceServcie ;
 	
-	
-	
-	// get student attendance by course
 	@GetMapping("/attendance/{coursename}")
-	public List<Attendance>  getAttendanceByCourseName(@PathVariable("coursename") String coursename) {
+	public List<Attendance>  getAllCourseByTermName(@PathVariable("coursename") String coursename) {
 		return attendnceServcie.getAllAttendancesByCoursename(coursename);
 	}
 	
@@ -35,10 +36,77 @@ public List<Object[]> getAllCourses(){
 	return attendnceServcie.entityser();
 }*/
 	
-	@GetMapping(value="/list/{coursename}")
+	@GetMapping(value="/listexceed/{coursename}")
 	public List<String> getattendanceCourses(@PathVariable("coursename") String coursename){
+	//public List<detail> getattendanceCourses(@PathVariable("coursename") String coursename){
+		//detail d = new detail ();
+		//List<String> namelist = new ArrayList<>();
+	//	List<detail> detaillist = new ArrayList<>();
+	//	namelist = attendnceServcie.getexceedednames(coursename);
+		//for (String att: namelist) {
+	//d.setSname(att);
+	//String name = d.getSname();
+	//int n =attendnceServcie.getexceededtimes(coursename, name);	
+	//d.setNtimes(n);
+	
+//	detaillist.add(d);
+	
+		     // }
+	//	return detaillist;
 		return attendnceServcie.getexceedednames(coursename);
 	}
+	
+	
+	@GetMapping(value="/list/{coursename}")
+	//public List<String> getattendanceCourses(@PathVariable("coursename") String coursename){
+	public List<detail> getnameandtimebycCourse(@PathVariable("coursename") String coursename){
+	//	detail d = new detail ();
+		
+		
+		List<String> namelist = new ArrayList<>();
+		
+		List<String> ttt = new ArrayList<>();
+		List<detail> detaillist = new ArrayList<>();
+		namelist = attendnceServcie.getattnames(coursename);
+		detail mmm[]= new detail[namelist.size()];
+		//for(int i=0;i<namelist.size();i++)
+		String s = new String();
+		String [] array = new String[namelist.size()];
+		array = namelist.toArray(array) ;
+			for(int i=0;i<namelist.size();i++) {	
+		//int i =	namelist.indexOf(att);
+	//String	ssname=namelist.get(i);
+	//d.setSname(array[i]);
+				
+				
+				//make number of objects = the no of elements in in namelist
+				mmm[i] = new detail();	
+				
+	String name=	array[i];
+	//String name = d.getSname();
+	int n =attendnceServcie.getatttimes(coursename, name);	
+	
+	int percentage    =  ((n * 100) / 15 );
+//	d.setNtimes(n);
+	s = name + " the abssence times are " +  n ;
+	ttt.add(s);
+//	detaillist.add(d);
+	//assignvalues to objects
+	mmm[i].setData(name ,n,percentage);
+	detaillist.add(mmm[i]);
+	//i++;
+	
+			}
+	      
+			return detaillist ;
+		//return mmm
+		//return ttt ;
+		//return attendnceServcie.getexceedednames(coursename);
+	}
+	
+	
+	
+	
 	
 	@GetMapping(value="/list/{coursename}/{studentname}")
 	public int gettimesCourses(@PathVariable("coursename") String coursename , @PathVariable("studentname") String studentname){
@@ -67,6 +135,12 @@ public List<Object[]> getAllCourses(){
 	total.setPercentage(percentage);
 		return total ;
 	}
+	
+	@GetMapping(value = "/get_names_list")
+    public List<String> getTagList(@PathVariable("coursename") String  NameSearch) {
+        List<String> tagList = attendnceServcie.serachattBySname(NameSearch);
+        return tagList;
+    }
 	
 	
 }

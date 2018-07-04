@@ -22,10 +22,30 @@
 <meta http-equiv="Expires" content="sat, 01 Dec 2001 00:00:00 GMT">
 <title>courses | home</title>
 <link href="static/css/bootstrap.min.css" rel="stylesheet">
-<link href="static/css/style-attendance.css" rel="stylesheet">
-<link href="static/css/table-attendance.css" rel="stylesheet">
+<link href="static/css/style.css" rel="stylesheet">
+<link href="static/css/table.css" rel="stylesheet">
 <script src="static/js/query-1.11.1.min.js"></script>
 <script src="static/js/placeholder.js"></script>
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#NameSearch").autocomplete({
+            source: 'localhost:8080/api/get_names_list/',
+            minLength: 1
+        });
+    });
+    
+    $(function(){
+    	 $.getJSON("http://localhost:8080/api/get_names_list", function(data) {
+    	  $( "#NameSearch" ).autocomplete({
+    	     source: data    
+    	       });
+    	    });
+    	});
+    
+</script>
+
  <!--   <style >
 
 
@@ -93,9 +113,17 @@
 					
 		 <div class="container">
 		 
-		 <center>  <h2>Total Students' Attendance in ${courseno}  </h2>
+		 <center>  <h2>exceeded Students' Attendance in ${courseno}  </h2>
 
 </center>
+<!-- after many trials the problem solved by making get method in the form which will pass the form params in query strng automatically without making query string oo your own -->
+<form class="form-horizontal" method="GET" action="totalnamesattendances">
+
+<div>
+<input type="submit" class="btn"  value="search" />
+<input type="text" placeholder="Search.." name="NameSearch" id="NameSearch" class="form-control"></div>
+<input type="hidden" name="coursename" id="input" value="${courseno}" />
+</form>
             <div class="table-responsive">
 					<table class="table table-striped table-bordered">
                 <thead>

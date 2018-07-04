@@ -19,8 +19,6 @@
 <script src="static/js/query-1.11.1.min.js"></script>
 <script src="static/js/placeholder.js"></script>
 
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-
 
 
 
@@ -29,14 +27,6 @@
 <title>Iattendance</title>
 </head>
 <body>
-<script>
-$(document).ready(function(){
-    $("#button").click(function(){
-        $("#test").hide(10000);
-    });
-});
-</script>
-
 <script >
 
 
@@ -70,16 +60,12 @@ function overlay()
 <hr/>
  order of section :  ${orderofsection}  </h3>
  
- <!--  <div  id = "test" class="alert alert-danger fade in">
-                <a href="#" class="close" data-dismiss="alert">&times;</a>
-                 the student is already submitted ${message}
-</div>-->
+ 
  <div>  ${message}   </div>
 
-<c:forEach var="student" items="${students }">
-<%-- <c:forEach var="att" items="${atts }">--%>
-		<form:form  class="form-horizontal" method="POST" modelAttribute="attendance" action="attendance-saved" >
-	<%-- 	<form class="form-horizontal" method="POST" action="attendance-saved">--%>
+
+		<form:form  class="form-horizontal" method="POST" modelAttribute="attendance" action="saveatt" >
+	
 	
 	<div class="container">
 				<div class="table-responsive">
@@ -105,26 +91,26 @@ function overlay()
 								
 									<td>
 									
-									${student.name}
+									${attendance.sname}
 									<%-- ${student.user.firstname}--%></td>
 								<td>
 								
 								<form:checkbox path = "pre" /></div>
 									<input type="hidden" name="id" value="${attendance.id }" />
-									<input type="hidden" name="sname" value=" ${student.name}" />
+									<input type="hidden" name="sname" value=" ${attendance.sname}" />
 									<input type="hidden" name="secorder" value=" ${orderofsection}" />
 									<input type="hidden" name="coursename" id="input" value="${courseno}" />
-									<input type="hidden" name="secserial" value=" ${orderofsection}" />
+									<!-- <input type="hidden" name="secserial" value=" ${orderofsection}" />-->
 								<td>
 								<input type="text" class="form-control" name="remarkText"
 								value="${attendance.remarkText }" />
 								
-								<input type="hidden" name="studentId"  value="${student.id}"/></td>
+								<input type="hidden" name="studentId"  value="${attendance.studentId}"/></td>
 									
 						<%-- 		<td><form:checkbox path = "done" /></td> --%>
 								 <%-- <td><form:hidden path = "done" /></td>--%>
 								<td>
-						<input type="submit" id="button" class="btn btn-primary" value="assign" />
+						<input type="submit" class="btn btn-primary" value="assign" />
 					</td>
 								
 								<%-- 
@@ -173,6 +159,6 @@ function overlay()
 					
 					</form:form>
 				
-					</c:forEach>
+					
 </body>
 </html>

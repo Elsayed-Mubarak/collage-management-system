@@ -53,6 +53,8 @@
                         </select>
                         </th> -->
                         <th>Remark</th>
+                        <th>delete</th>
+                        <th>edit</th>
                         
                     </tr>
                     </thead>
@@ -84,9 +86,10 @@
                         <td >${att.remarkText }</td>
                         
                         
-                        <%--   <td><a href="/deleteattendance?id=${att.id }&coursename=${courseno}&secorder=${orderofsection}"><span
-											class="glyphicon glyphicon-trash"></span></a></td>  --%>
-											
+                         <td><a href="/deleteattendance?id=${att.id }&coursename=${courseno}&secorder=${orderofsection}"><span
+											class="glyphicon glyphicon-trash"></span></a></td>  
+											<td><a href="/editattendance?id=${att.id }&coursename=${courseno}&secorder=${orderofsection}"><span
+											class="glyphicon glyphicon-pencil"></span></a></td>
 											
                        <%--  <td><a href="/deleteattendance?id=${att.id }"><span
 											class="glyphicon glyphicon-trash"></span></a></td>--%>

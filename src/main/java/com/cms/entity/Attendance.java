@@ -28,6 +28,8 @@ public class Attendance implements Serializable {
 	private Boolean pre;
 	@Column(name="secorder")
 	private String secorder ;
+	//@Column(name="secserial")
+	//private int secserial ;
 	/*@Column(name="done")
 	private Boolean done;
 	public Boolean getDone() {
@@ -37,6 +39,10 @@ public class Attendance implements Serializable {
 	public void setDone(Boolean done) {
 		this.done = done;
 	}*/
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 
 	public String getSecorder() {
 		return secorder;
@@ -62,7 +68,19 @@ public class Attendance implements Serializable {
 	private String remarkText;
 
 	//@Column(name="section_id", unique=true)
-	//private int sectionId;
+
+//private int sectionId;
+	
+	//@Column(name="course-id")
+//private int coursid;
+/*	public int getCoursid() {
+		return coursid;
+	}
+
+	public void setCoursid(int coursid) {
+		this.coursid = coursid;
+	}*/
+
 
 	@Column(name="student_id", unique=true)
 	private int studentId;
