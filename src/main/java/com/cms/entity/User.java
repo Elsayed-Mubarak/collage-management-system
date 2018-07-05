@@ -56,8 +56,7 @@ public class User implements Serializable {
 	@Column(name = "level")
 	private String level;
 
-	@Column(name = "active")
-	private int active;
+	
 
 	@Column(length = 255, name = "phone")
 	private String phone;
@@ -190,13 +189,7 @@ public class User implements Serializable {
 		this.level = level;
 	}
 
-	public int getActive() {
-		return active;
-	}
-
-	public void setActive(int active) {
-		this.active = active;
-	}
+	
 
 	public String getPhone() {
 		return this.phone;

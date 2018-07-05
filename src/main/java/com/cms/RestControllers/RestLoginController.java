@@ -49,7 +49,7 @@ public class RestLoginController {
 	@PostMapping("/add")
 	public User add(@RequestBody User user) {
 		
-		System.out.println("user.getActive()"+user.getActive());
+//		System.out.println("user.getActive()"+user.getActive());
 		return userService.addUser(user);
 	}
 

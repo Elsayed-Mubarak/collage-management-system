@@ -49,7 +49,7 @@ public class UserServiceImp implements UserService{
 	//	if(user.getPassword().equals(user.getConfirmPassword())) {
 	//		user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
 	//		user.setConfirmPassword(bCryptPasswordEncoder.encode(user.getConfirmPassword()));
-        user.setActive(1);
+//        user.setActive(1);
         Role userRole = roleRepository.findByRoleName("ADMIN");
         System.out.println(Arrays.asList(userRole)+"Arrays.asList(userRole)");                               
         user.setRoles(new HashSet<Role>(Arrays.asList(userRole)));
