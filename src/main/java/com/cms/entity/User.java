@@ -36,7 +36,7 @@ public class User implements Serializable {
 
 	@Column(length = 255, name = "last_name")
 	private String lastname;
-	
+
 	@Column(length = 255, name = "gender")
 	private String gender;
 
@@ -56,7 +56,16 @@ public class User implements Serializable {
 	@Column(name = "level")
 	private String level;
 
-	
+	@Column(name = "mobile_number")
+	private String mobile;
+
+	public String getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
 
 	@Column(length = 255, name = "phone")
 	private String phone;
@@ -64,9 +73,6 @@ public class User implements Serializable {
 	@Column(name = "user_name", length = 255)
 	private String userName;
 
-	
-	
-	
 	@ManyToOne
 	@JoinColumn(name = "department_id")
 	private Department department;
@@ -132,7 +138,6 @@ public class User implements Serializable {
 		this.email = email;
 	}
 
-	
 	public String getFirstname() {
 		return firstname;
 	}
@@ -188,8 +193,6 @@ public class User implements Serializable {
 	public void setLevel(String level) {
 		this.level = level;
 	}
-
-	
 
 	public String getPhone() {
 		return this.phone;
