@@ -1,0 +1,216 @@
+
+body
+{
+   
+    font-size: medium;
+    border: #.25px solid:#F00;
+    background:url("../images/3.jpg") no-repeat transparent left;
+    background-position: center;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    background-color: #FFF;
+    height: 1000px;
+   
+    
+}
+.container
+{
+    
+    
+    margin-left: 300px;
+    margin-right: 190px;
+    background-image: url('/images/4.jpg');
+    
+    background-size: 150% 100%;
+        
+    
+    background-attachment: scroll;
+    
+    
+}
+.Header
+{
+    	background: rgba(0, 0, 0, 0.4);
+       border: .1px solid rgba(0, 0, 0, 0.4);
+
+    color: #FFF;
+    text-align: center;
+    margin-top: 50px;
+     margin-left: 210px;
+    margin-right: 190px;
+    letter-spacing: 1px;
+    font-family: serif;
+    
+    
+}
+form
+{
+    background: #FFF;
+    
+    width: 400px;
+    height: 820px;
+    padding: 0px;
+    font-family: sans-serif;
+    margin-left: -90px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+        
+
+}
+label
+{
+    
+    margin-left: 30px;
+    margin-right: 100px;
+    margin-top: 300px;
+    margin-bottom: 300px;
+    letter-spacing: .5px;
+    font-size: italic,bold;
+    padding: 0px;
+    font-family: serif;
+    font-style: italic;
+}
+
+.type,.level
+{
+    
+    
+    margin-top: 20px;
+    display: inline;
+}
+.ty
+{
+    margin-left: 80px;
+    color: #00F;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    text-height: 10px;
+}
+
+.levle
+{
+    margin-top: 10px;
+    margin-left: 80px;
+    color: #00F;
+}
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=tel]
+
+{
+    display: block;
+    letter-spacing: 1px;
+    width: 300px;
+    margin-left : 30px;
+    margin-top: 5px;
+    height: 15px;
+    text-align:left;
+    padding: 10px;
+    border: 1px solid #00F;
+    font-family: serif;
+    font-style: italic;
+}
+
+
+
+select
+{
+    border: 1px dashed #F00;
+    width: 100px;
+    height: 20px;
+    font-size: large;
+    display: block;
+    margin-left: 30px;
+    width: 150px;
+    height: 25px;
+}
+h6
+{
+    color: #F00;
+    margin-left: 30px;
+    margin-top: -10px;
+    letter-spacing: 1px;
+}
+
+
+h1
+{
+    float: center;
+}
+.content
+{
+    padding: 0px;
+}
+.5
+{
+    display: inline-block;
+    letter-spacing: 1px;
+    width: 125px;
+    margin: 5px;
+    height: 12.5px;
+    
+}
+a
+{
+    color: #F00;
+    cursor: !important;
+}
+
+.button
+{
+    margin: 20px;
+    width: 350px;
+    height: 50px;
+    background-color: #890f0a;
+    color: #FFF;
+    font-size: large;
+    letter-spacing: 1.5px;
+    text-align: center;
+    display: block;
+}
+
+.password
+{
+    width: 125px;
+    display:inline-block;
+    height: 25px;
+}
+
+.gender
+{
+    
+    margin-left: 80px;
+    color: #00F;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    text-height: 10px;
+       
+}
+p
+{
+    
+    font-size: larger;
+    color: #000;
+    float: !important;
+    margin-top: 50px;
+    margin-left: 20px;
+    font-weight: 400;
+    text-align: center;
+    font-size: larger;
+    
+}
+div[class="Footer"]
+{
+    font-family: cursive;
+    font-size: larger;
+    color: #000;
+    float: !important;
+    margin-top: 50px;
+    margin-left: 20px;
+    font-weight: 400;
+    text-align: center;
+    font-size: larger;
+}

@@ -9,7 +9,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Course Details Page</title>
 
-<link href="${contextRoot}/static/css/bootstrap.min.css" rel="stylesheet">
+<link href="${contextRoot}/static/css/bootstrap.min.css"
+	rel="stylesheet">
 <link href="${contextRoot}/static/css/style.css" rel="stylesheet">
 <link href="${contextRoot}/static/css/styles.css" rel="stylesheet">
 
@@ -17,8 +18,8 @@
 </head>
 <body>
 
-<div id='courses'>
-	
+	<div id='courses'>
+
 		<ul>
 			<li><a href='/welcome'>Courses Welcome Page</a></li>
 
@@ -48,9 +49,11 @@
 					<p>${courseDetails.type}</p>
 					<p>${courseDetails.description}</p>
 					<p>${courseDetails.code}</p>
-					<p>${courseDetails.instructor}</p>
+					<p>${courseDetails.instructor.user.firstname}
+						${courseDetails.instructor.user.lastname}</p>
 					<p>${courseDetails.term}</p>
 					<p>${courseDetails.type}</p>
+					<p><a href="/attendence-services">Show Attendance</a></p>
 				</div>
 			</div>
 

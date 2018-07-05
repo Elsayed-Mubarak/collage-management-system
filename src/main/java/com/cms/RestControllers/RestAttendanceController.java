@@ -7,9 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cms.entity.Attendance;
@@ -17,12 +14,16 @@ import com.cms.entity.Course;
 import com.cms.entity.detail;
 import com.cms.entity.total;
 import com.cms.services.AttendanceService;
+import com.cms.services.CourseService;
 
 @RestController
 @RequestMapping("/api")
 public class RestAttendanceController {
 	@Autowired
 	AttendanceService attendnceServcie ;
+	
+	@Autowired
+	CourseService courseServcie ; 
 	
 	@GetMapping("/attendance/{coursename}")
 	public List<Attendance>  getAllCourseByTermName(@PathVariable("coursename") String coursename) {
@@ -141,6 +142,20 @@ public List<Object[]> getAllCourses(){
         List<String> tagList = attendnceServcie.serachattBySname(NameSearch);
         return tagList;
     }
+	
+	@GetMapping(value="/viewcourseattendance")
+	public List<Course> showAllCourse2(){
+		
+		return courseServcie.getAllCourses() ; 
+	}
+	
+
+	@GetMapping(value="/viewcourseattendance2/{coursename}/{secorder}")
+	public List<Attendance> showAttbycoursenameandsecorder(@PathVariable("coursename") String coursename , @PathVariable("secorder") String secorder){
+		
+		return attendnceServcie.getAllAttendancesByCoursenameAndSecorder(coursename, secorder) ; 
+	}
+	
 	
 	
 }

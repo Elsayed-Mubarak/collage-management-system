@@ -3,83 +3,92 @@ package com.cms.entity;
 import java.io.Serializable;
 import javax.persistence.*;
 
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.Date;
 import java.util.Set;
-
 
 /**
  * The persistent class for the users database table.
  * 
  */
 @Entity
-@JsonIgnoreProperties(ignoreUnknown=true)
-@Table(name="users")
-@NamedQuery(name="User.findAll", query="SELECT u FROM User u")
+@JsonIgnoreProperties(ignoreUnknown = true)
+@Table(name = "users")
+@NamedQuery(name = "User.findAll", query = "SELECT u FROM User u")
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@SequenceGenerator(name="USERS_ID_GENERATOR" )
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="USERS_ID_GENERATOR")
-	@Column(unique=true, nullable=false , name="id")
+	@SequenceGenerator(name = "USERS_ID_GENERATOR")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "USERS_ID_GENERATOR")
+	@Column(unique = true, nullable = false, name = "id")
 	private int id;
 
-	
-	@Column(length=255,name="address")
+	@Column(length = 255, name = "address")
 	private String address;
 
-	@Column(length=255,name="age")
-	private int age;
-
-	@Column(length=255 , name = "email")
+	@Column(length = 255, name = "email")
 	private String email;
 
-	@Column(length=255,name = "first_name")
+	@Column(length = 255, name = "first_name")
 	private String firstname;
 
-	@Column(length=255 , name="gender")
+	@Column(length = 255, name = "last_name")
+	private String lastname;
+	
+	@Column(length = 255, name = "gender")
 	private String gender;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="join_date")
+	@Column(name = "join_date")
 	private Date joinDate;
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="last_login_date")
-	private Date lastLoginDate;
-
-	@Column(name="last_login_ip", length=255)
-	private String lastLoginIp;
-
-	@Column(length=255 , name ="last_name")
-	private String lastname;
-
-	@Column(length=255 , name="mobile_number")
-	private String mobile;
-
-	@Column(length=255 , name ="password" )
+	@Column(length = 255, name = "password")
 	private String password;
 
-	@Column(length=255  , name = "phone")
+	@Column(name = "user_type")
+	private String userType;
+
+	@Column(name = "Confirm_password")
+	private String confirmPassword;
+
+	@Column(name = "level")
+	private String level;
+
+	@Column(name = "active")
+	private int active;
+
+	@Column(length = 255, name = "phone")
 	private String phone;
 
-	@Column(length=255 ,name="status")
-	private String status;
-
-	@Column(name="user_name", length=255)
+	@Column(name = "user_name", length = 255)
 	private String userName;
 
 	
-	@ManyToOne
-	@JoinColumn(name="department_id")
-	private Department department;
 	
-	//bi-directional many-to-one association to Instructor
-	@OneToMany(mappedBy="user")
+	
+	@ManyToOne
+	@JoinColumn(name = "department_id")
+	private Department department;
+
+	// bi-directional many-to-one association to Instructor
+	@OneToMany(mappedBy = "user")
 	private Set<Instructor> instructors;
+
+	// bi-directional many-to-one association to Student
+	@OneToMany(mappedBy = "user")
+	private Set<Student> students;
+	/*
+	 * //bi-directional many-to-many association to Role
+	 * 
+	 * @ManyToMany(mappedBy="users") private Set<Role> roles;
+	 * 
+	 */
+
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+	private Set<Role> roles;
 
 	public Department getDepartment() {
 		return department;
@@ -88,16 +97,6 @@ public class User implements Serializable {
 	public void setDepartment(Department department) {
 		this.department = department;
 	}
-
-	//bi-directional many-to-one association to Student
-	@OneToMany(mappedBy="user")
-	private Set<Student> students;
-
-	//bi-directional many-to-many association to Role
-	@ManyToMany(mappedBy="users")
-	private Set<Role> roles;
-	
-	
 
 	public User() {
 	}
@@ -118,12 +117,12 @@ public class User implements Serializable {
 		this.address = address;
 	}
 
-	public int getAge() {
-		return this.age;
+	public String getLastname() {
+		return lastname;
 	}
 
-	public void setAge(int age) {
-		this.age = age;
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
 	}
 
 	public String getEmail() {
@@ -134,8 +133,9 @@ public class User implements Serializable {
 		this.email = email;
 	}
 
+	
 	public String getFirstname() {
-		return this.firstname;
+		return firstname;
 	}
 
 	public void setFirstname(String firstname) {
@@ -158,44 +158,44 @@ public class User implements Serializable {
 		this.joinDate = joinDate;
 	}
 
-	public Date getLastLoginDate() {
-		return this.lastLoginDate;
-	}
-
-	public void setLastLoginDate(Date lastLoginDate) {
-		this.lastLoginDate = lastLoginDate;
-	}
-
-	public String getLastLoginIp() {
-		return this.lastLoginIp;
-	}
-
-	public void setLastLoginIp(String lastLoginIp) {
-		this.lastLoginIp = lastLoginIp;
-	}
-
-	public String getLastname() {
-		return this.lastname;
-	}
-
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
-	}
-
-	public String getMobile() {
-		return this.mobile;
-	}
-
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
-	}
-
 	public String getPassword() {
 		return this.password;
 	}
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getConfirmPassword() {
+		return confirmPassword;
+	}
+
+	public void setConfirmPassword(String confirmPassword) {
+		this.confirmPassword = confirmPassword;
+	}
+
+	public String getUserType() {
+		return userType;
+	}
+
+	public void setUserType(String userType) {
+		this.userType = userType;
+	}
+
+	public String getLevel() {
+		return level;
+	}
+
+	public void setLevel(String level) {
+		this.level = level;
+	}
+
+	public int getActive() {
+		return active;
+	}
+
+	public void setActive(int active) {
+		this.active = active;
 	}
 
 	public String getPhone() {
@@ -206,14 +206,6 @@ public class User implements Serializable {
 		this.phone = phone;
 	}
 
-	public String getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
 	public String getUserName() {
 		return this.userName;
 	}
@@ -221,8 +213,6 @@ public class User implements Serializable {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-
-	
 
 	public Set<Instructor> getInstructors() {
 		return this.instructors;

@@ -19,15 +19,45 @@
 <script src="static/js/query-1.11.1.min.js"></script>
 <script src="static/js/placeholder.js"></script>
 
+<link href="static/css/bootstrap.min.css" rel="stylesheet">
+<link href="static/css/style.css" rel="stylesheet">
+<link href="static/css/styles.css" rel="stylesheet">
+<script src="static/js/jquery-1.11.1.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<script src="static/js/script.js"></script>
 
 
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1256">
 <title>Iattendance</title>
 </head>
 <body>
+
+
+	<div id='courses'>
+		<ul>
+			<li class='active'><a href='/welcome'>Courses Welcome Page</a></li>
+
+			<li><a href="/addCourse">New Course</a></li>
+			<li><a href="/show-courses">All Courses</a></li>
+			<li><a href="/show-courses-to-users">All Courses To users</a></li>
+			<li><a href="/show-schedule">Schedule</a></li>
+			<li><a href="/add-shedule-data">AddSchedule</a></li>
+			<li><a href="/showstudents">Student Profile</a></li>
+			<li><a href="/AllInstructors">Instructors</a></li>
+			<li><a href="/addinstructorProfiledata">Fill Your Profile</a></li>
+			<li><a href="/attendence-services">Show attendance services</a></li>
+			
+			<!-- <li><a href='#'>Contact</a></li>-->
+		</ul>
+	</div>
+	<!--start clearFloat-->
+	<div class="clearFloat"></div>
+
+
+
 <div class="container">
 
-<center>  <h2>select which course to show its attendance 
+<center>  <h2>Select  Servcie To Use  Attendance 
 
 <br/>
 
@@ -45,13 +75,16 @@
 								
 	<center>					
 
-<h3>  <a href="/courseattendance" class="btn btn-info" role="button">show attendance by course and section</a></h3>
+<h3>  <a href="/courseattendance" class="btn btn-info" role="button">Take Attendence</a></h3>
   
-<h3>  <a href="/totalcourseattendance" class="btn btn-info" role="button">Show percetage of attendance</a></h3>
+<h3>  <a href="/viewcourseattendance" class="btn btn-info" role="button">Show Taken Attendence</a></h3>
 
-<h3>  <a href="/exceedcourseattendance" class="btn btn-info" role="button">Show exccedded students</a></h3>
+  
+<h3>  <a href="/totalcourseattendance" class="btn btn-info" role="button">Show Total And Percetage Of Attendance</a></h3>
 
-<h3>  <a href="/courseattendance" class="btn btn-info" role="button">Take Attendance</a></h3>
+<h3>  <a href="/exceedcourseattendance" class="btn btn-info" role="button">Show Exccedded Students</a></h3>
+
+
 		
 		
 		

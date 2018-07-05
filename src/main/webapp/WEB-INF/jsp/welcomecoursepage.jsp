@@ -79,7 +79,7 @@
 					<a href="#first">First Year</a> <a
 						href="/show-courses-to-user/2nd year">Second Year</a> <a
 						href="/show-courses-to-user/3rd year">Third Year</a> <a
-						href="#fourth">Fourth Year</a>
+						href="/show-courses-to-user/4th year">Fourth Year</a>
 				</div>
 			</div>
 

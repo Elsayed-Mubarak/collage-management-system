@@ -77,6 +77,8 @@ public class Course implements Serializable {
 	private Department department;
 
 	
+	
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name="instructor_id"  )
 	private Instructor instructor;

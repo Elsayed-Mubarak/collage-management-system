@@ -47,17 +47,31 @@ public class InstructorController {
 	@GetMapping("/AllInstructors/{id}")
 	public String  getInstructorProfile(@PathVariable("id") int id , HttpServletRequest request)
 	{
-//		
+	
 		Instructor in = instructorService.getInstructorProfile(id);
-//		
-		in.setCourses(courseService.getAllCoursesByInstructorId(id));
-//		
+	
+		in.setCourses(courseService.getAllCoursesByInstructorId(id));	
 		
 		request.setAttribute("mode","MODE_INSTRUCTOR_PROFILE");
 		request.setAttribute("instructorProfile", instructorService.getInstructorProfile(id));
 		System.out.println(in.getCourses().size());
 		return "instructorprofilepage" ;
 	}
+	
+	
+//	@GetMapping("/AllInstructors/{id}")
+//	public String  getInstructorProfile(@PathVariable("id") int id , HttpServletRequest request)
+//	{
+//	
+//		Instructor in = instructorService.getInstructorProfile(id);
+//	
+//		in.setCourses(courseService.getAllCoursesByInstructorId(id));	
+//		
+//		request.setAttribute("mode","MODE_INSTRUCTOR_PROFILE");
+//		request.setAttribute("instructorProfile", instructorService.getInstructorProfile(id));
+//		System.out.println(in.getCourses().size());
+//		return "instructorprofilepage" ;
+//	}
 	
 	@RequestMapping("/addinstructorProfiledata")
 	public String addInstructorProfileData(HttpServletRequest request) {

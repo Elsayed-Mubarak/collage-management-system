@@ -50,7 +50,11 @@ public class AttendanceController {
 //	}
 	
 	
-	
+	@RequestMapping("/attendence-services")
+	public String getAttendenceServices(HttpServletRequest request){
+		request.setAttribute("mode","MODE_ATTENDENCE_SERVCIES");
+		return "attendanceServcies"; 
+	}
 	
 	 
 	   @ModelAttribute("secList")
@@ -101,9 +105,7 @@ public class AttendanceController {
 			model.put("message", "<div class=\"alert alert-success alert-dismissible\" >\r\n" + 
 					"    <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>\r\n" + 
 					"    <strong>done successfully!</strong> .\r\n" + 
-					"  </div>");
-			
-			
+					"  </div>");	
 			
 		}
 		
@@ -124,8 +126,6 @@ public class AttendanceController {
 					"</div>");
 			
 		}
-		
-		
 		
 	  //    model.put("attendance", new Attendance());
 	      
