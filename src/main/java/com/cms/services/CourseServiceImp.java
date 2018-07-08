@@ -9,7 +9,7 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import com.cms.entity.Course;
-import com.cms.entity.Instructor;
+
 import com.cms.repository.CourseRepository;
 
 

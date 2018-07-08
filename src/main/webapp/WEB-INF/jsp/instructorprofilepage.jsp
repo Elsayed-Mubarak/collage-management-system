@@ -81,15 +81,56 @@
 									<div class="yui-u">
 										<c:forEach var="course1" items="${instructorProfile.courses }">
 											<p class="enlarge">
-												<a href="/">${course1.name} </a>   <br>
+												<a
+													href="/show-courses-to-users/${course1.id}">${course1.name}
+												</a> <br>
 											</p>
-											</c:forEach>
+										</c:forEach>
+
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 
+					<div id="bd">
+						<div id="yui-main">
+							<div class="yui-b">
+
+								<div class="yui-gf">
+									<div class="yui-u first">
+										<h2>My Courses Attendance Services</h2>
+									</div>
+									<div class="yui-u">
+
+										<p class="enlarge">
+											<a
+												href="/courseattendancebyinst?instructorId=${instructorProfile.id}">take
+												attendance </a> <br>
+										</p>
+
+										<p class="enlarge">
+											<a
+												href="/viewcourseattendanceinst?instructorId=${instructorProfile.id}">Show attendance </a> <br>
+										</p>
+
+										<p class="enlarge">
+											<a
+												href="/exceedcourseattendanceinst?instructorId=${instructorProfile.id}">show excceded students </a> <br>
+										</p>
+
+										<p class="enlarge">
+											<a
+												href="/totalcourseattendanceinst?instructorId=${instructorProfile.id}">show total attendance </a> <br>
+										</p>
+
+
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 
 					<div id="bd">
 						<div id="yui-main">

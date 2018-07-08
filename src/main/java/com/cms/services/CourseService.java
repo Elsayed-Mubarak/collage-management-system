@@ -3,7 +3,7 @@ package com.cms.services;
 import java.util.List;
 
 import com.cms.entity.Course;
-import com.cms.entity.Instructor;
+
 
 
 public interface  CourseService {

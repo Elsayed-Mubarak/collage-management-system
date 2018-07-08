@@ -25,6 +25,19 @@ public class Student implements Serializable {
 	private int id;
 
 	
+//	
+//	 @OneToOne(fetch = FetchType.LAZY, cascade =  CascadeType.ALL,mappedBy = "student")
+//	 private File file;
+//	
+//	
+//	public File getFile() {
+//		return file;
+//	}
+//
+//	public void setFile(File file) {
+//		this.file = file;
+//	}
+
 	@Column(length=255)
 	private String gpa;
 

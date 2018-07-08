@@ -30,60 +30,40 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @NamedQuery(name="Course.findAll", query="SELECT c FROM Course c")
 public class Course implements Serializable {
 	private static final long serialVersionUID = 1L;
-
-	@Id
+    @Id
 	@SequenceGenerator(name="COURSE_ID_GENERATOR" )
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="COURSE_ID_GENERATOR")
 	@Column(unique=true, nullable=false)
 	private int id;
-
 	@Column(length=255)
 	private String name;
-	
 	@Column(length=255)
 	private String description;
-
-	
-
 	@Column(length=255)
 	private String term;
-
 	@Column(length=255)
 	private String type;
-	
 	@Column
 	private String quizes ; 
-	
 	@Column
 	private String imageUrl ; 
-	
-	
-
 	@Column
 	private String code ; 
-
-
 	@Column(length=255)
 	private String year;
-
 	//bi-directional many-to-one association to Attendance
 	@JsonIgnore
 	@OneToMany(mappedBy="course")
 	private Set<Attendance> attendances;
-
 	//bi-directional many-to-one association to Department
 	@ManyToOne
 	@JoinColumn(name="department_id"  )
 	private Department department;
-
-	
-	
 	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name="instructor_id"  )
 	private Instructor instructor;
 	//bi-directional many-to-many association to Section
-	
 	@ManyToMany
 	@JoinTable(
 		name="course_section"

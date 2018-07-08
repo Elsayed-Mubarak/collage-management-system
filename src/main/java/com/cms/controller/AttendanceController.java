@@ -11,18 +11,16 @@ import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
-import com.cms.entity.attendanceform;
+
 import com.cms.entity.AggregateResults;
 import com.cms.entity.Attendance;
-import com.cms.entity.Course;
-import com.cms.entity.Student;
+
 import com.cms.services.AttendanceService;
 import com.cms.services.CourseService;
 import com.cms.services.StudentService;
@@ -54,7 +52,7 @@ public class AttendanceController {
 	public String getAttendenceServices(HttpServletRequest request){
 		request.setAttribute("mode","MODE_ATTENDENCE_SERVCIES");
 		return "attendanceServcies"; 
-	}
+	}	
 	
 	 
 	   @ModelAttribute("secList")
@@ -184,7 +182,7 @@ public class AttendanceController {
 			     
 			     model.put("orderofsection", secorder);
 			     
-			      List<Attendance> atts=attendnceServcie.getAllAttendances();
+//			      List<Attendance> atts=attendnceServcie.getAllAttendances();
 			  //    List<Student> studens=studentServcie.getAllStudents();
 			    //  for (Student att: studens) {
 			    //	  att.getAttendance().
@@ -277,6 +275,14 @@ public class AttendanceController {
 						return "courseattendance" ; 
 					}
 					
+					
+					@GetMapping("/courseattendancebyinst")
+					public String showAllCourseByInstructorId(@RequestParam int instructorId ,  HttpServletRequest request){
+						request.setAttribute("courses", courseServcie.getAllCoursesByInstructorId(instructorId));
+						request.setAttribute("mode", "ALL_COURSES");
+						return "courseattendance" ; 
+					}
+					
 // دى بتاعت اظهار الغياب الى انا خدته 
 					@GetMapping("/viewcourseattendance")
 					public String showAllCourse2(HttpServletRequest request){
@@ -285,6 +291,13 @@ public class AttendanceController {
 						return "viewcourseattendance" ; 
 					}
 				   
+					@GetMapping("/viewcourseattendanceinst")
+					public String showAllCourse2ByInstructoId(@RequestParam int instructorId , HttpServletRequest request){
+						request.setAttribute("courses", courseServcie.getAllCoursesByInstructorId(instructorId ));
+						request.setAttribute("mode", "ALL_COURSES");
+						return "viewcourseattendance" ; 
+					}
+					
 					// شغاله 
 					@RequestMapping(value = "/viewcourseattendance2", method = RequestMethod.GET)
 					   public String attendacebycourse(//@ModelAttribute("SpringWeb")Attendance user, 
@@ -363,11 +376,28 @@ public class AttendanceController {
 						return "exceededcourses" ; 
 					}	
 					
+					@GetMapping("/exceedcourseattendanceinst")
+					public String showexceededCourseByInstructorId(@RequestParam int instructorId , HttpServletRequest request){
+						request.setAttribute("courses", courseServcie.getAllCoursesByInstructorId(instructorId ));
+						request.setAttribute("mode", "ALL_COURSES");
+						return "exceededcourses" ; 
+					}	
+					
+					
 					
 					//شغاله 
 					@GetMapping("/totalcourseattendance")
 					public String showtotalattenCourse(HttpServletRequest request){
 						request.setAttribute("courses", courseServcie.getAllCourses());
+						request.setAttribute("mode", "ALL_COURSES");
+						return "totalattcourses" ; 
+				
+				}	
+					
+					//شغاله 
+					@GetMapping("/totalcourseattendanceinst")
+					public String showtotalattenCourseByInstructorId(@RequestParam int instructorId , HttpServletRequest request){
+						request.setAttribute("courses", courseServcie.getAllCoursesByInstructorId(instructorId ));
 						request.setAttribute("mode", "ALL_COURSES");
 						return "totalattcourses" ; 
 				

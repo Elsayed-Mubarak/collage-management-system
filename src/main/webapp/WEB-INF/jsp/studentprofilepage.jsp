@@ -18,11 +18,27 @@
 			<div class="content">
 
 				<div class="upload">
+
+
+					<c:url value="/uploadfile" var="upload" />
+					<c:url value="/file" var="filePath" />
+
+					<form action="${upload}" enctype="multipart/form-data"
+						method="post">
+						<input type="hidden" name="${_csrf.parameterName}"
+							value="${_csrf.token}" /> Select Photo: <input type="file"
+							accept="image/*" name="file" /> <input type="submit"
+							value="upload" />
+					</form>
+					<br> <img src="${filePath}" width="230" height="230">
+
+				</div>
+				<!-- 
 					<input type="file" name="pic" accept="image/*" value="Upload">
 					<img alt="default student image"
 						src="${contextRoot }/static/images/profile.png">
+ -->
 
-				</div>
 				<div class="fullname">
 					<div>${student.user.firstname} ${student.user.lastname }</div>
 				</div>
@@ -75,9 +91,10 @@
 
 				<!--start educational-->
 				<div id="ahmd" class="ahmd">
-					<label>Year:</label><div>${student.level}</div>
-					 <a href="/show-courses-to-user/${student.level}">Courses</a><br> <a
-						href="#">Grades</a><br> <a href="#">Quiz</a><br> <a
+					<label>Year:</label>
+					<div>${student.level}</div>
+					<a href="/show-courses-to-user/${student.level}">Courses</a><br>
+					<a href="#">Grades</a><br> <a href="#">Quiz</a><br> <a
 						href="#">Assignments</a>
 				</div>
 				<!--end educational-->

@@ -92,7 +92,8 @@
 										<li><a href="#"> pay for Education</a></li>
 										<li><a id="union">student Union</a></li>
 										<li><a href="#">student Care</a></li>
-										<li><a href="/attendence-services">Attendence Services</a></li>
+										<li><a href="/attendence-services">Attendence
+												Services</a></li>
 
 									</ul></li>
 								<li><a href="#">RESEARCH</a>
@@ -111,7 +112,7 @@
 										<li><a href="#new"> News</a></li>
 										<li><a href="#">Services</a></li>
 										<li><a id="train">Training and activities</a></li>
-									
+
 									</ul></li>
 								<li><a href="#">DEPARTMENT</a>
 									<ul>
@@ -120,9 +121,13 @@
 												<li><a href="#">First Year</a></li>
 												<li><a href="#">Computers &amp;Control</a>
 													<ul>
-														<li><a href="/show-courses-to-user/2nd%20year">Second Year</a></li>
-														<li><a href="/show-courses-to-user/3rd%20year">Third Year</a></li>
-														<li><a href="/show-courses-to-user/4th%20year">Forth Year</a></li>
+														<li><a href="/show-courses-to-users">All Courses</a></li>
+														<li><a href="/show-courses-to-user/2nd%20year">Second
+																Year</a></li>
+														<li><a href="/show-courses-to-user/3rd%20year">Third
+																Year</a></li>
+														<li><a href="/show-courses-to-user/4th%20year">Forth
+																Year</a></li>
 													</ul></li>
 												<li><a href="#">Communications</a></li>
 												<li><a href="#">Power</a></li>
@@ -138,8 +143,8 @@
 										<li><a href="/	add-shedule-data"> Add Time Table Data</a></li>
 										<li><a href="/show-courses">Configure courses</a></li>
 										<li><a href="/addCourse">Add New Courses</a></li>
-										
-										
+
+
 									</ul></li>
 								<li><a href="#">OUR-FACULTY</a>
 									<ul>

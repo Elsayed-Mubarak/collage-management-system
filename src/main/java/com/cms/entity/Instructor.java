@@ -22,33 +22,47 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @NamedQuery(name="Instructor.findAll", query="SELECT i FROM Instructor i")
 public class Instructor implements Serializable {
 	private static final long serialVersionUID = 1L;
-
-	
 	@Id
 	@SequenceGenerator(name="INSTRUCTOR_ID_GENERATOR" )
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="INSTRUCTOR_ID_GENERATOR")
 	@Column(unique=true, nullable=false)
 	private int id;
-
-	
-//	@Column(name="department_id", unique=true)
-//	private int departmentId;
-
-	
+	//@Column(name="department_id", unique=true)
+//	private int departmentId;	
 	@OneToMany(mappedBy="instructor" , fetch=FetchType.EAGER)
 	private List<Course> courses;
-	
 	@Column(length=255)
 	private String rank;
-
-	
 	@Column(name="courses_taught" , length=255)
 	private String coursesTaught;
-	
-	public String getCoursesTaught() {
-		return coursesTaught;
+	@Column(name="other_titles", length = 255)
+	private String otherTitles ; 
+	//bi-directional many-to-one association to User
+	@JsonIgnore
+	@ManyToOne
+	@JoinColumn(name="user_id")
+	private User user;
+    @Transient
+	private MultipartFile file ; 
+	@Column(name="resarch_interests" , length=255)
+	private String resarchInterests;
+    @Column(name="education" , length=255)
+	private String education;	
+    @Column(name="time_at_tanta" , length=255)
+	private String timeAtTanta;
+    @Column(name="current_activities" , length=255)
+	private String currentActivities;	
+    @Column(name="current_research" , length=255)
+	private String currentResearch;
+  
+	public String getCurrentResearch() {
+		return currentResearch;
 	}
 
+	public void setCurrentResearch(String currentResearch) {
+		this.currentResearch = currentResearch;
+	}
+	
 	public void setCoursesTaught(String coursesTaught) {
 		this.coursesTaught = coursesTaught;
 	}
@@ -84,11 +98,7 @@ public class Instructor implements Serializable {
 	public void setCurrentActivities(String currentActivities) {
 		this.currentActivities = currentActivities;
 	}
-	
-	
-	
-	@Transient
-	private MultipartFile file ; 
+
 
 	public MultipartFile getFile() {
 		return file;
@@ -97,35 +107,9 @@ public class Instructor implements Serializable {
 	public void setFile(MultipartFile file) {
 		this.file = file;
 	}
-
-	@Column(name="resarch_interests" , length=255)
-	private String resarchInterests;
-	
-    @Column(name="education" , length=255)
-	private String education;
-	
-    @Column(name="time_at_tanta" , length=255)
-	private String timeAtTanta;
-    
-    @Column(name="current_activities" , length=255)
-	private String currentActivities;
-	
-    @Column(name="current_research" , length=255)
-	private String currentResearch;
-    
-	public String getCurrentResearch() {
-		return currentResearch;
-	}
-
-	public void setCurrentResearch(String currentResearch) {
-		this.currentResearch = currentResearch;
-	}
-
 //	@Column(name="instructor_Img", length=255)
 //	private String instructorImg;
 
-	@Column(name="other_titles", length = 255)
-	private String otherTitles ; 
 	
 	
 	//bi-directional one-to-one association to Department
@@ -137,11 +121,7 @@ public class Instructor implements Serializable {
 //	@JoinColumn(name="id", nullable=false, insertable=false, updatable=false)
 //	private Section section;
 
-	//bi-directional many-to-one association to User
-	@JsonIgnore
-	@ManyToOne
-	@JoinColumn(name="user_id")
-	private User user;
+
 
 	public Instructor() {
 	}
@@ -195,9 +175,6 @@ public class Instructor implements Serializable {
 	public void setOtherTitles(String otherTitles) {
 		this.otherTitles = otherTitles;
 	}
-	
-	
-
 
 //	public Department getDepartment() {
 //		return this.department;
@@ -214,6 +191,10 @@ public class Instructor implements Serializable {
 //	public void setSection(Section section) {
 //		this.section = section;
 //	}
+	
+	public String getCoursesTaught() {
+		return coursesTaught;
+	}
 
 	public List<Course> getCourses() {
 		return courses;

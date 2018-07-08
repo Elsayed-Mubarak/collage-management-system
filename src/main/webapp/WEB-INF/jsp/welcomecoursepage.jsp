@@ -1,3 +1,4 @@
+
 <!DOCTYPE html >
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
@@ -16,11 +17,10 @@
 
 <title>courses | home</title>
 
-<link href="${contextRoot }/static/css/bootstrap.min.css" rel="stylesheet">
-<link href="${contextRoot }/static/css/style.css" rel="stylesheet">
+
+
 <link href="${contextRoot }/static/css/styles.css" rel="stylesheet">
-<script src="${contextRoot }/static/js/jquery-1.11.1.min.js"></script>
-<script src="${contextRoot }/static/js/bootstrap.min.js"></script>
+
 <script src="${contextRoot }/static/js/script.js"></script>
 
 
@@ -35,22 +35,20 @@
 
 <body>
 
+<!--  
 	<div id='courses'>
 		<ul>
 			<li class='active'><a href='/welcome'>Courses Welcome Page</a></li>
 
 			<li><a href="/addCourse">New Course</a></li>
 			<li><a href="/show-courses">All Courses</a></li>
-			<!-- <li><a href="/showstudents">All Students</a></li> -->
 			<li><a href="/show-courses-to-users">All Courses To users</a></li>
 			<li><a href="/show-schedule">Schedule</a></li>
 			<li><a href="/add-shedule-data">AddSchedule</a></li>
-			<!-- <li><a href='#'>Contact</a></li>-->
 		</ul>
 	</div>
-	<!--start clearFloat-->
 	<div class="clearFloat"></div>
-
+-->
 	.
 	<!-- <div role="navigation">
 		<div class="navbar navbar-inverse">

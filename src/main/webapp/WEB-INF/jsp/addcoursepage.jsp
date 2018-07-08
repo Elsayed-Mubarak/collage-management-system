@@ -17,22 +17,22 @@
 <body>
 
 
+<!--  
 	<div id='courses'>
 		<ul>
 			<li class='active'><a href='/welcome'>Courses Welcome Page</a></li>
 
 			<li><a href="/addCourse">New Course</a></li>
 			<li><a href="/show-courses">All Courses</a></li>
-			<!-- <li><a href="/showstudents">All Students</a></li> -->
 			<li><a href="/show-courses-to-users">All Courses To users</a></li>
 			<li><a href="/show-schedule">Schedule</a></li>
 			<li><a href="/add-shedule-data">AddSchedule</a></li>
-			<!-- <li><a href='#'>Contact</a></li>-->
 		</ul>
 	</div>
-	<!--start clearFloat-->
+	
 	<div class="clearFloat"></div>
 
+-->
 
 	<c:choose>
 		<c:when test="${mode=='MODE_ADDCOURSE' }">

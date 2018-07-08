@@ -9,8 +9,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Course Details Page</title>
 
-<link href="${contextRoot}/static/css/bootstrap.min.css"
-	rel="stylesheet">
+
+
 <link href="${contextRoot}/static/css/style.css" rel="stylesheet">
 <link href="${contextRoot}/static/css/styles.css" rel="stylesheet">
 
@@ -20,31 +20,17 @@
 
 	<div id='courses'>
 
-		<ul>
-			<li><a href='/welcome'>Courses Welcome Page</a></li>
-
-			<li><a href="/addCourse">New Course</a></li>
-			<li><a href="/show-courses">All Courses</a></li>
-			<!-- <li><a href="/showstudents">All Students</a></li> -->
-			<li><a href="/show-courses-to-users">All Courses To users</a></li>
-			<li><a href="/schedule">Schedule</a></li>
-			<!-- <li><a href='#'>Contact</a></li>-->
-		</ul>
-	</div>
-	<!--start clearFloat-->
-	<div class="clearFloat"></div>
-
 	<c:choose>
 		<c:when test="${mode=='MODE_COURSE_DETAILS' }">
 
-			<h1>${courseDetails.name}</h1>
+			<h1 class="heading">${courseDetails.name}</h1>
 			<div class="videos">
 				<div class="image">
 					<img src=${courseDetails.imageUrl
 					}
 						alt="image may contain:course logo">
 				</div>
-				<div class="description">
+				<div class="description details" >
 
 					<p>${courseDetails.type}</p>
 					<p>${courseDetails.description}</p>
@@ -53,7 +39,7 @@
 						${courseDetails.instructor.user.lastname}</p>
 					<p>${courseDetails.term}</p>
 					<p>${courseDetails.type}</p>
-					<p><a href="/attendence-services">Show Attendance</a></p>
+					
 				</div>
 			</div>
 

@@ -57,12 +57,12 @@ function overlay()
 }
 
 </script>
-                        <select id = "demo" name="course" onchange="overlay();">
+                    <!--      <select id = "demo" name="course" onchange="overlay();">
   <option value="2">math</option>
   <option value="2">Android</option>
   <option value="3">security</option>
   <option value="4">Audi TT</option>
-</select>
+</select>  -->
 
 <h3> Submitting  Students' Attendance in ${courseno}  
 <br/>

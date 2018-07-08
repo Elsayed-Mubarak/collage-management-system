@@ -32,6 +32,7 @@
 </head>
 <body>
 
+<!-- 
 
 	<div id='courses'>
 		<ul>
@@ -47,12 +48,11 @@
 			<li><a href="/addinstructorProfiledata">Fill Your Profile</a></li>
 			<li><a href="/attendence-services">Show attendance services</a></li>
 			
-			<!-- <li><a href='#'>Contact</a></li>-->
+			
 		</ul>
 	</div>
-	<!--start clearFloat-->
-	<div class="clearFloat"></div>
-
+		<div class="clearFloat"></div>
+ -->
 
 
 <div class="container">
