@@ -55,7 +55,7 @@ public class InstructorController {
 		request.setAttribute("mode","MODE_INSTRUCTOR_PROFILE");
 		request.setAttribute("instructorProfile", instructorService.getInstructorProfile(id));
 		System.out.println(in.getCourses().size());
-		return "instructorprofilepage" ;
+		return "drprofile" ;
 	}
 	
 	

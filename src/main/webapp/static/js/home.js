@@ -8,27 +8,9 @@ var signin = document.getElementById('signin'),
     
     enter = document.getElementById('enter'),
     
-    
-    home = document.getElementById('home'),
-    
-    
+    home = document.getElementById('home'), 
      
-    profile = document.getElementById('profile'),
-    
-        logout = document.getElementById('signout'),
-
-    
-    unionp = document.getElementById('union-page'),
-
-    union = document.getElementById('union'),
-    
-    uh = document.getElementById('uh'),
-    
-    th = document.getElementById('th'),
-    
-    trainp = document.getElementById('training'),
-    
-    trainb = document.getElementById('train');
+    profile = document.getElementById('profile');
 
 studentlogin.onclick = function () {
     
@@ -46,39 +28,6 @@ close.onclick = function () {
     home.style.display = 'block';
     login.style.display = 'none';
 };
-
-union.onclick = function () {
-    'use strict';
-    unionp.style.display = 'block';
-    home.style.display = 'none';
-    profile.style.display = 'none';
-};
-trainb.onclick = function () {
-    'use strict';
-    trainp.style.display = 'block';
-    home.style.display = 'none';
-};
-uh.onclick = function () {
-    'use strict';
-    unionp.style.display = 'block';
-    home.style.display = 'none';
-
-};
-
-uh.onclick = function () {
-    'use strict';
-    unionp.style.display = 'none';
-    home.style.display = 'block';
-    
-};
-th.onclick = function () {
-    'use strict';
-    trainp.style.display = 'none';
-    home.style.display = 'block';
-    
-};
-
-
 
 
 
@@ -101,12 +50,7 @@ enter.onclick = function () {
     
     
 };
-logout.onclick = function () {
-    'use strict';
-    
-    profile.style.display = 'none';
-    home.style.display = 'block';
-};
+
     
 
 

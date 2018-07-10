@@ -1,34 +1,28 @@
-/*--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
---*/
-/* reset */
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
-article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
-ol,ul{list-style:none;margin:0px;padding:0px;}
-blockquote,q{quotes:none;}
-blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
-table{border-collapse:collapse;border-spacing:0;}
+
+.login-form html, .login-form body,.login-form div,.login-form span,.login-form applet,.login-form object,.login-form iframe,.login-form h1,.login-form h2,.login-form h3,.login-form h4,.login-form h5,.login-form h6,.login-form p,.login-form blockquote,.login-form pre,.login-form a,.login-form abbr,.login-form acronym,.login-form address,.login-form big,.login-form cite,.login-form code,.login-form del,.login-form dfn,.login-form em,.login-form img,.login-form ins,.login-form kbd,.login-form q,.login-form s,.login-form samp,.login-form small,.login-form strike,.login-form strong,.login-form sub,.login-form sup,.login-form tt,.login-form var,.login-form b,.login-form u,.login-form i,.login-form dl,.login-form dt,.login-form dd,.login-form ol,.login-form nav ul,.login-form nav li,.login-form fieldset,.login-form form,.login-form label,.login-form legend,.login-form table,.login-form caption,.login-form tbody,.login-form tfoot,.login-form thead,.login-form tr,.login-form th,.login-form td,.login-form article,.login-form aside,.login-form canvas,.login-form details,.login-form embed,.login-form figure,.login-form figcaption,.login-form footer,.login-form header,.login-form hgroup,.login-form menu,.login-form nav,.login-form output,.login-form ruby,.login-form section,.login-form summary,.login-form time,.login-form mark,.login-form audio,.login-form video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}.login-form
+ article,.login-form aside,.login-form details,.login-form figcaption,.login-form figure,footer,.login-form header,.login-form hgroup,.login-form menu,.login-form nav, .login-formsection {display: block;}
+.login-form ol,.login-form ul{list-style:none;margin:0px;padding:0px;}
+.login-form blockquote,.login-form q{quotes:none;}
+.login-form blockquote:before,.login-form blockquote:after,.login-form q:before,.login-form q:after{content:'';content:none;}
+.login-form table{border-collapse:collapse;border-spacing:0;}
 /* start editing from here */
-a{text-decoration:none;}
-.txt-rt{text-align:right;}/* text align right */
-.txt-lt{text-align:left;}/* text align left */
-.txt-center{text-align:center;}/* text align center */
-.float-rt{float:right;}/* float right */
-.float-lt{float:left;}/* float left */
-.clear{clear:both;}/* clear float */
-.pos-relative{position:relative;}/* Position Relative */
-.pos-absolute{position:absolute;}/* Position Absolute */
-.vertical-base{	vertical-align:baseline;}/* vertical align baseline */
-.vertical-top{	vertical-align:top;}/* vertical align top */
-nav.vertical ul li{	display:block;}/* vertical menu */
-nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
+.login-form a{text-decoration:none;}
+.login-form .txt-rt{text-align:right;}/* text align right */
+.login-form .txt-lt{text-align:left;}/* text align left */
+.login-form .txt-center{text-align:center;}/* text align center */
+.login-form .float-rt{float:right;}/* float right */
+.login-form .float-lt{float:left;}/* float left */
+.login-form .clear{clear:both;}/* clear float */
+.login-form .pos-relative{position:relative;}/* Position Relative */
+.login-form .pos-absolute{position:absolute;}/* Position Absolute */
+.login-form .vertical-base{	vertical-align:baseline;}/* vertical align baseline */
+.login-form .vertical-top{	vertical-align:top;}/* vertical align top */
+.login-form nav.vertical ul li{	display:block;}/* vertical menu */
+.login-form nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
 img{max-width:100%;}
 /*end reset*/
-body {
-    background: url(../images/5.jpg)no-repeat;
+.login-form {
+    background: url(../images/5.jpg) no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -37,13 +31,13 @@ body {
     background-attachment: fixed;
     background-position: center;
 	font-family: 'Open Sans', sans-serif;
-	height: 100vh;
+	
 }
 /*--header--*/
-.header-w3l {
+.login-form .header-w3l {
     padding-top: 16px;
 }
-.header-w3l h1 {
+.login-form .header-w3l h1 {
     font-size: 4.5em;
     color: #fff;
     letter-spacing: 4px;
@@ -52,12 +46,12 @@ body {
     text-shadow: 4px 5px 8px #101010;
     font-family: 'Tangerine', cursive;
 }
-.header-w3l h1 span {
+.login-form .header-w3l h1 span {
     color: #18ba60;
 }
 /*--//header--*/
 /*--main--*/
-.sub-main-w3 {
+.login-form  .sub-main-w3 {
     width: 30%;
     margin: 57px auto;
     -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
@@ -67,23 +61,25 @@ body {
     text-align: center;
     background:  rgba(0, 0, 0, 0.22);
 }
-.sub-main-w3 img {
+.login-form .sub-main-w3 img {
     border: 2px solid #fff;
     border-radius: 50%;
+    width: 200px;
+    height: 150px;
 }
-.sub-main-w3 h2 {
+.login-form .sub-main-w3 h2 {
     color: #fff;
     font-size: 26px;
     letter-spacing: 1px;
     margin-bottom: 1.5em;
 }
-.pom-agile {
+.login-form .pom-agile {
     padding: 11px 15px;
     background: #fff;
     margin-bottom: 16px;
     border-radius: 4px;
 }
-.pom-agile input[type="text"], .pom-agile input[type="password"] {
+.login-form .pom-agile input[type="text"], .pom-agile input[type="password"] {
     outline: none;
     font-size: .9em;
     border: none;
@@ -93,7 +89,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     letter-spacing: 1px;
 }
-.right-w3l input[type="submit"] {
+.login-form .right-w3l input[type="submit"] {
     color: #fff;
     background: #18ba60;
     border: none;
@@ -113,7 +109,7 @@ body {
     -ms-transition: 0.5s all;
     transition: 0.5s all;
 }
-.right-w3l input[type="submit"]:hover {
+.login-form .right-w3l input[type="submit"]:hover {
     background: #000;
 	-webkit-transition: 0.5s all;
     -o-transition: 0.5s all;
@@ -121,7 +117,7 @@ body {
     -ms-transition: 0.5s all;
 	transition: 0.5s all;
 }
-span.fa {
+.login-form span.fa {
     float: right;
     line-height: 1.5;
     margin-left: 10px;
@@ -129,13 +125,13 @@ span.fa {
     border-left:1px solid rgba(0, 0, 0, 0.28);
     padding-left: 10px;
 }
-.sub-agile {
+.login-form .sub-agile {
     float: left;
 }
-.sub-agile input[type="checkbox"] {
+.login-form .sub-agile input[type="checkbox"] {
     display: none;
 }
-.sub-agile input[type="checkbox"]+label {
+.login-form .sub-agile input[type="checkbox"]+label {
     position: relative;
     padding-left: 25px;
     display: inline-block;
@@ -143,7 +139,7 @@ span.fa {
     color: #fff;
     cursor: pointer;
 }
-.sub-agile input[type="checkbox"]+label span:first-child {
+.login-form .sub-agile input[type="checkbox"]+label span:first-child {
     width: 13px;
     height: 13px;
     display: inline-block;
@@ -152,7 +148,7 @@ span.fa {
     top: 1px;
     left: 2px;
 }
-.sub-agile input[type="checkbox"]:checked+label span:first-child:before {
+.login-form .sub-agile input[type="checkbox"]:checked+label span:first-child:before {
     content: "";
     background: url(../images/tick.png)no-repeat;
     position: absolute;
@@ -162,7 +158,7 @@ span.fa {
     width: 10px;
     height: 10px;
 }
-.forgot-w3l a {
+.login-form .forgot-w3l a {
     font-size: .9em;
     color: #fff;
     letter-spacing: 1px;
@@ -172,7 +168,7 @@ span.fa {
     -ms-transition: 0.5s all;
     transition: 0.5s all;
 }
-.forgot-w3l a:hover {
+.login-form .forgot-w3l a:hover {
     color:#000;
     -webkit-transition: 0.5s all;
     -o-transition: 0.5s all;
@@ -181,29 +177,29 @@ span.fa {
     transition: 0.5s all;
 }
 /*--placeholder-color--*/
-::-webkit-input-placeholder{
+.login-form ::-webkit-input-placeholder{
 	color:#000;
 }
-:-moz-placeholder { /* Firefox 18- */
+.login-form :-moz-placeholder { /* Firefox 18- */
    color: #000;
 }
-::-moz-placeholder {  /* Firefox 19+ */
+.login-form ::-moz-placeholder {  /* Firefox 19+ */
    color: #000;
 }
-:-ms-input-placeholder {
+.login-form :-ms-input-placeholder {
    color: #000;
 }
 /*--//placeholder-color--*/
 /*--//main--*/
 /*--footer--*/
-.footer p {
+/*.login-form .footer p {
     font-size: .9em;
     color: #fff;
     letter-spacing: 2px;
     text-align: center;
     margin-bottom: 30px;
 }
-.footer p a {
+.login-form .footer p a {
     color: #18ba60;
 	-webkit-transition: 0.5s all;
     -o-transition: 0.5s all;
@@ -211,7 +207,7 @@ span.fa {
     -ms-transition: 0.5s all;
 	transition: 0.5s all;
 }
-.footer p a:hover {
+.login-form .footer p a:hover {
     color: #fff;
 	-webkit-transition: 0.5s all;
     -o-transition: 0.5s all;
@@ -222,57 +218,57 @@ span.fa {
 /*--//footer--*/
 
 /*--responsive--*/
-@media(max-width: 1440px){
+/*.login-form @media(max-width: 1440px){
     .sub-main-w3 {
         width: 32%;
     }
 }
-@media(max-width: 1366px){
+.login-form @media(max-width: 1366px){
     .sub-main-w3 {
         width: 35%;
     }
 }
-@media(max-width: 1280px){
+.login-form @media(max-width: 1280px){
     .header-w3l h1 {
         font-size: 4.3em;
     }
 }
-@media(max-width: 1080px){
+.login-form @media(max-width: 1080px){
     .header-w3l {
         padding-top: 1em;
     }
-    .sub-main-w3 h2 {
+    .login-form .sub-main-w3 h2 {
         font-size: 1.7em;
     }
-    .sub-main-w3 {
+    .login-form .sub-main-w3 {
         width: 38%;
     }
-    .pom-agile input[type="text"], .pom-agile input[type="password"] {
+    .login-form .pom-agile input[type="text"], .pom-agile input[type="password"] {
         width: 90%;
     }
 }
-@media(max-width: 1050px){
-    .sub-main-w3 {
+.login-form @media(max-width: 1050px){
+    .login-form .sub-main-w3 {
         width: 40%;
     }
 }
-@media(max-width: 1024px){
+.login-form @media(max-width: 1024px){
     .sub-main-w3 {
         width: 43%;
         padding: 40px;
     }
 }
-@media(max-width: 991px){
+.login-form @media(max-width: 991px){
     .sub-main-w3 {
         width: 44%;
     }
 }
-@media(max-width: 900px){
+.login-form @media(max-width: 900px){
     .sub-main-w3 {
         width: 48%;
     }
 }
-@media(max-width: 800px){
+.login-form @media(max-width: 800px){
     .header-w3l h1 {
         font-size: 4em;
     }
@@ -287,15 +283,15 @@ span.fa {
         line-height: 1.4;
     }
 }
-@media(max-width: 768px){
+.login-form @media(max-width: 768px){
 
 }
-@media(max-width: 736px){
+.login-form @media(max-width: 736px){
     .sub-main-w3 {
         width: 57%;
     }
 }
-@media(max-width: 667px){
+.login-form @media(max-width: 667px){
     .header-w3l h1 {
         font-size: 3.8em;
     }
@@ -306,12 +302,12 @@ span.fa {
         letter-spacing: 1px;
     }
 }
-@media(max-width: 640px){
+.login-form @media(max-width: 640px){
     .sub-main-w3 {
         width: 65%;
     }
 }
-@media(max-width: 600px){
+.login-form @media(max-width: 600px){
     .sub-main-w3 {
         width: 69%;
     }
@@ -319,20 +315,20 @@ span.fa {
         font-size: .85em;
     }
 }
-@media(max-width: 568px){
+.login-form @media(max-width: 568px){
     .sub-main-w3 {
         width: 73%;
     }
 }
-@media(max-width: 480px){
+.login-form @media(max-width: 480px){
     .header-w3l h1 {
         font-size: 2.55em;
         letter-spacing: 2px;
     }
-    .pom-agile input[type="text"], .pom-agile input[type="password"] {
+    .login-form .pom-agile input[type="text"], .pom-agile input[type="password"] {
         width: 89%;
     }
-    .sub-agile input[type="checkbox"]+label {
+    .login-form .sub-agile input[type="checkbox"]+label {
         font-size: .85em;
     }
     .sub-w3l a {
@@ -357,7 +353,7 @@ span.fa {
         padding-left: 8px;
     }
 }
-@media(max-width: 440px){
+.@media(max-width: 440px){
     .sub-main-w3 {
         margin: 40px auto;
     }

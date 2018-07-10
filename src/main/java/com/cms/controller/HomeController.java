@@ -24,4 +24,63 @@ public class HomeController {
 	
 	
 
+	@RequestMapping(value={"/union"}, method = RequestMethod.GET)
+	public String union(){
+		
+		return "union";
+	}
+	
+	@RequestMapping(value={"/research"}, method = RequestMethod.GET)
+	public String research(){
+		
+		return "research";
+	}
+	
+
+	@RequestMapping(value={"/fservice"}, method = RequestMethod.GET)
+	public String fservice(){
+		
+		return "fservice";
+	}
+	
+
+	@RequestMapping(value={"/training"}, method = RequestMethod.GET)
+	public String training(){
+		
+		return "training";
+	}
+	
+
+	@RequestMapping(value={"/focus"}, method = RequestMethod.GET)
+	public String focus(){
+		
+		return "focus";
+	}
+	
+	
+	@RequestMapping(value={"/pay"}, method = RequestMethod.GET)
+	public String pay(){
+		
+		return "pay";
+	}
+	
+
+	@RequestMapping(value={"/care"}, method = RequestMethod.GET)
+	public String care(){
+		
+		return "care";
+	}
+	
+	@RequestMapping(value={"/offices"}, method = RequestMethod.GET)
+	public String offices(){
+		
+		return "offices";
+	}
+	
+	@RequestMapping(value={"/vision"}, method = RequestMethod.GET)
+	public String vision(){
+		
+		return "vision";
+	}
+
 }

@@ -29,6 +29,8 @@ public class Instructor implements Serializable {
 	private int id;
 	//@Column(name="department_id", unique=true)
 //	private int departmentId;	
+	
+	@JsonIgnore
 	@OneToMany(mappedBy="instructor" , fetch=FetchType.EAGER)
 	private List<Course> courses;
 	@Column(length=255)
