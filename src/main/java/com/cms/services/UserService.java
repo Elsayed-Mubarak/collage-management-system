@@ -14,4 +14,5 @@ public interface UserService {
 
 	public User findByEmailEquals(String email);
 	public User loginUser(String email, String password);
+	public User findByEmailAndPassword(String email, String password);
 }

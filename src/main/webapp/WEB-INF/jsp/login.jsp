@@ -188,40 +188,53 @@
 			</div>
 			<!--//header-->
 			<!---728x90--->
-			<div class="main-content-agile">
-				<div class="sub-main-w3">
-					<img src="static/images/logo.png" alt="logo" />
-				</div>
-				<div class="sub-main-w3">
-					<form action="#" method="post">
-						<div class="pom-agile">
-							<span class="fa fa-user-o" aria-hidden="true"></span> <input
-								placeholder="Username" name="Name" class="user" type="text"
-								required="">
-						</div>
-						<div class="pom-agile">
-							<span class="fa fa-key" aria-hidden="true"></span> <input
-								placeholder="Password" name="Password" class="pass"
-								type="password" required="">
-						</div>
-						<div class="sub-w3l">
-							<div class="sub-agile">
-								<input type="checkbox" id="brand1" value=""> <label
-									for="brand1"> <span></span>Remember me
-								</label>
-							</div>
-							<div class="clear"></div>
-						</div>
-						<div class="right-w3l">
-							<input type="submit" value="Login">
-						</div>
-						<div class="forgot-w3l">
-							<a href="#">Forgot Password?</a>
-						</div>
-					</form>
+			
+	<div class="main-content-agile">
+		<div class="sub-main-w3">
+			<img src="static/images/logo.png" alt="logo" />
+
+
+			<form action="${contextPath}/login" method="POST">
+				<div class="pom-agile">
+					<span class="fa fa-user-o" aria-hidden="true"></span> <input
+						placeholder="Email" name="email"  class="user" type="text"
+						required="">
 				</div>
 
-			</div>
+
+
+				<div class="pom-agile">
+					<span class="fa fa-key" aria-hidden="true"></span> <input
+						placeholder="Password" name="password" class="pass"
+						type="password" required="">
+				</div>
+
+
+
+				<div class="sub-w3l">
+					<div class="sub-agile">
+						<input type="checkbox" id="brand1" value=""> <label
+							for="brand1"> Remember me
+						</label>
+					</div>
+					<div class="clear"></div>
+				</div>
+
+
+				<div class="right-w3l">
+					<input type="submit" value="LOG IN">
+				</div>
+
+			</form>
+
+			
+			<h4 class="text-center">
+				<a href="/registration"><font color="white">Create an account</font> </a>
+			</h4>
+
+		</div>
+	</div>
+
 			<!--//main-->
 			<!---728x90--->
 			<!--footer-->

@@ -22,6 +22,7 @@
 img{max-width:100%;}
 /*end reset*/
 .login-form {
+	width:1260px ; 
     background: url(../images/5.jpg) no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
@@ -128,9 +129,7 @@ img{max-width:100%;}
 .login-form .sub-agile {
     float: left;
 }
-.login-form .sub-agile input[type="checkbox"] {
-    display: none;
-}
+
 .login-form .sub-agile input[type="checkbox"]+label {
     position: relative;
     padding-left: 25px;

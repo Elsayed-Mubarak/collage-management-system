@@ -19,6 +19,9 @@ public interface CourseRepository extends CrudRepository<Course, Integer>  {
  	
 	List<Course> findAllByYearAndTermIgnoreCase(String year , String term);
 	Course findById(int id);
+	
+	@Query(value= "SELECT * FROM course WHERE name like %?1% " , nativeQuery = true)
+	List<Course> searchcoursebyname (String coursename);
 	 
 	
 	

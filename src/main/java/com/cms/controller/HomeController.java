@@ -2,16 +2,30 @@ package com.cms.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.cms.services.AttendanceService;
+import com.cms.services.CourseService;
+import com.cms.services.StudentService;
 import com.cms.services.UserService;
 
 @Controller
 public class HomeController {
 	
 	@Autowired UserService userService;
+	
+	@Autowired
+	AttendanceService attendnceServcie ;
+	
+	@Autowired
+	StudentService  studentServcie ; 
+
+	@Autowired
+	CourseService courseServcie ; 
 	
 	
 
@@ -21,6 +35,9 @@ public class HomeController {
 		modelAndView.setViewName("home");
 		return modelAndView;
 	}
+	
+	
+	
 	
 	
 
@@ -82,5 +99,84 @@ public class HomeController {
 		
 		return "vision";
 	}
+	
+	
+	@RequestMapping(value = "/home1", method = RequestMethod.GET)
+	
+	 public String	showtotalattendanceCourses(  ModelMap model)
+	    {
+			     
+			   //   model.put("attendance", attendnceServcie.getattnames(coursename));
+			     // model.put("attendance", attendnceServcie.getAllByCoursenameAndSecorder(coursename, secorder));
+			  
+			      model.put("mode", "home");
+			   //   model.put("orderofsection", secorder);
+			      return "home";
+	   }
+	
+	
+
+	// used to search by get method
+	@RequestMapping(value = "/globalsearch", method = RequestMethod.GET)
+	
+	 public String	ShowtotalattendanceCourses( ModelMap model ,@RequestParam String NameSearch)
+	    {
+		
+//try static data   String course = " m" ;
+//String courses = "data structure" ;
+		
+       if (NameSearch != null && NameSearch != " ")
+
+       {
+           
+       	// model.put("mode", "searchresult");
+          model.put("studentresult", attendnceServcie.serachattBySname(NameSearch));
+          model.put("cousreresult",courseServcie.searchcoursebyname(NameSearch));
+
+}
+       
+       else {
+      // model.put("attendance", attendnceServcie.getattnames(coursename));
+       	//model.put("mode", "home");
+       	return "home";
+       	// model.put("attendance", attendnceServcie.getAllByCoursenameAndSecorder(coursename, secorder));
+       }
+       
+			   //   model.put("orderofsection", secorder);
+			      return "globalsearch";
+	   }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	@RequestMapping(value={"/unauthorized"}, method = RequestMethod.GET)
+	public String no(){
+		
+		return "unauthorized";
+	}
+	
+	
+	@RequestMapping(value={"/prof"}, method = RequestMethod.GET)
+	public String prof(){
+		
+		return "profile";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

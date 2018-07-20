@@ -3,6 +3,7 @@ package com.cms.services;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
+//import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,6 +12,7 @@ import com.cms.entity.Role;
 import com.cms.entity.User;
 import com.cms.repository.RoleRepository;
 import com.cms.repository.UserRepository;
+
 
 @Service
 public class UserServiceImp implements UserService{
@@ -22,12 +24,13 @@ public class UserServiceImp implements UserService{
 	
 	@Override
 	public User findUserByEmail(String email) {
+	
 		return userRepository.findByEmail(email);
 	}
 
-	
 	@Override
 	public User addUser(User user) {
+	
 		return userRepository.saveAndFlush(user);
 		
 	}
@@ -75,6 +78,12 @@ public class UserServiceImp implements UserService{
 		}
 		return null;
 	}
+	
+	
+	public User findByEmailAndPassword(String username, String password) {
+		return userRepository.findByEmailAndPassword(username, password);
+	}
+	
 	
 }
 

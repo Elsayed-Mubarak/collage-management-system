@@ -159,57 +159,62 @@
 
 				<div class="Content">
 
-					<form>
-						<br>
-						<br> <label>FIRST NAME:</label> <input type="text"
-							name="firstname" placeholder="First Name"> <br> <label>LAST
-							NAME:</label> <input type="text" name="lastname" placeholder="Last Name">
-						<br> <label>EMAIL:</label> <input type="email" name="email"
-							placeholder="a.b@xy.z"><br> <label>PHONE:</label> <input
-							type="tel" name="mobile" placeholder="Phone"> <br>
-
-						<div class="typ">
-							<label class="type">TYPE:</label>
-							<div class="ty">
-								<input type="radio" name="type" value="Admin">Admin <input
-									type="radio" name="type" value="Admin">Student <input
-									type="radio" name="type" value="Admin">Instructor<br>
-							</div>
-						</div>
-
-						<div class="levl">
-							<label class="level">LEVEL:</label>
-							<div class="levle">
-								<input type="radio" name="level" value="primary">Primary
-								<input type="radio" name="level" value="1st">1st Year <input
-									type="radio" name="level" value="2nd">2nd Year<br>
-								<br> <input type="radio" name="level" value="3rd">3rd
-								Year <input type="radio" name="level" value="4th">4th
-								Year<br>
-								<br>
-							</div>
-						</div>
-
-						<div class="s">
-							<label class="pass">PASSWORD:</label><br> <input
-								class="password" type="password" name="Password"
-								placeholder="Password"> <input class="password"
-								type="password" name="Password" placeholder="Confirm Password"><br>
-						</div>
-						<h6>Minimum of 6 characters</h6>
-
-						<label>GENDER:</label>
-						<div class="gender" style="">
-							<input type="radio" name="gender" value="male">Male <input
-								type="radio" name="gender" value="Female">Female
-
-						</div>
-						<button class="button" name="submit" value="Submit">SUBMIT</button>
-					</form>
+					
+					
+					
+                <form  action="#" th:action="@{/registration}" th:object="${user}" method="post"><br><br>
+                <label>FIRST NAME:</label>  
+                <input type="text" name="firstname" placeholder="First Name"> <br>
+                <label>LAST NAME:</label>  
+                <input type="text" name="lastname" placeholder="Last Name"> <br>
+                <label>EMAIL:</label>
+                <input type="email" name="email" placeholder="a.b@xy.z"><br>
+                <label>PHONE:</label> 
+                <input type="tel" name="phone" placeholder="Phone"> <br>
+                
+                <div class="typ">                
+                <label class="type">TYPE:</label>
+                <div class="ty">
+               
+                <input type="radio" name="userType" value="student">Student
+                <input type="radio" name="userType" value="instructor">Instructor<br>
+                </div>
+                </div>
+                
+                <div class="levl">
+                <label class="level">LEVEL:</label>
+                <div class="levle">
+                <input type="radio" name="level" value="primary">Primary
+                <input type="radio" name="level" value="1st">1st Year
+                <input type="radio" name="level" value="2nd">2nd Year<br><br>
+                <input type="radio" name="level" value="3rd">3rd Year
+                <input type="radio" name="level" value="4th">4th Year<br><br>
+                </div>
+                </div>
+                
+                <div  class="s">
+                <label class="pass" >PASSWORD:</label><br>
+                <input class="password" type="password" name="password"  placeholder="Password">
+                <input class="password" type="password" name="confirmPassword"  placeholder="ConfirmPassword"><br>
+                </div>
+                <h6>Minimum of 6 characters</h6>
+                
+                <label>GENDER:</label>
+                <div class="gender"  style="inline">
+                <input type="radio" name="gender" value="male">Male
+                <input type="radio" name="gender" value="Female">Female
+                </div>
+                
+                <button class="button" name="submit" value="Submit">REGISTER</button>
+                
+                <span th:utext="${successMessage}"></span>
+                
+                </form>
+             </div>
 
 				</div>
 			</div>
-		</div>
+	
 
 
 		<!-- Start of Footer-->
@@ -217,7 +222,7 @@
 			<div class="container">
 				<div class="f">
 					<div class="left">
-						<a href="#home"><h3>
+						<a href="/home"><h3>
 								<span>T</span>anta University
 							</h3></a>
 						<p>we introduce our best efforts to be a uniqe graduated
@@ -254,12 +259,8 @@
 		</div>
 
 		<!-- End of Footer-->
-
-		<!--<div class="Footer">
-            <p>© 2018 Student Registration Form. All Rights Reserved | Design by <a href="http://www.facebook.com/elkhole" target ="_blank" >ELKHOLY</a> </p>
-        </div>-->
+</div>
 
 
-	</div>
 </body>
 </html>

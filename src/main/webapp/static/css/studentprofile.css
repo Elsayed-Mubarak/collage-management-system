@@ -2,8 +2,6 @@ body
 {
     margin: auto;
 }
-
-
 /*Start of header*/
 
 .home .header
@@ -118,7 +116,7 @@ body
 {
     width: 50px;
     padding: 10px;
-    background:#0064d2  url(../images/search.png) no-repeat;
+    background:#0064d2  url(../pic/search.png) no-repeat;
     background-position: center;
     border: 1px #0064d2 solid;    
     margin-right: 100px;
@@ -289,186 +287,76 @@ body
 
 
 
-.regist-form 
+.profile-student 
 {
-    width:1260px;
-    font-size: medium;
-    border: #.25px solid:#F00;
-    background:url("../images/f3.jpg") no-repeat transparent left;
-    background-position: center;
-    background-size: 100% 100%;
-    background-attachment: fixed;
-    -webkit-background-size: 100% 100%;
-    -moz-background-size: 100% 100%;
-    background-color: #FFF;
-    height: 1000px;
+    width: 900px;
+    margin-left: 200px;
+    height: 750px;
+    background-color:#f5f5f5;
+}
+.content{
+  width: 788px;
+  margin: auto;
+  padding-top: 10px;
+}
+.clearfloat{clear: both;}
+.profile-student .box{padding-bottom:20px }
+.profile-student .upload{width:300px;height: 300px;float: left;background-size:100%;}
+/*.upload button{margin: auto;}*/
+.profile-student .fullname{float: left;padding-left: 30px;padding-top:40px;font-size:30px }
+.profile-student h3 i{padding: 0px}
+.profile-student ul{clear: both;list-style-type:none;padding-bottom:20px;font-size:20px;}
+.profile-student ul li{float: left;width: 20%; padding: 15px;}
+.profile-student ul li a{text-decoration: none;color:#03a9f4}
+.profile-student ul li a:active{color:red;}
+
+.profile-student .row label,.profile-student .row div{
+  width: 25%;
+  
+  margin-bottom: 10px;
 
 }
-.regist-form .container
-{
-    margin-left: 300px;
-    margin-right: 190px;
-    background-image: url(../images/f4.jpg);
-    background-size: 150% 100%;
-    background-attachment: scroll;   
+.profile-student .row label{
+  font-weight: bold;
 }
 
-.regist-form .Headerf
+.profile-student .row
 {
-    	background: rgba(0, 0, 0, 0.4);
-       border: .1px solid rgba(0, 0, 0, 0.4);
+  display: none;
 
-    color: #FFF;
-    text-align: center;
-    margin-top: 50px;
-     margin-left: 210px;
-    margin-right: 190px;
-    letter-spacing: 1px;
-    font-family: serif;
-    
-    
 }
-.regist-form form
+.profile-student .ahmd
 {
-    background: #FFF;
-    
-    width: 400px;
-    height: 820px;
-    padding: 0px;
-    font-family: sans-serif;
-    margin-left: -90px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+  display: none;
+  font-weight:bold;
+  line-height: 2.5em;
+  letter-spacing: 2px;
 }
-.regist-form label
+.profile-student .eissa
 {
-    
-    margin-left: 30px;
-    margin-right: 100px;
-    margin-top: 300px;
-    margin-bottom: 300px;
-    letter-spacing: .5px;
-    font-size: italic,bold;
-    padding: 0px;
-    font-family: serif;
-    font-style: italic;
-}
+  display: none;
+  color: red;
+  font-weight:bold;
+  line-height: 2.5em;
+  letter-spacing: 2px;
 
-.regist-form .type,.regist-form .level
-{
-    margin-top: 20px;
-    display: inline;
 }
-.regist-form .ty
+.profile-student .sasa
 {
-    margin-left: 80px;
-    color: #00F;
-    margin-bottom: 20px;
-    margin-top: 10px;
-    text-height: 10px;
-}
+  display: none;
+  color: red;
+  font-weight:bold;
+  line-height: 2.5em;
+  letter-spacing: 2px;
 
-.regist-form .levle
-{
-    margin-top: 10px;
-    margin-left: 80px;
-    color: #00F;
-}
-.regist-form input[type=text],
-.regist-form input[type=password],
-.regist-form input[type=email],
-.regist-form input[type=tel]
 
-{
-    display: block;
-    letter-spacing: 1px;
-    width: 300px;
-    margin-left : 30px;
-    margin-top: 5px;
-    height: 15px;
-    text-align:left;
-    padding: 10px;
-    border: 1px solid #00F;
-    font-family: serif;
-    font-style: italic;
 }
-.regist-form select
-{
-    border: 1px dashed #F00;
-    width: 100px;
-    height: 20px;
-    font-size: large;
-    display: block;
-    margin-left: 30px;
-    width: 150px;
-    height: 25px;
+.profile-student a{ text-decoration:none;
 }
-.regist-form h6
-{
-    color: #F00;
-    margin-left: 30px;
-    margin-top: -10px;
-    letter-spacing: 1px;
-}
-.regist-form h1
-{
-    float: center;
-}
-.regist-form .content
-{
-    padding: 0px;
-}
-.regist-form .5
-{
-    display: inline-block;
-    letter-spacing: 1px;
-    width: 125px;
-    margin: 5px;
-    height: 12.5px;
-    
-}
-.regist-form a
-{
-    color: #F00;
-    cursor: !important;
-}
-.regist-form .button
-{
-    margin: 20px;
-    width: 350px;
-    height: 50px;
-    background-color: #890f0a;
-    color: #FFF;
-    font-size: large;
-    letter-spacing: 1.5px;
-    text-align: center;
-    display: block;
-}
-.regist-form .password
-{
-    width: 125px;
-    display:inline-block;
-    height: 25px;
-}
-.regist-form .gender
-{   
-    margin-left: 80px;
-    color: #00F;
-    margin-bottom: 20px;
-    margin-top: 10px;
-    text-height: 10px;      
-}
-.regist-form p
-{
-    font-size: larger;
-    color: #000;
-    float: !important;
-    margin-top: 50px;
-    margin-left: 20px;
-    font-weight: 400;
-    text-align: center;
-    font-size: larger;   
-}
+ .profile-student a:hover{color: green;}
+
+
+
 
 
 /*Start of Footer*/
@@ -610,17 +498,3 @@ body
 
 /*End of Footer*/
 
-
-
-/*div[class="Footer"]
-{
-    font-family: cursive;
-    font-size: larger;
-    color: #000;
-    float: !important;
-    margin-top: 50px;
-    margin-left: 20px;
-    font-weight: 400;
-    text-align: center;
-    font-size: larger;
-}*/

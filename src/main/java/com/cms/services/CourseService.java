@@ -20,4 +20,7 @@ public interface  CourseService {
     List<Course> getAllCoursesByYearANDTermIgnoreCase(String year,String term);
 	
     List<Course> getAllCoursesByInstructorId(int id);
+    
+    
+    List<Course> searchcoursebyname (String coursename);
 }

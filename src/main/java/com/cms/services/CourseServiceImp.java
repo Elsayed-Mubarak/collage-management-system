@@ -95,6 +95,11 @@ public class CourseServiceImp implements CourseService {
 		return courseRepository.findbyinstrucor(id);
 	}
 
-		
+	@Override
+	public List<Course> searchcoursebyname(String coursename) {
+		// TODO Auto-generated method stub
+		return courseRepository.searchcoursebyname(coursename);
+	}
+
 
 }

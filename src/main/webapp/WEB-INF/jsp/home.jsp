@@ -40,12 +40,10 @@
         
         
             <div id="search" class="search">
-                <div class="container">
-                    <form action="#" method="post">
-                        <input type="search" placeholder="Search Here..." required>
+                    <form action="globalsearch" method="get">
+                        <input class="search" name="NameSearch" id="NameSearch"  type="search" placeholder="Search Here..." required>
                         <input type="submit" value="">
                     </form> 
-                </div>
             </div>
         
         <!--End of search -->    
@@ -65,7 +63,7 @@
                                     <ul>
                                         <li><a href="/login"  class="hvr-rectangle-out-scroll">Login As Instructor</a></li>
                                         <li><a  id="sl" href="/login" class="hvr-rectangle-out-scroll">Login As Student</a></li>
-                                        <li><a href="/pay" class="hvr-rectangle-out-scroll"> pay for Education</a></li>
+                                        <li><a href="/pay" class="hvr-rectangle-out-scroll">Credit Hour System</a></li>
                                         <li><a  id="union" href="/union" class="hvr-rectangle-out-scroll">student Union</a></li>
                                         <li><a href="/care" class="hvr-rectangle-out-scroll">student Care</a></li>
 
@@ -148,7 +146,7 @@
         
           <div class="back">
                 <div class="container">
-                    <h2>computer management Information<br> <span>system</span></h2>
+                    <h2>college management Information<br> <span>system</span></h2>
                 </div>
             </div>
          <!--End of body -->
@@ -190,9 +188,9 @@
                 <img src="static/images/ab.jpg" alt="student pic" class="img-responsive">
             </div>
             <div class="about-right">
-                <h3> COMPLETE SOLUTION FOR YOU EDUCATION NEEDS</h3>
-                <p>The development of education does not depend on the conviction of governments and peoples together that the real growth in any country comes only with a real educational renaissance. Good education leads to good investment and a great renaissance. Governments are beginning to think about changing educational systems and transforming traditional teacher-based education as the only basic source of information ...
-                <span>It is noted that what occurs in integrated learning is the integration of traditional and e-learning. Accordingly, this integration formula can be called Blended Learning.</span></p>
+                <h3> about & History of college </h3>
+                <p>the faculty has been established at 1990 , there were civil , architecture and mechanical departments . <br>
+                our faculty is a pioneer leader in civil  and electrical engineering .                    <span>It is noted that what occurs in integrated learning is the integration of traditional and e-learning. Accordingly, this integration formula can be called Blended Learning.</span></p>
             </div>
         </div>
     <!--End of about-->
@@ -212,14 +210,14 @@
                         <i class="fa fa-bar-chart" aria-hidden="true"></i>    
                          </div>
                         <h5>Skills</h5>
-                        <p>hghyghg guhjknuvbh vbhknjvgb hbnj sdf dfsd sf sf sf sfff sfsq fvac </p>
+                        <p>college permit to different student skills to launch up </p>
                     </div>
                     <div class="second-obj">
                         <div class="fa">
                             <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
                         </div>
                         <h5>Self Learning</h5>
-                        <p>hghyghg guhjknuvbh vbhknjvgb hbnj sdf dfsd sf sf sf sfff sfsq fvac </p>
+                        <p> online coursesand quizes  are provided </p>
                     </div>
                 
                     <div class="third-obj">
@@ -227,7 +225,7 @@
                         <i class="fa-question-circle-o" aria-hidden="true"></i>
                             </div>
                         <h5>Knowledge</h5>
-                        <p>hghyghg guhjknuvbh vbhknjvgb hbnj sdf dfsd sf sf sf sfff sfsq fvac </p>
+                        <p>it provides a huge amount of information to its community </p>
                     </div>
                     <div class="clearfix"></div>
                     <div class="forth-obj">
@@ -235,21 +233,21 @@
                         <i class="fa-comments" aria-hidden="true"></i>    
                          </div>
                         <h5>Discussion</h5>
-                        <p>hghyghg guhjknuvbh vbhknjvgb hbnj sdf dfsd sf sf sf sfff sfsq fvac </p>
+                        <p>there is a benefit discussion between its people </p>
                     </div>
                     <div class="fifth-obj">
                          <div class="fa">
                         <i class="fa-usd" aria-hidden="true"></i>    
                          </div>
-                        <h5>International Payment</h5>
-                        <p>hghyghg guhjknuvbh vbhknjvgb hbnj sdf dfsd sf sf sf sfff sfsq fvac </p>
+                        <h5>credit hours</h5>
+                        <p> there is a new system with credit hours in construction department</p>
                     </div>
                     <div class="six-obj">
                          <div class="fa">
                         <i class="fa-building-o" aria-hidden="true"></i>    
                          </div>
                         <h5>Hosted Content</h5>
-                        <p>hghyghg guhjknuvbh vbhknjvgb hbnj sdf dfsd sf sf sf sfff sfsq fvac </p>
+                        <p> there is a good content and educational environment</p>
                     </div>
                 </div>
             </div>
@@ -323,7 +321,7 @@
                 <div class="left-top">
                     <i> 28th june 2018</i>
                     <p>in this day national team get out of worldcop in this day national team get out of worldcop in this day national team get out of worldcop in this day national team get out of worldcop in this day national team get out of worldcop</p>
-                    <h6>Mohamed eisa</h6>
+                    <h6>Mohamed eisa , student union member</h6>
                 </div>
                 <div class="right-top">
                     <div class="button">
@@ -342,7 +340,7 @@
                 <div class="right-bottom">
                     <i> 28th june 2018</i>
                     <p>in this day national team get out of worldcop in this day national team get out of worldcop in this day national team get out of worldcop in this day national team get out of worldcop in this day national team get out of worldcop</p>
-                    <h6>Mohamed eisa</h6>
+                    <h6>Mohamed eisa , student union member</h6>
                 </div>
             </div>
         </div>
@@ -551,6 +549,21 @@
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+     
         
         
         

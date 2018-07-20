@@ -3,6 +3,8 @@ package com.cms.entity;
 import java.io.Serializable;
 import javax.persistence.*;
 
+import org.springframework.lang.Nullable;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.Date;
@@ -27,6 +29,19 @@ public class User implements Serializable {
 
 	@Column(length = 255, name = "address")
 	private String address;
+
+	@Column(length = 255, name = "prof_img")
+	@Nullable
+	private String profImg ; 
+	
+	
+	public String getProfImg() {
+		return profImg;
+	}
+
+	public void setProfImg(String profImg) {
+		this.profImg = profImg;
+	}
 
 	@Column(length = 255, name = "email")
 	private String email;

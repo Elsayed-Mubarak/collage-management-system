@@ -17,17 +17,26 @@
 
 <title>courses | home</title>
 
+<link rel="stylesheet" href="${contextRoot }/static/css/profilehome.css"
+	type="text/css">
 
 
-<link rel="stylesheet" href="static/css/home.css" type="text/css">
-<link rel="stylesheet" href="static/css/font.css" type="text/css">
-<link rel="stylesheet" href="static/css/normal.css" type="text/css">
-<link rel="stylesheet" href="static/css/union.css" type="text/css">
+<link rel="stylesheet" href="${contextRoot }/static/css/home.css"
+	type="text/css">
+<link rel="stylesheet" href="${contextRoot }/static/css/font.css"
+	type="text/css">
+<link rel="stylesheet" href="${contextRoot }/static/css/normal.css"
+	type="text/css">
+<link rel="stylesheet" href="${contextRoot }/static/css/union.css"
+	type="text/css">
+	
+
 
 <link href="${contextRoot }/static/css/styles.css" rel="stylesheet">
 
 <script src="${contextRoot }/static/js/script.js"></script>
 
+<script src="${contextRoot }/static/js/profilehome.js"></script>
 
 
 
@@ -46,15 +55,35 @@
 		<div id="home" class="home">
 			<div class="header">
 				<div class="container">
-					<a href="/home"><img src="static/images/logo.png"></a> <a
+					<a href="/home"><img
+						src="${contextRoot }/static/images/logo.png"></a> <a
 						href="/home"><h1>
 							<span>T</span>anta University <i class="fa fa-graduation-cap"
 								aria-hidden="true"></i>
 						</h1></a>
-					<div class="sign">
-						<a class="signin" href="/login" id="signin">SIGN IN</a> <a
-							class="signup" href="/registeration" id="signup">SIGN Up</a>
-					</div>
+
+
+					 	<div class="profile">
+					
+						<ul id="sel">
+							<li id="list"><a href="/myProfile">MY PROFILE</a></li>
+							<li id="list"><a href="#">SETTING</a></li>
+							<li id="list"><a href="#">HELP</a></li>
+							<li id="list"><a href="/home">SIGN OUT</a></li>
+						</ul>
+					</div>  
+
+
+
+
+					<c:if test="${isLogin == '0'}">
+
+						<div class="sign">
+							<a class="signin" href="/login" id="signin">SIGN IN</a> <a
+								class="signup" href="/registeration" id="signup">SIGN Up</a>
+						</div>
+					</c:if>
+
 				</div>
 			</div>
 			<!--End of Header -->
@@ -185,8 +214,8 @@
 
 
 
-			<c:choose>
 
+			<c:choose>
 
 				<c:when test="${mode=='ALL_COURSES_TO_USERS' }">
 
@@ -196,11 +225,12 @@
 						<div class="dropdown">
 							<button onclick="myFunction()" class="dropbtn">Courses</button>
 							<div id="myDropdown" class="dropdown-content">
-							
-								<a  href="#first">First Year</a> 
-								<a href="/show-courses-to-user/2nd year"  style="src:url(static/css/font.css)"  >Second Year</a>
-								 <a	href="/show-courses-to-user/3rd year">Third Year</a>
-								  <a href="/show-courses-to-user/4th year">Fourth Year</a>
+
+								<a href="#first">First Year</a> <a
+									href="/show-courses-to-user/2nd year"
+									style="src: url(static/css/font.css)">Second Year</a> <a
+									href="/show-courses-to-user/3rd year">Third Year</a> <a
+									href="/show-courses-to-user/4th year">Fourth Year</a>
 							</div>
 						</div>
 
@@ -224,53 +254,59 @@
 
 
 			</c:choose>
-		
 
 
 
 
-<!-- Start of Footer-->
-                <div class="footer">
-                    <div class="container">
-                        <div class="f">
-                        <div class="left">
-                            <a href="/home"><h3><span>T</span>anta University</h3></a>
-                            <p>we introduce our best efforts to be a uniqe graduated person.</p>
-                        </div>
-                                                    
-                        <div class="mid">
-                            <h3>our address</h3>
-                            <i class="fa fa-map-marker" aria-hidden="true"></i>
-                            <p>Stad street,tanta</p>
-                            <i class="fa fa-phone" aria-hidden="true"></i>
-                            <p>(040) 3453862</p>
-                            <i class="fa fa-envelope" aria-hidden="true"></i>
-                            <a>elsayed260639@f-eng.tanta.edu.eg</a>
-                        </div>
-                                                    
-                        <div class="right">
-                            <h3>Keep in touch wih us</h3>
-                            <ul>
-                                <li><a href="#"><i class="fa fa-facebook"></i></a> <a class="ahmd" href="https://www.facebook.com/ELKHOLE">Facebook</a></li>
-                               
-                                <li><a href="#"><i class="fa fa-twitter"></i></a><a href="https://twitter.com/AhmdElkhole">Twitter</a></li>
-                                
-                            </ul>
-                        </div>
-                        </div>
-                                               
-                        <div class="last">
-                            © 2018 faculty Of Engineering Tanta Univerisity . All Rights Reserved | Design by  <a href="https://www.facebook.com/ELKHOLE">Spring Graduation Project Team </a>
-                        </div>
-                    </div>
-                </div>
-                
-    <!-- End of Footer-->
-                </div>
-                
-                </div>
-                
-                
+
+			<!-- Start of Footer-->
+			<div class="footer">
+				<div class="container">
+					<div class="f">
+						<div class="left">
+							<a href="/home"><h3>
+									<span>T</span>anta University
+								</h3></a>
+							<p>we introduce our best efforts to be a uniqe graduated
+								person.</p>
+						</div>
+
+						<div class="mid">
+							<h3>our address</h3>
+							<i class="fa fa-map-marker" aria-hidden="true"></i>
+							<p>Stad street,tanta</p>
+							<i class="fa fa-phone" aria-hidden="true"></i>
+							<p>(040) 3453862</p>
+							<i class="fa fa-envelope" aria-hidden="true"></i> <a>elsayed260639@f-eng.tanta.edu.eg</a>
+						</div>
+
+						<div class="right">
+							<h3>Keep in touch wih us</h3>
+							<ul>
+								<li><a href="#"><i class="fa fa-facebook"></i></a> <a
+									class="ahmd" href="https://www.facebook.com/ELKHOLE">Facebook</a></li>
+
+								<li><a href="#"><i class="fa fa-twitter"></i></a><a
+									href="https://twitter.com/AhmdElkhole">Twitter</a></li>
+
+							</ul>
+						</div>
+					</div>
+
+					<div class="last">
+						© 2018 faculty Of Engineering Tanta Univerisity . All Rights
+						Reserved | Design by <a href="https://www.facebook.com/ELKHOLE">Spring
+							Graduation Project Team </a>
+					</div>
+				</div>
+			</div>
+
+			<!-- End of Footer-->
+		</div>
+
+	</div>
+
+
 
 
 
